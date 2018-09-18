@@ -1,0 +1,122 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    background: #ececec;
+    margin: auto;
+}
+
+.header {
+    height: 40px;
+    line-height: 40px;
+    color: #FFF;
+    background: #3F51B5;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 2px 9px 1px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 10px;
+}
+
+.swap {
+    float: right;
+    display: block;
+    width: 35px;
+    position: relative;
+    top: 2px;
+    filter: invert(100%);
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0px;
+    font-weight: 400;
+}
+
+li {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.favorites {
+    column-count: 2;
+}
+
+.favorites li {
+    list-style-position: inside;
+}
+
+p.departure {
+    font-size: 16px;
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0px;
+    font-weight: 400;
+    border-bottom: 2px solid white;
+}
+
+#insert {
+    max-width: 600px;
+    background: white;
+}
+
+h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+h1 a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+h2 {
+    margin-bottom: 15px;
+    margin-top: 25px;
+    margin-left: 15px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 30px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: blue;
+}
+
+.time {
+    float: right;
+}
+
+
+#searchTxt {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.search-wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+}

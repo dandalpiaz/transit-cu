@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 id="title">Favorites:</h2>
+
+<ul class="favorites">
+	<li>[[[[[TBD]]]]]</li>
+	<li>[[[[[TBD]]]]]</li>
+	<li>[[[[[TBD]]]]]</li>
+	<li>[[[[[TBD]]]]]</li>
+	<li>[[[[[TBD]]]]]</li>
+	<li>[[[[[TBD]]]]]</li>
+</ul>
+
+<h2 id="title">Search:</h2>
+
+<div class="search-wrap">
+    <input type="" id="searchTxt" placeholder="Search for Stops">
+</div>
+
+<div>
+	<ul id="result">
+	</ul>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+
+<script>
+
+/*
+window.onload = function() {
+  var input = document.getElementById("searchTxt").focus();
+} */
+
+var delay = (function(){
+	var timer = 0;
+	return function(callback, ms){
+	  clearTimeout (timer);
+	  timer = setTimeout(callback, ms);
+	};
+})();
+
+function getData() {
+    searchVar = document.getElementById("searchTxt").value;
+    console.log(searchVar);
+    if (searchVar == "") {
+		return
+	}
+
+    baseUrl = "https://search.mtd.org/v1.0.0/stop/suggest/";
+    url = baseUrl + searchVar;
+
+    $.getJSON(url, function(data) {
+        //console.log(data);
+		for (i = 0; i < data.length; i++) {
+			stopName = data[i]['result']['name'];
+			stopID = data[i]['result']['id'];
+			$('#result').append("<li>" + "<a href='/stop=" + stopID + "'>" + stopName + "</a>" + "</li>");
+		}
+    });       
+};
+
+$( document ).ready(function() {
+    $("#searchTxt").keyup(function(){
+        console.log("keyup on input")
+		delay(function(){
+			//alert('Time elapsed!');
+			getData();
+		}, 500 );
+	});
+
+    /*
+	$('th').click(function() {
+		$(':focus').blur();
+	}); */
+
+});
+
+/*
+$( document ).keydown(function(e) {
+	if (document.activeElement.id == "searchTxt") {
+		if (e.keyCode == 40) {
+			e.preventDefault();
+			$('a.move:first').focus();
+		}
+	}
+
+	else if (document.activeElement.className == "move") {
+		if (e.keyCode == 40) {
+			e.preventDefault();
+			$('.move:focus').closest('li').next().find('a.move').focus();
+		}
+		if (e.keyCode == 38) {
+			e.preventDefault();
+			if (document.activeElement.id == "0") {
+				$('#searchTxt').focus();
+			}
+			else {
+				$('.move:focus').closest('li').prev().find('a.move').focus();
+			}
+		}
+	}
+     	
+}); */
+            
+</script>
+
+{% endblock %}
