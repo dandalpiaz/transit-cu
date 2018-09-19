@@ -9,6 +9,10 @@ app = Flask(__name__)
 def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
 
+@app.route('/manifest.json')
+def static_from_root_1():
+    return send_from_directory(app.static_folder, request.path[1:])
+
 @app.route('/')
 def index():
 	return render_template('home.html')
@@ -29,5 +33,5 @@ def get_stop(stop):
 	return render_template('stop.html', data=data, title=title)
 
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = False
     app.run()
