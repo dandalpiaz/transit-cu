@@ -64,12 +64,11 @@ p.departure {
     padding-right: 15px;
     margin: 0px;
     font-weight: 400;
-    border-bottom: 2px solid white;
+    border-bottom: 1px solid #bbb;
 }
 
 #insert {
     max-width: 600px;
-    background: white;
 }
 
 h1 {
@@ -108,6 +107,8 @@ a:visited {
 
 .time {
     float: right;
+    line-height: 50px;
+    color: black;
 }
 
 
@@ -120,4 +121,18 @@ a:visited {
 .search-wrap {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.route-short {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+}
+
+.route-name {
+    color: black;
+    padding-left: 15px;
 }

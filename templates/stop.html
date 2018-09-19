@@ -40,6 +40,10 @@ function getData() {
 			departures = json['departures'];
 			for (i = 0; i < departures.length; i++) {
 				route = departures[i]['headsign'];
+				route_short = route.split(" ")[0];
+
+				route_name = route.substr(route.indexOf(" ") + 1);
+
 				route_color = departures[i]['route']['route_color'];
 
 				route_color_r = hexToRgb(route_color).r;
@@ -48,7 +52,8 @@ function getData() {
 
 				route_text_color = departures[i]['route']['route_text_color'];
 				eta = departures[i]['expected_mins'];
-				$("#insert").append("<p class='departure' style='color: " + "#" + route_text_color + "; " + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75)" + ";'>" + route + "<span class='time'>" + eta + " Min" + "</span>" + "</p>");
+				//$("#insert").append("<p class='departure' style='color: " + "#" + route_text_color + "; " + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75)" + ";'>" + route + "<span class='time'>" + eta + " Min" + "</span>" + "</p>");
+				$("#insert").append("<p class='departure' style='color: " + "#" + route_text_color + ";'>" + "<span class='route-short' style='" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75)" + ";'>" + route_short + "</span>" + "<span class='route-name'>" + route_name + "</span>" + "<span class='time'>" + eta + " Min" + "</span>" + "</p>");
 				
 				
 			}
