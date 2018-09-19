@@ -4,13 +4,11 @@ A no-frills bus application.
 
 ## TODO
 
-- add a gitignore, ignore venv folder
 - move api key to enviornment variable
 - add instructions for creating a virtual enviornment and installing dependencies
 - refresh stop pages every 30 seconds
 - manifest json for fullscreen mode and app color
-- add to GitHub repo
-- heroku
+- heroku instructions
 
 ## Reference
 

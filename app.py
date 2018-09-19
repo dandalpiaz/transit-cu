@@ -13,6 +13,10 @@ def static_from_root():
 def static_from_root_1():
     return send_from_directory(app.static_folder, request.path[1:])
 
+@app.route('/logo.png')
+def static_from_root_2():
+    return send_from_directory(app.static_folder, request.path[1:])
+
 @app.route('/')
 def index():
 	return render_template('home.html')
