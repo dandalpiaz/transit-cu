@@ -1,27 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2 id="title">Favorites:</h2>
-
-<ul class="favorites">
-	<li>[[[[[TBD]]]]]</li>
-	<li>[[[[[TBD]]]]]</li>
-	<li>[[[[[TBD]]]]]</li>
-	<li>[[[[[TBD]]]]]</li>
-	<li>[[[[[TBD]]]]]</li>
-	<li>[[[[[TBD]]]]]</li>
-</ul>
-
 <h2 id="title">Search:</h2>
 
 <div class="search-wrap">
-    <input type="" id="searchTxt" placeholder="Search for Stops">
+    <input autocomplete="off" type="" id="searchTxt" placeholder="Search for Stops">
 </div>
 
 <div>
 	<ul id="result">
 	</ul>
 </div>
+
+<h2 id="title">Favorites:</h2>
+
+<ul class="favorites">
+	<li>[[[[[TBD]]]]]</li>
+	<li>[[[[[TBD]]]]]</li>
+	<li>[[[[[TBD]]]]]</li>
+</ul>
 
 {% endblock %}
 
@@ -45,7 +42,6 @@ var delay = (function(){
 
 function getData() {
     searchVar = document.getElementById("searchTxt").value;
-    console.log(searchVar);
     if (searchVar == "") {
 		return
 	}
@@ -53,8 +49,8 @@ function getData() {
     baseUrl = "https://search.mtd.org/v1.0.0/stop/suggest/";
     url = baseUrl + searchVar;
 
+	$('#result').html("");
     $.getJSON(url, function(data) {
-        //console.log(data);
 		for (i = 0; i < data.length; i++) {
 			stopName = data[i]['result']['name'];
 			stopID = data[i]['result']['id'];
@@ -67,44 +63,10 @@ $( document ).ready(function() {
     $("#searchTxt").keyup(function(){
         console.log("keyup on input")
 		delay(function(){
-			//alert('Time elapsed!');
 			getData();
 		}, 500 );
 	});
-
-    /*
-	$('th').click(function() {
-		$(':focus').blur();
-	}); */
-
 });
-
-/*
-$( document ).keydown(function(e) {
-	if (document.activeElement.id == "searchTxt") {
-		if (e.keyCode == 40) {
-			e.preventDefault();
-			$('a.move:first').focus();
-		}
-	}
-
-	else if (document.activeElement.className == "move") {
-		if (e.keyCode == 40) {
-			e.preventDefault();
-			$('.move:focus').closest('li').next().find('a.move').focus();
-		}
-		if (e.keyCode == 38) {
-			e.preventDefault();
-			if (document.activeElement.id == "0") {
-				$('#searchTxt').focus();
-			}
-			else {
-				$('.move:focus').closest('li').prev().find('a.move').focus();
-			}
-		}
-	}
-     	
-}); */
             
 </script>
 
