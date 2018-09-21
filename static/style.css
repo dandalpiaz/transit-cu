@@ -5,29 +5,21 @@ body {
     padding: 0px;
     font-family: 'Roboto';
     font-weight: 300;
-    background: #ececec;
+    background: white;
     margin: auto;
+    color: rgba(0, 0, 0, 0.8);
 }
 
 .header {
     height: 40px;
     line-height: 40px;
     color: #FFF;
-    background: #3F51B5;
-    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 2px 9px 1px rgba(0, 0, 0, 0.12), 0 4px 2px -2px rgba(0, 0, 0, 0.2);
+    background: #f8f8f8;
+    border-bottom: 1px solid #ddd;
     padding-top: 8px;
     padding-bottom: 8px;
     padding-left: 16px;
     padding-right: 10px;
-}
-
-.swap {
-    float: right;
-    display: block;
-    width: 35px;
-    position: relative;
-    top: 2px;
-    filter: invert(100%);
 }
 
 .container {
@@ -46,6 +38,7 @@ p {
 li {
     font-size: 16px;
     font-weight: 400;
+    line-height: 1.5rem;
 }
 
 p.departure {
@@ -58,6 +51,10 @@ p.departure {
     border-bottom: 1px solid #bbb;
 }
 
+p.departure:last-child {
+    border-bottom: none;
+}
+
 h1 {
     margin: 0px;
     padding: 0px;
@@ -67,7 +64,7 @@ h1 {
 }
 
 h1 a {
-    color: white !important;
+    color: rgba(0, 0, 0, 0.6) !important;
     text-decoration: none !important;
 }
 
@@ -75,7 +72,7 @@ h2 {
     margin-bottom: 15px;
     margin-top: 25px;
     margin-left: 15px;
-    font-weight: 400;
+    font-weight: 300;
     color: rgba(0, 0, 0, 0.8);
     font-size: 30px;
 }
@@ -95,14 +92,16 @@ a:visited {
 .time {
     float: right;
     line-height: 50px;
-    color: black;
+    color: rgba(0, 0, 0, 0.8);
+    padding-right: 10px;
 }
-
 
 #searchTxt {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
+    font-size: 16px;
+    font-family: 'Roboto';
 }
 
 .search-wrap {
@@ -120,6 +119,6 @@ a:visited {
 }
 
 .route-name {
-    color: black;
+    color: rgba(0, 0, 0, 0.8);
     padding-left: 15px;
 }
