@@ -15,9 +15,7 @@
 <h2 id="title">Favorites:</h2>
 
 <ul class="favorites">
-	<li>[[[[[TBD]]]]]</li>
-	<li>[[[[[TBD]]]]]</li>
-	<li>[[[[[TBD]]]]]</li>
+	
 </ul>
 
 {% endblock %}
@@ -66,6 +64,24 @@ $( document ).ready(function() {
 			getData();
 		}, 500 );
 	});
+
+	localStorage.setItem('favs','PLAZA###Transit Plaza, FOXSURS###Fox Drive at SURS');
+	var favorites = localStorage.getItem('favs');
+	var favorites_array = favorites.split(', ');
+
+	for (var i = 0; i < favorites_array.length; i++) {
+		//console.log(favorites_array[i]);
+		var fav_split = favorites_array[i].split('###');
+		$('.favorites').append("<li><a href='/stop=" + fav_split[0] + "'>" + fav_split[1] + "</a></li>" );
+	}
+
+	var mylist = $('.favorites');
+	var listitems = mylist.children('li').get();
+	listitems.sort(function(a, b) {
+		return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+	})
+	$.each(listitems, function(idx, itm) { mylist.append(itm); });
+
 });
             
 </script>
