@@ -130,6 +130,11 @@ a:visited {
     display: inline-block;
 }
 
+.route-short:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
 .route-name {
     color: rgba(0, 0, 0, 0.8);
     padding-left: 15px;

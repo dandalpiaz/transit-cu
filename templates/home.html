@@ -41,7 +41,7 @@ var delay = (function(){
 	};
 })();
 
-function getData() {
+function getSearchData() {
     searchVar = document.getElementById("searchTxt").value;
     if (searchVar == "") {
 		return
@@ -64,7 +64,7 @@ $( document ).ready(function() {
     $("#searchTxt").keyup(function(){
         console.log("keyup on input")
 		delay(function(){
-			getData();
+			getSearchData();
 		}, 500 );
 	});
 
@@ -73,7 +73,6 @@ $( document ).ready(function() {
 	var favorites_array = favorites.split(', ');
 
 	for (var i = 0; i < favorites_array.length; i++) {
-		//console.log(favorites_array[i]);
 		var fav_split = favorites_array[i].split('###');
 		$('.favorites').append("<li><a href='/stop=" + fav_split[0] + "'>" + fav_split[1] + "</a></li>" );
 	}
@@ -98,54 +97,71 @@ $( document ).ready(function() {
 <script>
 
 function hexToRgb(hex) {
-		var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-		return result ? {
-				r: parseInt(result[1], 16),
-				g: parseInt(result[2], 16),
-				b: parseInt(result[3], 16)
-		} : null;
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? {
+			r: parseInt(result[1], 16),
+			g: parseInt(result[2], 16),
+			b: parseInt(result[3], 16)
+	} : null;
 }
 
 function getFilterData() {
-	(function($) {
 
-		var json = JSON.parse('{{ all_stops_data | tojson | safe}}');
-		all_routes = json['routes'];
-		var added = [];
+	var json = JSON.parse('{{ all_stops_data | tojson | safe}}');
+	all_routes = json['routes'];
+	var added = [];
 
-		for (i = 0; i < all_routes.length; i++) {
+	for (i = 0; i < all_routes.length; i++) {
 
-			route = all_routes[i]['route_short_name'];
+		route = all_routes[i]['route_short_name'];
 
-			if (added.includes(route)) {
-				continue;
-			}
-
-			route_text_color = all_routes[i]['route_text_color'];
-			route_color = all_routes[i]['route_color'];
-
-			route_color_r = hexToRgb(route_color).r;
-			route_color_g = hexToRgb(route_color).g;
-			route_color_b = hexToRgb(route_color).b; 
-
-			$("#filters").append("<span class='route-short' style='margin:1px;" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75);" + "color: " + "#" + route_text_color + ";'>" + route + "</span>");
-
-			added.push(route);
+		if (added.includes(route)) {
+			continue;
 		}
 
-		var filterSort = $('#filters');
-		var listitems = filterSort.children('span').get();
-		listitems.sort(function(a, b) {
-			return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
-		})
-		$.each(listitems, function(idx, itm) { filterSort.append(itm); });
-						
-		})(jQuery);
+		route_text_color = all_routes[i]['route_text_color'];
+		route_color = all_routes[i]['route_color'];
+
+		route_color_r = hexToRgb(route_color).r;
+		route_color_g = hexToRgb(route_color).g;
+		route_color_b = hexToRgb(route_color).b; 
+
+		$("#filters").append("<span class='route-short' style='margin:1px;" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75);" + "color: " + "#" + route_text_color + ";'>" + route + "</span>");
+
+		added.push(route);
+	}
+
+	var filterSort = $('#filters');
+	var listitems = filterSort.children('span').get();
+	listitems.sort(function(a, b) {
+		return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
+	})
+	$.each(listitems, function(idx, itm) { filterSort.append(itm); });
 }
 
+
 $(document).ready(function() {
+
 	getFilterData();
+
+	/*
+	localStorage.setItem('filter', '');
+
+	$('.route-short').click(function() {
+
+		var route_num = $(this).text();
+
+		var old = localStorage.getItem('filter');
+		if(old === null) old = "";
+		localStorage.setItem('filter', old + "##" + route_num + "--");
+
+		var filter = localStorage.getItem('filter');
+
+		console.log(filter);
+	});
+	*/
 })
+
 			
 </script>
 
