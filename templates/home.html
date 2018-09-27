@@ -144,6 +144,45 @@ $(document).ready(function() {
 
 	getFilterData();
 
+	var saved_filter = localStorage.getItem('filter');
+
+	if (saved_filter == null) {
+		var selected_filters = [];
+	}
+
+	else {
+		var selected_filters = saved_filter.split(",");
+	}
+
+	$('.route-short').click(function() {
+
+		var route_num = $(this).text();
+
+		if (selected_filters.includes(route_num)) {
+			var index = selected_filters.indexOf(route_num);
+			selected_filters.splice(index, 1);
+		}
+
+		else {
+			selected_filters.push(route_num);
+		}
+		
+		console.log(selected_filters);
+		localStorage.setItem('filter', selected_filters);
+
+		$('.route-short').each(function() {
+			if (selected_filters.includes($(this).text())) {
+				$(this).css('opacity', '1.0');
+			}
+			else {
+				$(this).css('opacity', '0.5');
+			}
+		});
+		
+	});
+
+	
+
 	/*
 	localStorage.setItem('filter', '');
 
