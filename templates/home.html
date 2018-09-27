@@ -141,65 +141,41 @@ function getFilterData() {
 
 
 $(document).ready(function() {
-
 	getFilterData();
-
 	var saved_filter = localStorage.getItem('filter');
-
 	if (saved_filter == null) {
 		var selected_filters = [];
 	}
-
 	else {
 		var selected_filters = saved_filter.split(",");
 	}
-
+	updateFilters(selected_filters);
 	$('.route-short').click(function() {
-
 		var route_num = $(this).text();
-
 		if (selected_filters.includes(route_num)) {
 			var index = selected_filters.indexOf(route_num);
 			selected_filters.splice(index, 1);
 		}
-
 		else {
 			selected_filters.push(route_num);
 		}
-		
-		console.log(selected_filters);
 		localStorage.setItem('filter', selected_filters);
-
-		$('.route-short').each(function() {
-			if (selected_filters.includes($(this).text())) {
-				$(this).css('opacity', '1.0');
-			}
-			else {
-				$(this).css('opacity', '0.5');
-			}
-		});
-		
+		updateFilters(selected_filters);
 	});
-
-	
-
-	/*
-	localStorage.setItem('filter', '');
-
-	$('.route-short').click(function() {
-
-		var route_num = $(this).text();
-
-		var old = localStorage.getItem('filter');
-		if(old === null) old = "";
-		localStorage.setItem('filter', old + "##" + route_num + "--");
-
-		var filter = localStorage.getItem('filter');
-
-		console.log(filter);
-	});
-	*/
 })
+
+function updateFilters(selected_filters) {
+	$('.route-short').each(function() {
+		if (selected_filters.includes($(this).text())) {
+			$(this).css('opacity', '1.0');
+		}
+		else {
+			$(this).css('opacity', '0.5');
+		}
+	});
+	console.log(selected_filters);
+	console.log(localStorage.getItem('filter'));
+}
 
 			
 </script>

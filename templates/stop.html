@@ -58,6 +58,14 @@ function getStopData() {
 
 $(document).ready(function() {
 	getStopData();
+
+	var saved_filter = localStorage.getItem('filter');
+	var selected_filters = saved_filter.split(",");
+	$('.route-short').each(function() {
+		if (!selected_filters.includes($(this).text().slice(0, -1))) {
+			$(this).parent().hide();
+		}
+	});
 })
 			
 </script>
