@@ -146,6 +146,9 @@ $(document).ready(function() {
 	if (saved_filter == null) {
 		var selected_filters = [];
 	}
+	else if (saved_filter.length == 0) {
+		var selected_filters = [];
+	}
 	else {
 		var selected_filters = saved_filter.split(",");
 	}
@@ -175,6 +178,14 @@ function updateFilters(selected_filters) {
 	});
 	console.log(selected_filters);
 	console.log(localStorage.getItem('filter'));
+	
+	
+	if (selected_filters.length == 0) {
+		$('.route-short').each(function() {
+			$(this).css('opacity', '1.0');
+		});
+	}
+
 }
 
 			
