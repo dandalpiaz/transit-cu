@@ -11,7 +11,7 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
 - filter buttons - don't allow text select, keyboard nav
 - move api key to enviornment variable
 - add instructions for creating a virtual enviornment and installing dependencies
-- refresh stop pages every 30 seconds
+- refresh stop pages every 30 seconds, add countdown
 - save favorites
 - heroku instructions
 - how to add to homescreen (android only?)
