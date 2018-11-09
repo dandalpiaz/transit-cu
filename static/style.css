@@ -154,7 +154,8 @@ a:visited {
 }
 
 .route-short {
-    border-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
     width: 50px;
     height: 50px;
     line-height: 50px;
