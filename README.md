@@ -11,8 +11,6 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
 - no results behavior with filter active
 - move filter logic to a JS file
 - move search logic to a JS file
-- hide last border-bottom on listing
-- filter buttons - don't allow text select, keyboard nav
 - move api key to enviornment variable
 - add instructions for creating a virtual enviornment and installing dependencies
 - refresh stop pages every 30 seconds, add countdown, show last load time

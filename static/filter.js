@@ -22,11 +22,11 @@ function getFilterData() {
 		route_color_r = hexToRgb(route_color).r;
 		route_color_g = hexToRgb(route_color).g;
 		route_color_b = hexToRgb(route_color).b; 
-		$("#filters").append("<span class='route-short' style='margin:1px;" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75);" + "color: " + "#" + route_text_color + ";'>" + route + "</span>");
+		$("#filters").append("<button class='route-short-filter noselect' style='margin:1px;" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75);" + "color: " + "#" + route_text_color + ";'>" + route + "</button>");
 		added.push(route);
 	}
 	var filterSort = $('#filters');
-	var listitems = filterSort.children('span').get();
+	var listitems = filterSort.children('button').get();
 	listitems.sort(function(a, b) {
 		return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
 	})
@@ -34,7 +34,7 @@ function getFilterData() {
 }
 
 function updateFilters(selected_filters) {
-	$('.route-short').each(function() {
+	$('.route-short-filter').each(function() {
 		if (selected_filters.includes($(this).text())) {
 			$(this).css('opacity', '1.0');
 		}
@@ -46,7 +46,7 @@ function updateFilters(selected_filters) {
 	console.log(localStorage.getItem('filter'));
 	
 	if (selected_filters.length == 0) {
-		$('.route-short').each(function() {
+		$('.route-short-filter').each(function() {
 			$(this).css('opacity', '1.0');
 		});
 	}
@@ -65,7 +65,7 @@ $(document).ready(function() {
 		var selected_filters = saved_filter.split(",");
 	}
 	updateFilters(selected_filters);
-	$('.route-short').click(function() {
+	$('.route-short-filter').click(function() {
 		var route_num = $(this).text();
 		if (selected_filters.includes(route_num)) {
 			var index = selected_filters.indexOf(route_num);

@@ -27,6 +27,7 @@
 $(document).ready(function() {
 	getStopData();
 	getTimeColor();
+
 	var saved_filter = localStorage.getItem('filter');
 	if (saved_filter == "") {
 		
@@ -39,6 +40,9 @@ $(document).ready(function() {
 			}
 		});
 	}
+
+	$('.departure:visible').last().css("border-bottom", "0");
+
 })
 			
 </script>

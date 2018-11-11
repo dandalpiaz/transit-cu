@@ -83,10 +83,6 @@ div.departure {
     border-bottom: 1px solid #bbb;
 }
 
-div.departure-wrapper {
-    /*max-width: 400px;*/
-}
-
 p.departure:last-child {
     border-bottom: none;
 }
@@ -173,10 +169,32 @@ a:visited {
     display: inline-block;
 }
 
-.route-short:hover {
+.route-short-filter {
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    border: 0px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    font-family: 'Roboto';
+}
+
+.route-short-filter:hover {
     opacity: 0.7;
     cursor: pointer;
 }
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
 .route-name {
     color: rgba(0, 0, 0, 0.8);
