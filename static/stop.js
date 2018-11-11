@@ -8,6 +8,16 @@ function hexToRgb(hex) {
 	} : null;
 }
 
+function getTimeColor(){
+    $(".time").each(function() {
+		value = $( this ).text().split(" Min")[0];
+		value = value / 60;
+		value = 1 - value;
+		var hue=((1-value)*120).toString(10);
+		$(this)[0].style.backgroundColor = ["hsl(",hue,",100%,50%, .3)"].join("");
+	});
+}
+
 function getStopData() {
 	//var json = JSON.parse('{{ data | tojson | safe}}');
 	//var json2 = JSON.parse('{{ title | tojson | safe}}');

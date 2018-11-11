@@ -139,8 +139,13 @@ a:visited {
     float: right;
     line-height: 50px;
     color: rgba(0, 0, 0, 0.8);
-    padding-right: 10px;
     font-size: 17px;
+    position: relative;
+    bottom: 10px;
+    z-index: -1;
+    min-width: 54px;
+    text-align: center;
+    padding: 10px;
 }
 
 #searchTxt {
