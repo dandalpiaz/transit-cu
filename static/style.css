@@ -84,7 +84,7 @@ div.departure {
 }
 
 div.departure-wrapper {
-    max-width: 400px;;
+    /*max-width: 400px;*/
 }
 
 p.departure:last-child {
@@ -142,10 +142,11 @@ a:visited {
     font-size: 17px;
     position: relative;
     bottom: 10px;
+    left: 15px;
     z-index: -1;
-    min-width: 54px;
-    text-align: center;
     padding: 10px;
+    min-width: 54px;
+    width: calc(100% - 300px);
 }
 
 #searchTxt {
