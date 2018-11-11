@@ -24,7 +24,7 @@ function getStopData() {
 		route_color_b = hexToRgb(route_color).b; 
 		route_text_color = departures[i]['route']['route_text_color'];
 		eta = departures[i]['expected_mins'];
-		$("#insert").append("<p class='departure' style='color: " + "#" + route_text_color + ";'>" + "<span class='route-short' style='" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75)" + ";'>" + route_short + "</span>" + "<span class='route-name'>" + route_name + "</span>" + "<span class='time'>" + eta + " Min" + "</span>" + "</p>");
+		$("#insert").append("<div class='departure' style='color: " + "#" + route_text_color + ";'>" + "<div class='departure-wrapper'>" + "<span class='route-short' style='" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75)" + ";'>" + route_short + "</span>" + "<span class='route-name'>" + route_name + "</span>" + "<span class='time'>" + eta + " Min" + "</span>" + "</div>" + "</div>");
 	}
 	if ($('#insert').html() == "") {
 		$("#insert").append("<p>No buses coming...</p>");
