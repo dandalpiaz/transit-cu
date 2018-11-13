@@ -3,7 +3,7 @@ from flask_sslify import SSLify
 import urllib.request, json 
 
 app = Flask(__name__)
-#sslify = SSLify(app)
+sslify = SSLify(app)
 
 @app.route('/robots.txt')
 def static_from_root():
