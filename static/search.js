@@ -8,25 +8,33 @@ var delay = (function(){
 })();
 
 function getSearchData() {
-    searchVar = document.getElementById("searchTxt").value;
+	searchVar = document.getElementById("searchTxt").value;
     if (searchVar == "") {
+		$('#result').html("");
 		return
 	}
     baseUrl = "https://search.mtd.org/v1.0.0/stop/suggest/";
     url = baseUrl + searchVar;
-	$('#result').html("");
     $.getJSON(url, function(data) {
-		for (i = 0; i < data.length; i++) {
-			stopName = data[i]['result']['name'];
-			stopID = data[i]['result']['id'];
-			$('#result').append("<li>" + "<a href='/stop=" + stopID + "'>" + stopName + "</a>" + "</li>");
+		if (data.length == 0) {
+			$('#result').html("");
+			$('#result').append("<li><em>No stops found</em></li>");
 		}
+		else {
+			$('#result').html("");
+			for (i = 0; i < data.length; i++) {
+				stopName = data[i]['result']['name'];
+				stopID = data[i]['result']['id'];
+				$('#result').append("<li>" + "<a href='/stop=" + stopID + "'>" + stopName + "</a>" + "</li>");
+			}
+		}
+		
     });       
 };
 
 $( document ).ready(function() {
     $("#searchTxt").keyup(function(){
-        console.log("keyup on input")
+        //console.log("keyup on input");
 		delay(function(){
 			getSearchData();
 		}, 500 );

@@ -5,9 +5,7 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
 ## TODO
 
 - add filter to stop pages?
-- https redirect
 - remember search query when going back
-- no results behavior for search
 - no results behavior with filter active
 - move filter logic to a JS file
 - move search logic to a JS file
