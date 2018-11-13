@@ -76,5 +76,34 @@ $(document).ready(function() {
 		}
 		localStorage.setItem('filter', selected_filters);
 		updateFilters(selected_filters);
+
+
+
+		$('.departure:visible').last().css("border-bottom", "1px solid #bbb");
+
+		var saved_filter2 = localStorage.getItem('filter');
+		var selected_filters2 = saved_filter2.split(",");
+		if (selected_filters2 == "") {
+			$('.route-short').each(function() {
+				$(this).parent().show();
+			});
+		}
+		else {
+			$('.route-short').each(function() {
+				if (!selected_filters2.includes($(this).text().slice(0, -1))) {
+					$(this).parent().hide();
+				}
+				else {
+					$(this).parent().show();
+				}
+			});
+		}
+
+		$('.departure:visible').last().css("border-bottom", "0");
+
+		//if ( $('.departure:visible').length == 0 ) {
+		//	$("#insert").append("<p>No buses coming with selected filters...</p>");
+		//}
+
 	});
 })
