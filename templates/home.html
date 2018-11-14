@@ -50,6 +50,15 @@ $( document ).ready(function() {
 		return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
 	})
 	$.each(listitems, function(idx, itm) { mylist.append(itm); });
+
+	createFilterButtons();
+	updateActiveFilterButtons();
+
+	$('.route-short-filter').click(function() {
+		updateSavedFilters( $(this) );
+		updateActiveFilterButtons();
+	});
+
 });
             
 </script>

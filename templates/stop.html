@@ -2,7 +2,7 @@
 
 {% block head %}
 {{ super() }}
-	<!--<meta http-equiv="refresh" content="30">-->
+	<meta http-equiv="refresh" content="30">
 
 {% endblock %}
 
@@ -10,6 +10,7 @@
 
 <h2 id="title" class="stop-title"></h2>
 <div id="insert"></div>
+<div id="no-filtered-results"></div>
 
 <h2>Filter By:</h2>
 
@@ -35,20 +36,16 @@ $(document).ready(function() {
 	getStopData();
 	getTimeColor();
 
-	var saved_filter = localStorage.getItem('filter');
-	if (saved_filter == "") {
-		
-	}
-	else {
-		var selected_filters = saved_filter.split(",");
-		$('.route-short').each(function() {
-			if (!selected_filters.includes($(this).text().slice(0, -1))) {
-				$(this).parent().hide();
-			}
-		});
-	}
+	createFilterButtons();
+	updateActiveFilterButtons();
+	showHideDepartures();
 
-	$('.departure:visible').last().css("border-bottom", "0");
+	$('.route-short-filter').click(function() {
+		updateSavedFilters( $(this) );
+		updateActiveFilterButtons();
+		showHideDepartures();
+
+	});
 
 })
 			
