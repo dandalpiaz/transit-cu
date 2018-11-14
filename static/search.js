@@ -11,6 +11,7 @@ function getSearchData() {
 	searchVar = document.getElementById("searchTxt").value;
     if (searchVar == "") {
 		$('#result').html("");
+		localStorage.setItem('search', searchVar);
 		return
 	}
     baseUrl = "https://search.mtd.org/v1.0.0/stop/suggest/";
@@ -27,14 +28,23 @@ function getSearchData() {
 				stopID = data[i]['result']['id'];
 				$('#result').append("<li>" + "<a href='/stop=" + stopID + "'>" + stopName + "</a>" + "</li>");
 			}
+			localStorage.setItem('search', searchVar);
 		}
 		
     });       
 };
 
 $( document ).ready(function() {
-    $("#searchTxt").keyup(function(){
-        //console.log("keyup on input");
+	var saved_search = localStorage.getItem('search');
+
+	if (saved_search == null || saved_search == "") {
+	}
+	else {
+		document.getElementById("searchTxt").value = saved_search;
+		getSearchData();
+	}
+
+	$("#searchTxt").keyup(function(){
 		delay(function(){
 			getSearchData();
 		}, 500 );

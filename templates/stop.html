@@ -33,8 +33,10 @@
 <script>
 
 $(document).ready(function() {
+
 	getStopData();
 	getTimeColor();
+	document.title = title + " | MTD"
 
 	createFilterButtons();
 	updateActiveFilterButtons();

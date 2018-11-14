@@ -38,16 +38,16 @@ body {
 }
 
 .title-1 {
-    margin-right: 8px;
-    font-weight: 400;
-    letter-spacing: 2px;
-    font-size: 25px;
-}
-
-.title-2 {
     font-weight: 300;
     font-size: 27px;
     line-height: 40px;
+}
+
+.title-2 {
+    margin-left: 8px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 25px;
 }
 
 .container {
