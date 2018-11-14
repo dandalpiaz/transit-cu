@@ -8,8 +8,7 @@ function hexToRgb(hex) {
 	} : null;
 }
 
-function getFilterData() {
-	/*var json = JSON.parse('{{ all_stops_data | tojson | safe}}');*/
+function createFilterButtons() {
 	all_routes = all_stops_data['routes'];
 	var added = [];
 	for (i = 0; i < all_routes.length; i++) {
@@ -33,7 +32,15 @@ function getFilterData() {
 	$.each(listitems, function(idx, itm) { filterSort.append(itm); });
 }
 
-function updateFilters(selected_filters) {
+function updateActiveFilterButtons() {
+	var saved_filters = localStorage.getItem('filter');
+	if (saved_filters == null || saved_filters.length == 0) {
+		var selected_filters = [];
+	}
+	else {
+		var selected_filters = saved_filters.split(",");
+	}
+
 	$('.route-short-filter').each(function() {
 		if (selected_filters.includes($(this).text())) {
 			$(this).css('opacity', '1.0');
@@ -42,8 +49,6 @@ function updateFilters(selected_filters) {
 			$(this).css('opacity', '0.5');
 		}
 	});
-	console.log(selected_filters);
-	console.log(localStorage.getItem('filter'));
 	
 	if (selected_filters.length == 0) {
 		$('.route-short-filter').each(function() {
@@ -52,29 +57,51 @@ function updateFilters(selected_filters) {
 	}
 }
 
-$(document).ready(function() {
-	getFilterData();
-	var saved_filter = localStorage.getItem('filter');
-	if (saved_filter == null) {
-		var selected_filters = [];
+function showHideDepartures() {
+	
+	$('.departure:visible').last().css("border-bottom", "1px solid #bbb");
+	$("#no-filtered-results").html("");
+
+	var saved_filters = localStorage.getItem('filter');
+	var selected_filters = saved_filters.split(",");
+	if (selected_filters == "") {
+		$('.route-short').each(function() {
+			$(this).parent().show();
+		});
 	}
-	else if (saved_filter.length == 0) {
+	else {
+		$('.route-short').each(function() {
+			if (!selected_filters.includes($(this).text().slice(0, -1))) {
+				$(this).parent().hide();
+			}
+			else {
+				$(this).parent().show();
+			}
+		});
+	}
+	$('.departure:visible').last().css("border-bottom", "0");
+
+	if ( $('.departure:visible').length == 0 ) {
+		$("#no-filtered-results").append("<p>No buses coming with selected filters...</p>");
+	}
+}
+
+function updateSavedFilters(clicked_item) {
+	var saved_filters = localStorage.getItem('filter');
+	if (saved_filters == null || saved_filters.length == 0) {
 		var selected_filters = [];
 	}
 	else {
-		var selected_filters = saved_filter.split(",");
+		var selected_filters = saved_filters.split(",");
 	}
-	updateFilters(selected_filters);
-	$('.route-short-filter').click(function() {
-		var route_num = $(this).text();
-		if (selected_filters.includes(route_num)) {
-			var index = selected_filters.indexOf(route_num);
-			selected_filters.splice(index, 1);
-		}
-		else {
-			selected_filters.push(route_num);
-		}
-		localStorage.setItem('filter', selected_filters);
-		updateFilters(selected_filters);
-	});
-})
+	var route_num = clicked_item.text();
+	if (selected_filters.includes(route_num)) {
+		var index = selected_filters.indexOf(route_num);
+		selected_filters.splice(index, 1);
+	}
+	else {
+		selected_filters.push(route_num);
+	}
+
+	localStorage.setItem('filter', selected_filters);
+}
