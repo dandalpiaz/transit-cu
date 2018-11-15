@@ -1,7 +1,7 @@
 
 function listFavorites() {
     var favorites = localStorage.getItem('favs');
-    var favorites_array = favorites.split(', ');
+    var favorites_array = favorites.split(',');
 
     for (var i = 0; i < favorites_array.length; i++) {
         var fav_split = favorites_array[i].split('###');
@@ -15,8 +15,52 @@ function listFavorites() {
     $.each(listitems, function(idx, itm) { mylist.append(itm); });
 }
 
-function toggleFavorite(item) {
-    item.toggleClass('fav-active');
+function checkIfStopIsFavorite() {
+	var favorites = localStorage.getItem('favs');
+	if (favorites == null || favorites.length == 0) {
+		var current_favorites = [];
+	}
+	else {
+		var current_favorites = favorites.split(",");
+	}
+	
+	for (var i = 0; i < current_favorites.length; i++) {
+		var fav_split = current_favorites[i].split('###');
+		var test_title = fav_split[1];
+		if ( test_title == $('#title').html() ) {
+			$('.fa-star').addClass( "fav-active" );
+		}
+    }
+}
+
+function addRemoveFavorite(item) {
+	
+	if (item.hasClass( "fav-active") ) {
+		item.removeClass( "fav-active" );
+	}
+	else {
+		item.addClass( "fav-active" );
+	}
+
+	var favorites = localStorage.getItem('favs');
+	if (favorites == null || favorites.length == 0) {
+		var current_favorites = [];
+	}
+	else {
+		var current_favorites = favorites.split(",");
+	}
+
+	var fav_string = document.location.href.split("=")[1] + "###" + $('#title').html();
+
+	if (current_favorites.includes(fav_string)) {
+		var index = current_favorites.indexOf(fav_string);
+		current_favorites.splice(index, 1);
+	}
+	else {
+		current_favorites.push(fav_string);
+	}
+
+	localStorage.setItem('favs', current_favorites);
 }
 
 //localStorage.setItem('favs','PLAZA###Transit Plaza, FOXSURS###Fox Drive at SURS');
