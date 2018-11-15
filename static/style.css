@@ -207,3 +207,10 @@ a:visited {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.attribution {
+    font-size: 14px;
+    margin-top: 25px;
+    line-height: 40px;
+    border-left: 7px solid #ee3124;
+}
