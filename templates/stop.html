@@ -2,13 +2,45 @@
 
 {% block head %}
 {{ super() }}
-	<meta http-equiv="refresh" content="30">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!--<meta http-equiv="refresh" content="30">-->
+
+	<style>
+
+	.fa-star {
+		color: yellow;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: orange;
+		font-size: 27px;
+		float: right;
+		margin-top: 3px;
+		margin-right: 15px;
+	}
+
+	.fa-star:hover {
+		cursor: pointer;
+	}
+	
+	.fav-active {
+		color: white;
+	}
+
+	.stop-title {
+		float:left;
+		margin-top: 0px;
+	}
+
+	#insert {
+		clear: both;
+	}
+	
+	</style>
 
 {% endblock %}
 
 {% block content %}
 
-<h2 id="title" class="stop-title"></h2>
+<h2 id="title" class="stop-title"></h2><i class="fa fa-star fav-active"></i>
 <div id="insert"></div>
 <div id="no-filtered-results"></div>
 
@@ -28,6 +60,7 @@
 	var all_stops_data = JSON.parse('{{ all_stops_data | tojson | safe}}');
 </script>
 <script src="{{ url_for('static', filename='stop.js') }}"></script>
+<script src="{{ url_for('static', filename='favorites.js') }}"></script>
 <script src="{{ url_for('static', filename='filter.js') }}"></script>
 
 <script>
@@ -46,7 +79,10 @@ $(document).ready(function() {
 		updateSavedFilters( $(this) );
 		updateActiveFilterButtons();
 		showHideDepartures();
+	});
 
+	$('.fa-star').click(function() {
+		toggleFavorite( $(this) );
 	});
 
 })
