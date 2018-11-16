@@ -5,32 +5,16 @@
     <input autocomplete="off" type="" id="searchTxt" placeholder="Search for Stops">
 </div>
 
-<div>
-	<ul id="result">
-	</ul>
-</div>
+<ul id="result"></ul>
 
 <h2 id="title" style="margin-top:15px;">Favorites:</h2>
-
-<ul class="favorites">
-	
-</ul>
-
-<h2>Filter By:</h2>
-
-<div id="filters">
-</div>
-
-<p class="attribution">Data provided by: <a target="_blank" href="https://mtd.org">mtd.org</a></p>
+<ul class="favorites"></ul>
 
 {% endblock %}
 
 {% block footer %}
 {{ super() }}
 
-<script>
-var all_stops_data = JSON.parse('{{ all_stops_data | tojson | safe}}');
-</script>
 <script src="{{ url_for('static', filename='search.js') }}"></script>
 <script src="{{ url_for('static', filename='favorites.js') }}"></script>
 <script src="{{ url_for('static', filename='filter.js') }}"></script>
@@ -40,7 +24,6 @@ var all_stops_data = JSON.parse('{{ all_stops_data | tojson | safe}}');
 $( document ).ready(function() {
 	
 	listFavorites();
-	createFilterButtons();
 	updateActiveFilterButtons();
 
 	$('.route-short-filter').click(function() {

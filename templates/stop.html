@@ -3,38 +3,7 @@
 {% block head %}
 {{ super() }}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<!--<meta http-equiv="refresh" content="30">-->
-
-	<style>
-
-	.fa-star {
-		color: white;
-		-webkit-text-stroke-width: 1px;
-		-webkit-text-stroke-color: orange;
-		font-size: 27px;
-		float: left;
-		margin-top: 3px;
-		margin-left: 10px;
-	}
-
-	.fa-star:hover {
-		cursor: pointer;
-	}
-	
-	.fav-active {
-		color: yellow;
-	}
-
-	.stop-title {
-		float:left;
-		margin-top: 0px;
-	}
-
-	#insert {
-		clear: both;
-	}
-	
-	</style>
+	<meta http-equiv="refresh" content="30">
 
 {% endblock %}
 
@@ -44,11 +13,6 @@
 <div id="insert"></div>
 <div id="no-filtered-results"></div>
 
-<h2>Filter By:</h2>
-
-<div id="filters">
-</div>
-
 {% endblock %}
 
 {% block footer %}
@@ -57,7 +21,6 @@
 <script>
 	var json = JSON.parse('{{ data | tojson | safe}}');
 	var json2 = JSON.parse('{{ title | tojson | safe}}');
-	var all_stops_data = JSON.parse('{{ all_stops_data | tojson | safe}}');
 </script>
 <script src="{{ url_for('static', filename='stop.js') }}"></script>
 <script src="{{ url_for('static', filename='favorites.js') }}"></script>
@@ -71,7 +34,6 @@ $(document).ready(function() {
 	getTimeColor();
 	document.title = title + " | MTD"
 
-	createFilterButtons();
 	updateActiveFilterButtons();
 	showHideDepartures();
 

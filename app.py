@@ -40,12 +40,7 @@ def get_stop(stop):
 	with urllib.request.urlopen(stop_title) as url2:
 		title = json.loads(url2.read().decode())
 
-	all_stops = "https://developer.cumtd.com/api/v2.2/json/getroutes?key=f43367cb918d4110af23345fff93f294"
-
-	with urllib.request.urlopen(all_stops) as url:
-		all_stops_data = json.loads(url.read().decode())
-
-	return render_template('stop.html', data=data, title=title, all_stops_data=all_stops_data)
+	return render_template('stop.html', data=data, title=title)
 
 if __name__ == '__main__':
     app.debug = False

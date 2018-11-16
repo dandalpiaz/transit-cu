@@ -4,7 +4,8 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
 
 ## TODO
 
-- clean up favorites.js, stop.html, make favorite star into button
+- clean up favorites.js, filter.js, make favorite star into button
+- bug - empty favorites
 - move api key to enviornment variable
 - add instructions for creating a virtual enviornment and installing dependencies
 - refresh stop pages every 30 seconds, add countdown, show last load time
