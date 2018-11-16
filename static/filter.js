@@ -63,7 +63,12 @@ function showHideDepartures() {
 	$("#no-filtered-results").html("");
 
 	var saved_filters = localStorage.getItem('filter');
-	var selected_filters = saved_filters.split(",");
+	if (saved_filters == null || saved_filters.length == 0) {
+		var selected_filters = [];
+	}
+	else {
+		var selected_filters = saved_filters.split(",");
+	}
 	if (selected_filters == "") {
 		$('.route-short').each(function() {
 			$(this).parent().show();

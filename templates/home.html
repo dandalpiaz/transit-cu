@@ -32,27 +32,14 @@
 var all_stops_data = JSON.parse('{{ all_stops_data | tojson | safe}}');
 </script>
 <script src="{{ url_for('static', filename='search.js') }}"></script>
+<script src="{{ url_for('static', filename='favorites.js') }}"></script>
 <script src="{{ url_for('static', filename='filter.js') }}"></script>
 
 <script>
 	
-/* favorites */
-
 $( document ).ready(function() {
-	localStorage.setItem('favs','PLAZA###Transit Plaza, FOXSURS###Fox Drive at SURS');
-	var favorites = localStorage.getItem('favs');
-	var favorites_array = favorites.split(', ');
-	for (var i = 0; i < favorites_array.length; i++) {
-		var fav_split = favorites_array[i].split('###');
-		$('.favorites').append("<li><a href='/stop=" + fav_split[0] + "'>" + fav_split[1] + "</a></li>" );
-	}
-	var mylist = $('.favorites');
-	var listitems = mylist.children('li').get();
-	listitems.sort(function(a, b) {
-		return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
-	})
-	$.each(listitems, function(idx, itm) { mylist.append(itm); });
-
+	
+	listFavorites();
 	createFilterButtons();
 	updateActiveFilterButtons();
 
