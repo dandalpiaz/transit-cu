@@ -36,12 +36,12 @@ function getSearchData() {
 		});
 		setTimeout(function() {
 			searching.abort();
-			$('#result').append("<li><em>Error retrieving search result; try again later.</em></li>");
+			$('#result').html("<li><em>Error retrieving search result; try again later.</em></li>");
 		}, 2000);
 	}
 
 	catch {
-		$('#result').append("<li><em>Error retrieving search result; try again later.</em></li>");
+		$('#result').html("<li><em>Error retrieving search result; try again later.</em></li>");
 	}
 };
 
