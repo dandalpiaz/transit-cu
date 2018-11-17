@@ -19,13 +19,7 @@ def static_from_root_2():
 
 @app.route('/')
 def index():
-
-	all_stops = "https://developer.cumtd.com/api/v2.2/json/getroutes?key=f43367cb918d4110af23345fff93f294"
-
-	with urllib.request.urlopen(all_stops) as url:
-		all_stops_data = json.loads(url.read().decode())
-
-	return render_template('home.html', all_stops_data=all_stops_data)
+	return render_template('home.html')
 
 @app.route('/stop=<stop>')
 def get_stop(stop):
