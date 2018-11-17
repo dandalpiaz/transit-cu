@@ -29,13 +29,13 @@ def get_stop(stop):
 	stop_title = "https://developer.cumtd.com/api/v2.2/json/GetStop?key=f43367cb918d4110af23345fff93f294&stop_id=" + stop 
 
 	try:
-		with urllib.request.urlopen(stop_data) as url:
+		with urllib.request.urlopen(stop_data, timeout=25) as url:
 			data = json.loads(url.read().decode())
 	except:
 		return render_template('error.html')
 		
 	try:
-		with urllib.request.urlopen(stop_title) as url2:
+		with urllib.request.urlopen(stop_title, timeout=25) as url2:
 			title = json.loads(url2.read().decode())
 	except:
 		return render_template('error.html')
