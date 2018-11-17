@@ -9,21 +9,17 @@ var delay = (function(){
 
 function getSearchData() {
 	searchVar = document.getElementById("searchTxt").value;
-    if (searchVar == "") {
-		$('#result').html("");
-		localStorage.setItem('search', searchVar);
-		return
-	}
-
     baseUrl = "https://search.mtd.org/v1.0.0/stop/suggest/";
 	url = baseUrl + searchVar;
 	try {
-		var searching = $.getJSON(url, function(data) {
+		$.getJSON(url, function(data) {
 			if (data.length == 0) {
+				$(".loader").css("display","none");
 				$('#result').html("");
 				$('#result').append("<li><em>No stops found</em></li>");
 			}
 			else {
+				$(".loader").css("display","none");
 				$('#result').html("");
 				for (i = 0; i < data.length; i++) {
 					stopName = data[i]['result']['name'];
@@ -32,15 +28,8 @@ function getSearchData() {
 				}
 				localStorage.setItem('search', searchVar);
 			}
-			
 		});
-		setTimeout(function() {
-			searching.abort();
-			$('#result').html("<li><em>Error retrieving search result; try again later.</em></li>");
-		}, 2000);
-	}
-
-	catch {
+	} catch {
 		$('#result').html("<li><em>Error retrieving search result; try again later.</em></li>");
 	}
 };
@@ -56,8 +45,17 @@ $( document ).ready(function() {
 	}
 
 	$("#searchTxt").keyup(function(){
-		delay(function(){
-			getSearchData();
-		}, 500 );
+		searchVar = document.getElementById("searchTxt").value;
+		if (searchVar == "") {
+			$(".loader").css("display","none");
+			$('#result').html("");
+			localStorage.setItem('search', searchVar);
+		} else {
+			$(".loader").css("display","block");
+			$('#result').html("");
+			delay(function(){
+				getSearchData();
+			}, 1000 );
+		}		
 	});
 });
