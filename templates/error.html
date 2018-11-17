@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>There was an error getting the requested data. Please try again later.</p>
+
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+
+<script src="{{ url_for('static', filename='stop.js') }}"></script>
+<script src="{{ url_for('static', filename='favorites.js') }}"></script>
+<script src="{{ url_for('static', filename='filter.js') }}"></script>
+
+<script>
+
+$(document).ready(function() {
+
+	updateActiveFilterButtons();
+
+	$('.route-short-filter').click(function() {
+		updateSavedFilters( $(this) );
+		updateActiveFilterButtons();
+	});
+
+})
+			
+</script>
+
+{% endblock %}
+
+
+
+
+
