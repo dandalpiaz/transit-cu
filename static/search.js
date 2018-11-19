@@ -24,7 +24,7 @@ function getSearchData() {
 				for (i = 0; i < data.length; i++) {
 					stopName = data[i]['result']['name'];
 					stopID = data[i]['result']['id'];
-					$('#result').append("<li>" + "<a href='/stop=" + stopID + "'>" + stopName + "</a>" + "</li>");
+					$('#result').append("<li>" + "<a href='/stop_id=" + stopID + "/name=" + stopName + "'>" + stopName + "</a>" + "</li>");
 				}
 				localStorage.setItem('search', searchVar);
 			}

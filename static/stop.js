@@ -10,8 +10,6 @@ function getTimeColor(){
 }
 
 function getStopData() {
-	title = json2['stops'][0]['stop_name'];
-	$("#title").append(title);
 	departures = json['departures'];
 	for (i = 0; i < departures.length; i++) {
 		route = departures[i]['headsign'];
