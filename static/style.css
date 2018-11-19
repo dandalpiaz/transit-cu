@@ -52,7 +52,6 @@ body {
 
 .container {
     margin-right: auto;
-    /*max-width: 450px;*/
 }
 
 .main {
@@ -221,9 +220,12 @@ a:visited {
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: orange;
     font-size: 27px !important;
-    float: left;
+    float: right;
     margin-top: 3px;
-    margin-left: 10px;
+    margin-left: 5px;
+    border: 0px;
+    background: none;
+    margin-right: 15px;
 }
 
 .fa-star:hover {
@@ -237,6 +239,10 @@ a:visited {
 .stop-title {
     float:left;
     margin-top: 0px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
 #insert {
