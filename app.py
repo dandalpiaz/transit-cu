@@ -21,8 +21,8 @@ def static_from_root_2():
 def index():
 	return render_template('home.html')
 
-@app.route('/stop_id=<stop_id>/name=<name>')
-def get_stop(stop_id, name):
+@app.route('/stop=<stop_id>_<stop_name>')
+def get_stop(stop_id, stop_name):
 
 	stop_data = "https://developer.cumtd.com/api/v2.2/json/GetDeparturesByStop?key=f43367cb918d4110af23345fff93f294&stop_id=" + stop_id + "&pt=60"
 	
@@ -32,7 +32,7 @@ def get_stop(stop_id, name):
 	except:
 		return render_template('error.html')
 		
-	return render_template('stop.html', data=data, name=name)
+	return render_template('stop.html', data=data, stop_id=stop_id, stop_name=stop_name)
 
 if __name__ == '__main__':
     app.debug = False
