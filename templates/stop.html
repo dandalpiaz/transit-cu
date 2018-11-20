@@ -3,13 +3,13 @@
 {% block head %}
 {{ super() }}
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<meta http-equiv="refresh" content="30">
+	<!--<meta http-equiv="refresh" content="30">-->
 
 {% endblock %}
 
 {% block content %}
 
-<h2 id="title" class="stop-title"></h2><i class="fa fa-star"></i>
+<h2 id="title" class="stop-title"><button class="fa fa-star"></button>{{ name }}</h2>
 <div id="insert"></div>
 <div id="no-filtered-results"></div>
 
@@ -20,7 +20,7 @@
 
 <script>
 	var json = JSON.parse('{{ data | tojson | safe}}');
-	var json2 = JSON.parse('{{ title | tojson | safe}}');
+	
 </script>
 <script src="{{ url_for('static', filename='stop.js') }}"></script>
 <script src="{{ url_for('static', filename='favorites.js') }}"></script>
@@ -32,7 +32,7 @@ $(document).ready(function() {
 
 	getStopData();
 	getTimeColor();
-	document.title = title + " | MTD"
+	document.title = "{{ name | safe }}" + " | MTD"
 
 	updateActiveFilterButtons();
 	showHideDepartures();
@@ -43,9 +43,9 @@ $(document).ready(function() {
 		showHideDepartures();
 	});
 
-	checkIfStopIsFavorite();
+	checkIfStopIsFavorite("{{ name | safe }}");
 	$('.fa-star').click(function() {
-		addRemoveFavorite( $(this) );
+		addRemoveFavorite( $(this), "{{ name | safe }}" );
 	});
 
 })

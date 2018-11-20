@@ -21,26 +21,18 @@ def static_from_root_2():
 def index():
 	return render_template('home.html')
 
-@app.route('/stop=<stop>')
-def get_stop(stop):
+@app.route('/stop_id=<stop_id>/name=<name>')
+def get_stop(stop_id, name):
 
-	stop_data = "https://developer.cumtd.com/api/v2.2/json/GetDeparturesByStop?key=f43367cb918d4110af23345fff93f294&stop_id=" + stop + "&pt=60"
-
-	stop_title = "https://developer.cumtd.com/api/v2.2/json/GetStop?key=f43367cb918d4110af23345fff93f294&stop_id=" + stop 
-
+	stop_data = "https://developer.cumtd.com/api/v2.2/json/GetDeparturesByStop?key=f43367cb918d4110af23345fff93f294&stop_id=" + stop_id + "&pt=60"
+	
 	try:
 		with urllib.request.urlopen(stop_data, timeout=25) as url:
 			data = json.loads(url.read().decode())
 	except:
 		return render_template('error.html')
 		
-	try:
-		with urllib.request.urlopen(stop_title, timeout=25) as url2:
-			title = json.loads(url2.read().decode())
-	except:
-		return render_template('error.html')
-
-	return render_template('stop.html', data=data, title=title)
+	return render_template('stop.html', data=data, name=name)
 
 if __name__ == '__main__':
     app.debug = False
