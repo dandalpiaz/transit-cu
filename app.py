@@ -1,9 +1,12 @@
 from flask import Flask, render_template, request, send_from_directory
 from flask_sslify import SSLify
 import urllib.request, json 
+import os
 
 app = Flask(__name__)
 sslify = SSLify(app)
+
+api_key = os.environ.get('CUMTD_KEY')
 
 @app.route('/robots.txt')
 def static_from_root():
@@ -24,7 +27,7 @@ def index():
 @app.route('/stop=<stop_id>_<stop_name>')
 def get_stop(stop_id, stop_name):
 
-	stop_data = "https://developer.cumtd.com/api/v2.2/json/GetDeparturesByStop?key=f43367cb918d4110af23345fff93f294&stop_id=" + stop_id + "&pt=60"
+	stop_data = "https://developer.cumtd.com/api/v2.2/json/GetDeparturesByStop?key=" + api_key + "&stop_id=" + stop_id + "&pt=60"
 	
 	try:
 		with urllib.request.urlopen(stop_data, timeout=25) as url:
