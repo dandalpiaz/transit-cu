@@ -21,6 +21,11 @@ git push heroku master
 
 ## TODO
 
+- remove filters from homepage, move to a toggle interface in header?
+- add autofocus on input on homepage?
+- get a new domain name
+- apply bootstrap framework?
+- refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
 - add ARIA labels to buttons
 - change filter button styles/behaviour
 - run an audit at [https://web.dev/](https://web.dev/)
