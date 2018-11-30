@@ -29,7 +29,7 @@ function getSearchData() {
 				localStorage.setItem('search', searchVar);
 			}
 		});
-	} catch {
+	} catch(err) {
 		$('#result').html("<li><em>Error retrieving search result; try again later.</em></li>");
 	}
 };
