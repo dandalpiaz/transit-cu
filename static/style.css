@@ -5,16 +5,15 @@ body {
     padding: 0px;
     font-family: 'Roboto';
     font-weight: 300;
-    background: #f8f8f8;
+    background: white;
     margin: auto;
     color: rgba(0, 0, 0, 0.8);
 }
 
 .header {
-    height: 40px;
-    line-height: 40px;
-    color: #FFF;
-    background: #13294a;
+    height: 50px;
+    line-height: 50px;
+    background: white;
     border-bottom: 1px solid #ddd;
     padding-top: 8px;
     padding-bottom: 8px;
@@ -29,18 +28,19 @@ body {
     width: 40px;
     float: left;
     margin-right: 14px;
+    margin-top: 5px;
 }
 
 .title-1, .title-2 {
-    line-height: 40px;
+    line-height: 50px;
     display: block;
     float: left;
 }
 
 .title-1 {
     font-weight: 300;
-    font-size: 27px;
-    line-height: 40px;
+    font-size: 31px;
+    line-height: 50px;
 }
 
 .title-2 {
@@ -55,7 +55,7 @@ body {
 }
 
 .main {
-    margin-top: 80px;
+    margin-top: 90px;
     margin-bottom: 80px;
 }
 
@@ -92,11 +92,13 @@ h1 {
     padding: 0px;
     font-size: 20px;
     font-weight: 400;
-    display: inline-block;
+    text-align: center;
+    padding-right: 65px;
+    display: block;
 }
 
 h1 a {
-    color: white !important;
+    color: rgba(0, 0, 0, 0.7) !important;
     text-decoration: none !important;
 }
 
@@ -160,8 +162,7 @@ a:visited {
 }
 
 .route-short {
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-radius: 50%;
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -170,8 +171,7 @@ a:visited {
 }
 
 .route-short-filter {
-    border-top-right-radius: 50%;
-    border-bottom-left-radius: 50%;
+    border-radius: 50%;
     border: 0px;
     width: 50px;
     height: 50px;
@@ -270,4 +270,28 @@ a:visited {
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    float: left;
+    height: 50px;
+    font-size: 28px !important;
+    color: rgba(0,0,0,.7);
+}
+
+.search-icon {
+    background: none;
+    border: none;
+    position: relative;
+    bottom: 57px;
+    float: right;
+    right: 27px;
+    font-size: 25px !important;
+    color: rgba(0,0,0,.6);
+}
+
+.menu-toggle:hover, .search-icon:hover {
+    cursor: pointer;
 }
