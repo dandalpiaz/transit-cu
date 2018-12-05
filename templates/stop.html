@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+{% block header_left %}
+<button class="left-icon fa fa-arrow-left"></button>
+{% endblock %}
+
+{% block header_right %}
+<button class="filter-toggle fa fa-filter"></button>
+{% endblock %}
+
 {% block content %}
 
 <h2 id="title" class="stop-title"><button class="fa fa-star"></button>{{ stop_name }}</h2>
@@ -39,6 +47,10 @@ $(document).ready(function() {
 	checkIfStopIsFavorite("{{ stop_name | safe }}");
 	$('.fa-star').click(function() {
 		addRemoveFavorite( $(this), "{{ stop_id | safe }}", "{{ stop_name | safe }}" );
+	});
+
+	$('.left-icon').click(function() {
+		window.history.back();
 	});
 
 })
