@@ -107,9 +107,9 @@ h2 {
     margin-top: 25px;
     margin-left: 15px;
     margin-right: 15px;
-    font-weight: 400;
+    font-weight: 300;
     color: rgba(0, 0, 0, 0.8);
-    font-size: 20px;
+    font-size: 26px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 8px;
 }
@@ -311,4 +311,8 @@ a:visited {
 
 .filter-toggle:hover, .left-icon:hover, .map-icon:hover {
     cursor: pointer;
+}
+
+#result {
+    
 }
