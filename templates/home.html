@@ -1,13 +1,5 @@
 {% extends "base.html" %}
 
-{% block header_left %}
-<button class="map-icon fa fa-map-marker"></button>
-{% endblock %}
-
-{% block header_right %}
-<button class="filter-toggle fa fa-filter"></button>
-{% endblock %}
-
 {% block content %}
 
 <div class="search-wrap">
@@ -17,13 +9,21 @@
 <div class="loader"></div>
 <ul id="result"></ul>
 
-<h2 id="title" style="margin-top:15px;"><i style="float:none" class="fa fa-star fav-active"></i>Favorites</h2>
-<ul class="favorites"></ul>
+<div id="favorites">
+	<h2 id="title" style="margin-top:15px;"><i style="float:none" class="fa fa-star fav-active"></i>Favorites</h2>
+	<ul class="favorites"></ul>
+</div>
+
+<p class="attribution">Data provided by: <a target="_blank" href="https://mtd.org">mtd.org</a></p>
 
 {% endblock %}
 
 {% block footer %}
 {{ super() }}
+
+<style>
+h1 {padding-right: 30px;}
+</style>
 
 <script src="{{ url_for('static', filename='search.js') }}"></script>
 <script src="{{ url_for('static', filename='favorites.js') }}"></script>
