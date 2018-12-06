@@ -1,18 +1,11 @@
 {% extends "base.html" %}
 
-{% block header_left %}
-<button class="left-icon fa fa-arrow-left"></button>
-{% endblock %}
-
-{% block header_right %}
-<button class="filter-toggle fa fa-filter"></button>
-{% endblock %}
-
 {% block content %}
 
 <h2 id="title" class="stop-title"><button class="fa fa-star"></button>{{ stop_name }}</h2>
 <div id="insert"></div>
 <div id="no-filtered-results"></div>
+<p id="current-filters"></p>
 
 {% endblock %}
 
@@ -36,21 +29,23 @@ $(document).ready(function() {
 	document.title = "{{ stop_name | safe }}" + " | MTD"
 
 	updateActiveFilterButtons();
+	printActiveFilters();
 	showHideDepartures();
 
 	$('.route-short-filter').click(function() {
 		updateSavedFilters( $(this) );
 		updateActiveFilterButtons();
+		printActiveFilters();
 		showHideDepartures();
+	});
+
+	$('#filter-update-toggle').click(function() {
+		$('.filter-toggle').click();
 	});
 
 	checkIfStopIsFavorite("{{ stop_name | safe }}");
 	$('.fa-star').click(function() {
 		addRemoveFavorite( $(this), "{{ stop_id | safe }}", "{{ stop_name | safe }}" );
-	});
-
-	$('.left-icon').click(function() {
-		window.history.back();
 	});
 
 })

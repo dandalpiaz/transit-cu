@@ -35,15 +35,6 @@ function getSearchData() {
 };
 
 $( document ).ready(function() {
-	var saved_search = localStorage.getItem('search');
-
-	if (saved_search == null || saved_search == "") {
-	}
-	else {
-		document.getElementById("searchTxt").value = saved_search;
-		getSearchData();
-	}
-
 	$("#searchTxt").keyup(function(){
 		searchVar = document.getElementById("searchTxt").value;
 		if (searchVar == "") {

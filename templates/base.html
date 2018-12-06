@@ -5,7 +5,7 @@
 	{% block head %}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="theme-color" content="#13294a">
+	<meta name="theme-color" content="#ffffff">
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 	<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
@@ -19,9 +19,7 @@
 <div class="header">
 	
 	<div class="container">
-		{% block header_left %}
-		
-		{% endblock %}
+	
 		<h1>
 			<a style="display: inline-block" href="/">
 			<img class="title-img" src="{{ url_for('static', filename='favicon.ico') }}"/>
@@ -29,7 +27,7 @@
 			</a>
 		</h1>
 		{% block header_right %}
-		
+		<button class="filter-toggle fa fa-bars"></button>
 		{% endblock %}
 	</div>
 
@@ -93,6 +91,7 @@ function hexToRgb(hex) {
 $(document).ready(function() {
 	$('.filter-toggle').click(function() {
 		$('#filters').slideToggle();
+		$(this).toggleClass("fa-bars fa-times");
 	});
 })
 

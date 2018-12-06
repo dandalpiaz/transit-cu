@@ -56,3 +56,15 @@ function updateSavedFilters(clicked_item) {
 	}
 	localStorage.setItem('filter', selected_filters);
 }
+
+function printActiveFilters() {
+	$('#current-filters').html("Active filters (<a id='filter-update-toggle'>update</a>):");
+
+	if (selected_filters.length == 0) {
+		$('#current-filters').append(" none");
+	}
+
+	for (filter in selected_filters) {
+		$('#current-filters').append("<span class='active-filter-circle'>" + selected_filters[filter] + "</span>");
+	}
+}
