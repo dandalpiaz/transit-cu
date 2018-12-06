@@ -2,12 +2,16 @@
 
 {% block content %}
 
-<div class="search-wrap">
-    <input autocomplete="off" type="text" spellcheck="false" id="searchTxt" placeholder="Search for Stops"><i class="fa fa-search"></i>
-</div>
+<div class="full-width-bg">
 
-<div class="loader"></div>
-<ul id="result"></ul>
+	<div class="search-wrap">
+		<input autocomplete="off" type="text" spellcheck="false" id="searchTxt" placeholder="Search for Stops"><i class="fa fa-search"></i>
+	</div>
+
+	<div class="loader"></div>
+	<ul id="result"></ul>
+
+</div>
 
 <div id="favorites">
 	<h2 id="title" style="margin-top:15px;"><i style="float:none" class="fa fa-star fav-active"></i>Favorites</h2>
@@ -23,6 +27,8 @@
 
 <style>
 h1 {padding-right: 30px;}
+.main {margin-top: 67px;}
+.full-width-bg { background: url( "{{ url_for('static', filename='cu.jpg') }}" ); }
 </style>
 
 <script src="{{ url_for('static', filename='search.js') }}"></script>

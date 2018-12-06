@@ -41,12 +41,7 @@ body {
     padding-top: 8px;
 }
 
-.container {
-    margin-right: auto;
-}
-
 .main {
-    margin-top: 95px;
     margin-bottom: 80px;
 }
 
@@ -109,6 +104,11 @@ h2 {
     font-weight: 300;
     border-bottom: 0px;
     padding-bottom: 0px;
+    float: left;
+    margin-top: 95px;
+    margin-right: 10px;
+    display: inline-block;
+    margin-bottom: 15px;
 }
 
 a {
@@ -153,8 +153,10 @@ a:visited {
     padding-right: 15px;
     margin-bottom: 15px;
     margin-right: auto;
-    margin-top: 95px;
+    margin-left: auto;
     max-width: 475px;
+    height: 363px;
+    padding-top: 50px;
 }
 
 .route-short {
@@ -220,7 +222,8 @@ a:visited {
     font-size: 14px;
     margin-top: 40px;
     line-height: 40px;
-    border-left: 7px solid #ee3124;
+    float: right;
+    border-right: 7px solid #ee3124;
 }
 
 .fa-star {
@@ -242,15 +245,6 @@ a:visited {
 
 .fav-active {
     color: yellow;
-}
-
-.stop-title {
-    float:left;
-    margin-top: 0px;
-    margin-right: 10px;
-    margin-bottom: 0px;
-    display: inline-block;
-    margin-bottom: 15px;
 }
 
 #insert {
@@ -302,6 +296,7 @@ a:visited {
 #favorites {
     max-width: 500px;
     margin-right: auto;
+    margin-left: auto;
     margin-top: 30px;
 }
 
@@ -334,4 +329,9 @@ i.fa.fa-search {
 
 #filter-update-toggle:hover {
     cursor: pointer;
+}
+
+.full-width-bg {
+    background-repeat: no-repeat !important;
+    background-position: center !important; 
 }
