@@ -5,7 +5,7 @@
 <h2 id="title" class="stop-title"><button class="fa fa-star"></button>{{ stop_name }}</h2>
 <div id="insert"></div>
 <div id="no-filtered-results"></div>
-<p id="current-filters"></p>
+<p id="current-filters-parent">Active filters (<a id='filter-update-toggle'>update</a>): <span id="current-filters"></span></p>
 
 {% endblock %}
 
@@ -40,7 +40,8 @@ $(document).ready(function() {
 	});
 
 	$('#filter-update-toggle').click(function() {
-		$('.filter-toggle').click();
+		$('#filters').slideToggle();
+		$('.filter-toggle').toggleClass("fa-bars fa-times");
 	});
 
 	checkIfStopIsFavorite("{{ stop_name | safe }}");

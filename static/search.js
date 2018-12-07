@@ -26,7 +26,7 @@ function getSearchData() {
 					stopID = data[i]['result']['id'];
 					$('#result').append("<li>" + "<a href='/stop=" + stopID + "_" + stopName + "'>" + stopName + "</a>" + "</li>");
 				}
-				localStorage.setItem('search', searchVar);
+				$('#result').show();
 			}
 		});
 	} catch(err) {
@@ -38,15 +38,17 @@ $( document ).ready(function() {
 	$("#searchTxt").keyup(function(){
 		searchVar = document.getElementById("searchTxt").value;
 		if (searchVar == "") {
+			$('#result').hide();
 			$(".loader").css("display","none");
 			$('#result').html("");
-			localStorage.setItem('search', searchVar);
+			clearTimeout(timer);
 		} else {
 			$(".loader").css("display","block");
 			$('#result').html("");
+			$('#result').hide();
 			delay(function(){
 				getSearchData();
-			}, 1000 );
+			}, 500 );
 		}		
 	});
 });

@@ -6,10 +6,10 @@
 
 	<div class="search-wrap">
 		<input autocomplete="off" type="text" spellcheck="false" id="searchTxt" placeholder="Search for Stops"><i class="fa fa-search"></i>
-	</div>
 
-	<div class="loader"></div>
-	<ul id="result"></ul>
+		<div class="loader"></div>
+		<ul id="result" style="display:none;"></ul>
+	</div>
 
 </div>
 
@@ -29,6 +29,7 @@
 h1 {padding-right: 30px;}
 .main {margin-top: 67px;}
 .full-width-bg { background: url( "{{ url_for('static', filename='cu.jpg') }}" ); }
+html {background: rgba(238,49,36,.8);}
 </style>
 
 <script src="{{ url_for('static', filename='search.js') }}"></script>

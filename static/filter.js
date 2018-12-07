@@ -58,7 +58,7 @@ function updateSavedFilters(clicked_item) {
 }
 
 function printActiveFilters() {
-	$('#current-filters').html("Active filters (<a id='filter-update-toggle'>update</a>):");
+	$('#current-filters').html("");
 
 	if (selected_filters.length == 0) {
 		$('#current-filters').append(" none");
