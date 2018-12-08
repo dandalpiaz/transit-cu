@@ -9,21 +9,14 @@ sslify = SSLify(app)
 api_key = os.environ.get('CUMTD_KEY')
 
 @app.route('/robots.txt')
-def static_from_root():
-    return send_from_directory(app.static_folder, request.path[1:])
-
 @app.route('/manifest.json')
-def static_from_root_1():
-    return send_from_directory(app.static_folder, request.path[1:])
-
 @app.route('/logo.png')
-def static_from_root_2():
+def static_from_root():
     return send_from_directory(app.static_folder, request.path[1:])
 
 @app.route('/')
 def index():
 	return render_template('home.html')
-
 
 @app.route('/<stop_id>')
 def get_stop_data(stop_id):
