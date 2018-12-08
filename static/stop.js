@@ -9,7 +9,7 @@ function getTimeColor(){
 	});
 }
 
-function getStopData() {
+function parseStopData() {
 	departures = json['departures'];
 	for (i = 0; i < departures.length; i++) {
 		route = departures[i]['headsign'];

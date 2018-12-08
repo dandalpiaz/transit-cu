@@ -33,8 +33,7 @@ def get_stop_data(stop_id):
 		with urllib.request.urlopen(stop_data, timeout=25) as url:
 			data = json.loads(url.read().decode())
 	except:
-		pass
-		#return render_template('error.html')
+		return ""
 		
 	return jsonify(data)
 
