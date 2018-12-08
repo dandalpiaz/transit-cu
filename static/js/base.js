@@ -11,12 +11,12 @@ function hexToRgb(hex) {
 $(document).ready(function() {
 	$('.filter-toggle').click(function() {
 		$('#filters').slideToggle("fast");
-		$(this).toggleClass("fa-bars fa-times");
+		$(this).toggleClass("fa-filter fa-times");
 	});
 
 	$('#filter-update-toggle').click(function() {
 		$('#filters').slideToggle("fast");
-		$('.filter-toggle').toggleClass("fa-bars fa-times");
+		$('.filter-toggle').toggleClass("fa-filter fa-times");
 	});
 })
 
@@ -30,7 +30,7 @@ $(document).mouseup(function(e) {
     {
 		if ( $('#filters').is(':visible') ) {
 			element1.slideToggle("fast");
-			$('.filter-toggle').toggleClass("fa-bars fa-times");
+			$('.filter-toggle').toggleClass("fa-filter fa-times");
 		}
     }
 });
