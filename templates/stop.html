@@ -4,6 +4,8 @@
 
 <h2 id="title" class="stop-title"><button class="fa fa-star"></button>{{ stop_name }}</h2>
 <div id="insert"></div>
+<div class="loader" style="display:block"></div>
+<div class="error"></div>
 <div id="no-filtered-results"></div>
 <p id="current-filters-parent">Active filters (<a id='filter-update-toggle'>update</a>): <span id="current-filters"></span></p>
 
@@ -12,25 +14,46 @@
 {% block footer %}
 {{ super() }}
 
-<script>
-	var json = JSON.parse('{{ data | tojson | safe}}');
-	
-</script>
+<style>
+.loader {position: fixed; top: 84px; right: 15px;}
+</style>
+
 <script src="{{ url_for('static', filename='stop.js') }}"></script>
 <script src="{{ url_for('static', filename='favorites.js') }}"></script>
 <script src="{{ url_for('static', filename='filter.js') }}"></script>
 
 <script>
 
+function request_stop_data() {
+	$.get("/{{ stop_id | safe }}", function(responseText) {
+		json = responseText;
+	}).done(function() {
+		if (json == "") {
+			$('.loader').hide();
+			$('#insert').html("");
+			$('.error').html("<p>There was an error getting the requested data. Please try again later.</p>");
+			return
+		}
+		$('#insert').html("");
+		parseStopData();
+		getTimeColor();
+		updateActiveFilterButtons();
+		printActiveFilters();
+		showHideDepartures();
+		$('.loader').hide();
+	});
+}
+
 $(document).ready(function() {
 
-	getStopData();
-	getTimeColor();
-	document.title = "{{ stop_name | safe }}" + " | MTD"
+	request_stop_data();
 
-	updateActiveFilterButtons();
-	printActiveFilters();
-	showHideDepartures();
+	setInterval(function() {
+		$('.loader').show();
+		request_stop_data();
+	}, 30 * 1000); // x * 1000 milsec
+
+	document.title = "{{ stop_name | safe }}" + " | MTD"
 
 	$('.route-short-filter').click(function() {
 		updateSavedFilters( $(this) );
