@@ -1,29 +1,27 @@
 {% extends "base.html" %}
 
+{% block head %}
+{{ super() }}
+	<style>
+	.loader {position: fixed; top: 84px; right: 15px;}
+	</style>
+{% endblock %}
+
 {% block content %}
-
-<h2 id="title" class="stop-title"><button class="fa fa-star"></button>{{ stop_name }}</h2>
-<div id="insert"></div>
-<div class="loader" style="display:block"></div>
-<div class="error"></div>
-<div id="no-filtered-results"></div>
-<p id="current-filters-parent">Active filters (<a id='filter-update-toggle'>update</a>): <span id="current-filters"></span></p>
-
+	<h2 id="title" class="stop-title"><button class="fa fa-star"></button>{{ stop_name }}</h2>
+	<div id="insert"></div>
+	<div class="loader" style="display:block"></div>
+	<div class="error"></div>
+	<div id="no-filtered-results"></div>
+	<p id="current-filters-parent">Active filters (<a id='filter-update-toggle'>update</a>): <span id="current-filters"></span></p>
 {% endblock %}
 
 {% block footer %}
 {{ super() }}
-
-<style>
-.loader {position: fixed; top: 84px; right: 15px;}
-</style>
-
-<script src="{{ url_for('static', filename='stop.js') }}"></script>
-<script src="{{ url_for('static', filename='favorites.js') }}"></script>
-<script src="{{ url_for('static', filename='filter.js') }}"></script>
-
+<script src="{{ url_for('static', filename='js/stop.js') }}"></script>
+<script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
+<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 <script>
-
 function request_stop_data() {
 	$.get("/{{ stop_id | safe }}", function(responseText) {
 		json = responseText;
@@ -45,9 +43,7 @@ function request_stop_data() {
 }
 
 $(document).ready(function() {
-
 	request_stop_data();
-
 	setInterval(function() {
 		$('.loader').show();
 		request_stop_data();
@@ -68,9 +64,7 @@ $(document).ready(function() {
 	});
 
 })
-			
 </script>
-
 {% endblock %}
 
 

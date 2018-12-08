@@ -17,24 +17,18 @@
 <body>
 
 <div class="header">
-	
 	<div class="container">
-	
 		<h1>
 			<a style="display: inline-block" href="/">
 			<img class="title-img" src="{{ url_for('static', filename='favicon.ico') }}"/>
 			<span class="title-2">mtd</span>
 			</a>
 		</h1>
-		{% block header_right %}
-		<button class="filter-toggle fa fa-bars"></button>
-		{% endblock %}
+		{% block header_right %}<button class="filter-toggle fa fa-bars"></button>{% endblock %}
 	</div>
-
 </div>
 
 <div class="container main">
-
 	<div style="display:none;" id="filters">
 		<h2 id="filter-by">Filter By:</h2>
 
@@ -71,52 +65,11 @@
 	{% endblock %}
 	
 </div>
-
 </body>
-
 
 {% block footer %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script>
-
-function hexToRgb(hex) {
-	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-	return result ? {
-			r: parseInt(result[1], 16),
-			g: parseInt(result[2], 16),
-			b: parseInt(result[3], 16)
-	} : null;
-}
-
-$(document).ready(function() {
-	$('.filter-toggle').click(function() {
-		$('#filters').slideToggle("fast");
-		$(this).toggleClass("fa-bars fa-times");
-	});
-
-	$('#filter-update-toggle').click(function() {
-		$('#filters').slideToggle("fast");
-		$('.filter-toggle').toggleClass("fa-bars fa-times");
-	});
-})
-
-$(document).mouseup(function(e) {
-    var element1 = $("#filters");
-	var element2 = $(".filter-toggle");
-	var element3 = $("#filter-update-toggle");
-
-    // if the target of the click isn't the container nor a descendant of the container
-    if (!element1.is(e.target) && element1.has(e.target).length === 0 && !element2.is(e.target) && !element3.is(e.target)) 
-    {
-		if ( $('#filters').is(':visible') ) {
-			element1.slideToggle("fast");
-			$('.filter-toggle').toggleClass("fa-bars fa-times");
-		}
-    }
-});
-
-</script>
-
+<script src="{{ url_for('static', filename='js/base.js') }}"></script>
 {% endblock %}
 
 </html>

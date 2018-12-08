@@ -1,16 +1,21 @@
 {% extends "base.html" %}
 
+{% block head %}
+{{ super() }}
+	<style>
+	.main {margin-top: 67px;}
+	.full-width-bg { background: url( "{{ url_for('static', filename='cu.jpg') }}" ); }
+	</style>
+{% endblock %}
+
 {% block content %}
-
 <div class="full-width-bg">
-
 	<div class="search-wrap">
 		<input autocomplete="off" type="text" spellcheck="false" id="searchTxt" placeholder="Search for Stops"><i class="fa fa-search"></i>
 
 		<div class="loader"></div>
 		<ul id="result" style="display:none;"></ul>
 	</div>
-
 </div>
 
 <div id="favorites">
@@ -19,35 +24,21 @@
 </div>
 
 <p class="attribution">Data provided by: <a target="_blank" href="https://mtd.org">mtd.org</a></p>
-
 {% endblock %}
 
 {% block footer %}
 {{ super() }}
-
-<style>
-.main {margin-top: 67px;}
-.full-width-bg { background: url( "{{ url_for('static', filename='cu.jpg') }}" ); }
-</style>
-
-<script src="{{ url_for('static', filename='search.js') }}"></script>
-<script src="{{ url_for('static', filename='favorites.js') }}"></script>
-<script src="{{ url_for('static', filename='filter.js') }}"></script>
-
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+<script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
+<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 <script>
-	
 $( document ).ready(function() {
-	
 	listFavorites();
 	updateActiveFilterButtons();
-
 	$('.route-short-filter').click(function() {
 		updateSavedFilters( $(this) );
 		updateActiveFilterButtons();
 	});
-
-});
-            
+});      
 </script>
-
 {% endblock %}
