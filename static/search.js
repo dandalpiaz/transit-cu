@@ -17,6 +17,7 @@ function getSearchData() {
 				$(".loader").css("display","none");
 				$('#result').html("");
 				$('#result').append("<li><em>No stops found</em></li>");
+				$('#result').show();
 			}
 			else {
 				$(".loader").css("display","none");
