@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request, send_from_directory, jsonify
 from flask_sslify import SSLify
 import urllib.request, json 
 import os
@@ -24,18 +24,23 @@ def static_from_root_2():
 def index():
 	return render_template('home.html')
 
-@app.route('/stop=<stop_id>_<stop_name>')
-def get_stop(stop_id, stop_name):
 
+@app.route('/<stop_id>')
+def get_stop_data(stop_id):
 	stop_data = "https://developer.cumtd.com/api/v2.2/json/GetDeparturesByStop?key=" + api_key + "&stop_id=" + stop_id + "&pt=60"
-	
+
 	try:
 		with urllib.request.urlopen(stop_data, timeout=25) as url:
 			data = json.loads(url.read().decode())
 	except:
-		return render_template('error.html')
+		pass
+		#return render_template('error.html')
 		
-	return render_template('stop.html', data=data, stop_id=stop_id, stop_name=stop_name)
+	return jsonify(data)
+
+@app.route('/stop=<stop_id>_<stop_name>')
+def get_stop(stop_id, stop_name):		
+	return render_template('stop.html', stop_id=stop_id, stop_name=stop_name)
 
 if __name__ == '__main__':
     app.debug = False

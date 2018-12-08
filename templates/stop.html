@@ -12,10 +12,6 @@
 {% block footer %}
 {{ super() }}
 
-<script>
-	var json = JSON.parse('{{ data | tojson | safe}}');
-	
-</script>
 <script src="{{ url_for('static', filename='stop.js') }}"></script>
 <script src="{{ url_for('static', filename='favorites.js') }}"></script>
 <script src="{{ url_for('static', filename='filter.js') }}"></script>
@@ -24,8 +20,12 @@
 
 $(document).ready(function() {
 
-	getStopData();
-	getTimeColor();
+	$.get("{{ url_for('get_stop_data', stop_id='PLAZA') }}", function(responseText) {
+		json = responseText;
+		getStopData();
+		getTimeColor();
+	});
+
 	document.title = "{{ stop_name | safe }}" + " | MTD"
 
 	updateActiveFilterButtons();
