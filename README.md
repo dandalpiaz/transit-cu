@@ -24,12 +24,13 @@ git push heroku master
 - get a new domain name
 - apply bootstrap framework?
 - refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
-- add ARIA labels to buttons
+- add ARIA labels to buttons, font-awesome
 - change filter button styles/behaviour
 - run an audit at [https://web.dev/](https://web.dev/)
 - stop refresh, add countdown, show last load time (Flask-Moment)
 - use ajax to reload data, instead of meta refresh
 - search stops by current location? show maps for stops?
+- improve error handling
 - add Google Analytics
 - how to add to homescreen (android only?)
 
@@ -38,4 +39,5 @@ git push heroku master
 - https://developers.google.com/web/fundamentals/design-and-ui/responsive/
 - https://developers.google.com/web/progressive-web-apps/checklist
 - https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute
+- https://fontawesome.com/how-to-use/on-the-web/other-topics/accessibility
 

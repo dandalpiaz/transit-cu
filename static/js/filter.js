@@ -62,6 +62,7 @@ function printActiveFilters() {
 
 	if (selected_filters.length == 0) {
 		$('#current-filters').append(" none");
+		$('#current-filters-parent').css("margin-top", "5px");
 	}
 
 	for (filter in selected_filters) {

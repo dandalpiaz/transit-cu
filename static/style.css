@@ -324,10 +324,6 @@ i.fa.fa-search {
     z-index: 1;
 }
 
-#current-filters-parent {
-    margin-top: 25px;
-}
-
 .active-filter-circle {
     border: 1px solid #aaa;
     border-radius: 50%;
@@ -336,8 +332,8 @@ i.fa.fa-search {
     line-height: 22px;
     text-align: center;
     display: inline-block;
-    padding: 11px;
-    margin-left: 6px;
+    padding: 5px;
+    margin-left: 2px;
     font-size: 13px;
 }
 
