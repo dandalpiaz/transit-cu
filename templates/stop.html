@@ -39,11 +39,6 @@ $(document).ready(function() {
 		showHideDepartures();
 	});
 
-	$('#filter-update-toggle').click(function() {
-		$('#filters').slideToggle();
-		$('.filter-toggle').toggleClass("fa-bars fa-times");
-	});
-
 	checkIfStopIsFavorite("{{ stop_name | safe }}");
 	$('.fa-star').click(function() {
 		addRemoveFavorite( $(this), "{{ stop_id | safe }}", "{{ stop_name | safe }}" );

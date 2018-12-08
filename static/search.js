@@ -31,6 +31,7 @@ function getSearchData() {
 		});
 	} catch(err) {
 		$('#result').html("<li><em>Error retrieving search result; try again later.</em></li>");
+		$('#result').show();
 	}
 };
 
