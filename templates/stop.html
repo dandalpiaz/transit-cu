@@ -29,8 +29,8 @@
 	<div class="loader" style="display:block"></div>
 	<div class="error"></div>
 	<div id="no-filtered-results"></div>
-	<p class="load-time"></p>
-	<p id="current-filters-parent">Active filters (<a id='filter-update-toggle'>update</a>): <span id="current-filters"></span></p>
+	<p style="display:none;" class="load-time"></p>
+	<p style="display:none;" id="current-filters-parent">Active filters (<a id='filter-update-toggle'>update</a>): <span id="current-filters"></span></p>
 {% endblock %}
 
 {% block footer %}
@@ -58,6 +58,8 @@ function request_stop_data() {
 		showHideDepartures();
 		$('.loader').hide();
 		$('.load-time').html( "Loaded at: " + moment().format('h:mm A') );
+		$('.load-time').show();
+		$('#current-filters-parent').show();
 	});
 }
 
