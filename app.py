@@ -7,6 +7,11 @@ app = Flask(__name__)
 sslify = SSLify(app)
 
 api_key = os.environ.get('CUMTD_KEY')
+google_tracking_id = os.environ.get('TRACKING_ID')
+
+@app.context_processor
+def inject_vars():
+    return dict(google_tracking_id=google_tracking_id)
 
 @app.route('/robots.txt')
 @app.route('/manifest.json')
