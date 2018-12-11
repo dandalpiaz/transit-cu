@@ -238,13 +238,13 @@ i.fa.fa-search {
 }
 
 #attribution {
-    font-size: 15px;
+    font-size: 16px;
     margin-top: 140px;
     line-height: 19px;
     position: fixed;
     bottom: 0px;
     right: 0px;
-    background: rgba(238,49,36,.9);
+    background: rgb(238,49,36);
     color: white;
     width: 100%;
     padding: 10px;

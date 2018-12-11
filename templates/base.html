@@ -18,10 +18,10 @@
 
 <div id="header">
 	<a style="display: inline-block" href="/">
-		<img id="title-img" src="{{ url_for('static', filename='logo.png') }}"/>
+		<img id="title-img" src="{{ url_for('static', filename='logo.png') }}" alt="CU Transit logo"/>
 		<span id="title-text">transit</span>
 	</a>
-	{% block header_right %}<button id="filter-toggle" class="fa fa-filter"></button>{% endblock %}
+	{% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-label="Toggle Filter section"></button>{% endblock %}
 </div>
 
 <div id="main">
