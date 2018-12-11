@@ -1,4 +1,4 @@
-# MTD Bus
+# CU Transit
 
 A web application for finding bus times for the [Champaign–Urbana Mass Transit District](https://mtd.org/)
 
@@ -18,7 +18,8 @@ pip3 install -r requirements.txt # or pip install -r requirements.txt
 ```bash
 export CUMTD_KEY=<YOUR_KEY_HERE> # for Windodws: set CUMTD_KEY=<YOUR_KEY_HERE>
 
-# If you're on a BASH enviornment, you can add this command to .bashrc so that it runs each time a terminal is started
+# If you're on a BASH enviornment, you can add this command to
+# .bashrc so that it runs each time a terminal is started
 sudo nano /home/UNIX_USERNAME/.bashrc
 ```
 5. With the variable set, run:
