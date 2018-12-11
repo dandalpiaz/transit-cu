@@ -14,25 +14,25 @@ function getSearchData() {
 	try {
 		$.getJSON(url, function(data) {
 			if (data.length == 0) {
-				$(".loader").css("display","none");
-				$('#result').html("");
-				$('#result').append("<li><em>No stops found</em></li>");
-				$('#result').show();
+				$("#spinner").css("display","none");
+				$('#search-results').html("");
+				$('#search-results').append("<li><em>No stops found</em></li>");
+				$('#search-results').show();
 			}
 			else {
-				$(".loader").css("display","none");
-				$('#result').html("");
+				$("#spinner").css("display","none");
+				$('#search-results').html("");
 				for (i = 0; i < data.length; i++) {
 					stopName = data[i]['result']['name'];
 					stopID = data[i]['result']['id'];
-					$('#result').append("<li>" + "<a href='/stop=" + stopID + "_" + stopName + "'>" + stopName + "</a>" + "</li>");
+					$('#search-results').append("<li>" + "<a href='/stop=" + stopID + "_" + stopName + "'>" + stopName + "</a>" + "</li>");
 				}
-				$('#result').show();
+				$('#search-results').show();
 			}
 		});
 	} catch(err) {
-		$('#result').html("<li><em>Error retrieving search result; try again later.</em></li>");
-		$('#result').show();
+		$('#search-results').html("<li><em>Error retrieving search result; try again later.</em></li>");
+		$('#search-results').show();
 	}
 };
 
@@ -40,14 +40,14 @@ $( document ).ready(function() {
 	$("#searchTxt").keyup(function(){
 		searchVar = document.getElementById("searchTxt").value;
 		if (searchVar == "") {
-			$('#result').hide();
-			$(".loader").css("display","none");
-			$('#result').html("");
+			$('#search-results').hide();
+			$("#spinner").css("display","none");
+			$('#search-results').html("");
 			clearTimeout(timer);
 		} else {
-			$(".loader").css("display","block");
-			$('#result').html("");
-			$('#result').hide();
+			$("#spinner").css("display","block");
+			$('#search-results').html("");
+			$('#search-results').hide();
 			delay(function(){
 				getSearchData();
 			}, 500 );

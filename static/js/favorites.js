@@ -9,9 +9,9 @@ if (favorites == null || favorites.length == 0) {
 function listFavorites() {
     for (var i = 0; i < current_favorites.length; i++) {
         var fav_split = current_favorites[i].split('###');
-        $('.favorites').append("<li><a href='/stop=" + fav_split[0] + "_" + fav_split[1] + "'>" + fav_split[1] + "</a></li>" );
+        $('#favorites').append("<li><a href='/stop=" + fav_split[0] + "_" + fav_split[1] + "'>" + fav_split[1] + "</a></li>" );
     }
-    var mylist = $('.favorites');
+    var mylist = $('#favorites');
     var listitems = mylist.children('li').get();
     listitems.sort(function(a, b) {
         return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());

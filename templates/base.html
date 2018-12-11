@@ -10,25 +10,25 @@
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 	<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<title>MTD Bus | Champaign-Urbana Mass Transit District</title>
+	<title>transit | Champaign-Urbana Transit</title>
 	{% endblock %}
 </head>
 
 <body>
 
-<div class="header">
-	<div class="container">
-		<h1>
-			<a style="display: inline-block" href="/">
-			<img class="title-img" src="{{ url_for('static', filename='logo.png') }}"/>
-			<span class="title-2">mtd</span>
-			</a>
-		</h1>
-		{% block header_right %}<button class="filter-toggle fa fa-filter"></button>{% endblock %}
-	</div>
+<div id="header">
+	<a style="display: inline-block" href="/">
+		<img id="title-img" src="{{ url_for('static', filename='logo.png') }}"/>
+		<span id="title-text">transit</span>
+	</a>
+	{% block header_right %}<button id="filter-toggle" class="fa fa-filter"></button>{% endblock %}
 </div>
 
-<div class="container main">
+<div id="main">
+
+	{% block content %}
+	{% endblock %}
+
 	<div style="display:none;" id="filters">
 		<h2 id="filter-by">Filter By:</h2>
 
@@ -60,9 +60,6 @@
 		<button class="route-short-filter noselect" style="background-color: rgba(158, 137, 102, 0.75); color: rgb(0, 0, 0);">8</button>
 		<button class="route-short-filter noselect" style="background-color: rgba(130, 86, 34, 0.75); color: rgb(255, 255, 255);">9</button>
 	</div>
-
-	{% block content %}
-	{% endblock %}
 	
 </div>
 </body>

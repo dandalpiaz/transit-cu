@@ -3,7 +3,7 @@
 {% block head %}
 {{ super() }}
 	<style>
-	.loader {
+	#spinner {
 		position: fixed;
 		top: 62px;
 		left: -8px;
@@ -12,25 +12,20 @@
 		border: 2px solid #f3f3f3;
 		border-top: 2px solid #3498db;
 	}
-	.load-time {
-		color: white;
-		background: #ee3124;
-		display: inline-block;
-		margin-top: 25px;
-		padding: 2px;
-		margin-left: 15px;
-	}
 	</style>
 {% endblock %}
 
 {% block content %}
-	<h2 id="title" class="stop-title"><button class="fa fa-star"></button>{{ stop_name }}</h2>
-	<div id="insert"></div>
-	<div class="loader" style="display:block"></div>
-	<div class="error"></div>
+	<h1 id="stop-title"><button class="fa fa-star"></button>{{ stop_name }}</h1>
+	<div id="stop-data"></div>
+	<div id="spinner" style="display:block"></div>
+	<div id="stop-error"></div>
 	<div id="no-filtered-results"></div>
-	<p style="display:none;" class="load-time"></p>
-	<p style="display:none;" id="current-filters-parent">Active filters (<a id='filter-update-toggle'>update</a>): <span id="current-filters"></span></p>
+
+	<p id="load-time" style="display:none;"></p>
+	<p id="current-filters-parent" style="display:none;">
+		Active filters (<a id='filter-update-toggle'>update</a>): <span id="current-filters"></span>
+	</p>
 {% endblock %}
 
 {% block footer %}
@@ -45,20 +40,20 @@ function request_stop_data() {
 		json = responseText;
 	}).done(function() {
 		if (json == "") {
-			$('.loader').hide();
-			$('#insert').html("");
-			$('.error').html("<p>There was an error getting the requested data. Please try again later.</p>");
+			$('#spinner').hide();
+			$('#stop-data').html("");
+			$('#stop-error').html("<p>There was an error getting the requested data. Please try again later.</p>");
 			return
 		}
-		$('#insert').html("");
+		$('#stop-data').html("");
 		parseStopData();
 		getTimeColor();
 		updateActiveFilterButtons();
 		printActiveFilters();
 		showHideDepartures();
-		$('.loader').hide();
-		$('.load-time').html( "Loaded at: " + moment().format('h:mm A') );
-		$('.load-time').show();
+		$('#spinner').hide();
+		$('#load-time').html( "Loaded at: " + moment().format('h:mm A') );
+		$('#load-time').show();
 		$('#current-filters-parent').show();
 	});
 }
@@ -66,11 +61,11 @@ function request_stop_data() {
 $(document).ready(function() {
 	request_stop_data();
 	setInterval(function() {
-		$('.loader').show();
+		$('#spinner').show();
 		request_stop_data();
 	}, 30 * 1000); // x * 1000 milsec
 
-	document.title = "{{ stop_name | safe }}" + " | MTD"
+	document.title = "{{ stop_name | safe }}" + " | Champaign-Urbana Transit"
 
 	$('.route-short-filter').click(function() {
 		updateSavedFilters( $(this) );

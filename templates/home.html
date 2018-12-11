@@ -3,27 +3,28 @@
 {% block head %}
 {{ super() }}
 	<style>
-	.main {margin-top: 67px;}
-	.full-width-bg { background: url( "{{ url_for('static', filename='cu.jpg') }}" ); }
+	#main {margin-top: 67px;}
+	#full-width-bg { background: url( "{{ url_for('static', filename='cu.jpg') }}" ); }
 	</style>
 {% endblock %}
 
 {% block content %}
-<div class="full-width-bg">
-	<div class="search-wrap">
-		<input autocomplete="off" type="text" spellcheck="false" id="searchTxt" placeholder="Search for Stops"><i class="fa fa-search"></i>
+	<h1 class="visually-hidden">transit | Champaign-Urbana Transit</h1>
+	<div id="full-width-bg">
+		<div id="search-wrap">
+			<input autocomplete="off" type="text" spellcheck="false" id="searchTxt" placeholder="Search for Stops"><i class="fa fa-search"></i>
 
-		<div class="loader"></div>
-		<ul id="result" style="display:none;"></ul>
+			<div id="spinner"></div>
+			<ul id="search-results" style="display:none;"></ul>
+		</div>
 	</div>
-</div>
 
-<div id="favorites">
-	<h2 id="title" style="margin-top:15px;"><i style="float:none" class="fa fa-star fav-active"></i>Favorites</h2>
-	<ul class="favorites"></ul>
-</div>
+	<div id="favorites-wrapper">
+		<h2 id="favorites-title"><i style="float:none" class="fa fa-star fav-active"></i>Favorites</h2>
+		<ul id="favorites"></ul>
+	</div>
 
-<p class="attribution">Data provided by: <a target="_blank" href="https://mtd.org">mtd.org</a></p>
+	<p id="attribution">Data provided by <a target="_blank" href="https://mtd.org">CUMTD</a></p>
 {% endblock %}
 
 {% block footer %}

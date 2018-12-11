@@ -9,20 +9,20 @@ function hexToRgb(hex) {
 }
 
 $(document).ready(function() {
-	$('.filter-toggle').click(function() {
+	$('#filter-toggle').click(function() {
 		$('#filters').slideToggle("fast");
 		$(this).toggleClass("fa-filter fa-times");
 	});
 
 	$('#filter-update-toggle').click(function() {
 		$('#filters').slideToggle("fast");
-		$('.filter-toggle').toggleClass("fa-filter fa-times");
+		$('#filter-toggle').toggleClass("fa-filter fa-times");
 	});
 })
 
 $(document).mouseup(function(e) {
     var element1 = $("#filters");
-	var element2 = $(".filter-toggle");
+	var element2 = $("#filter-toggle");
 	var element3 = $("#filter-update-toggle");
 
     // if the target of the click isn't the container nor a descendant of the container
@@ -30,7 +30,7 @@ $(document).mouseup(function(e) {
     {
 		if ( $('#filters').is(':visible') ) {
 			element1.slideToggle("fast");
-			$('.filter-toggle').toggleClass("fa-filter fa-times");
+			$('#filter-toggle').toggleClass("fa-filter fa-times");
 		}
     }
 });
