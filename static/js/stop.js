@@ -21,7 +21,7 @@ function parseStopData() {
 		route_color_b = hexToRgb(route_color).b; 
 		route_text_color = departures[i]['route']['route_text_color'];
 		eta = departures[i]['expected_mins'];
-		$("#stop-data").append("<div class='departure' style='color: " + "#" + route_text_color + ";'>" + "<span class='route-short' style='" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "0.75)" + ";'>" + route_short + "</span>" + "<span class='route-name'>" + route_name + "</span>" + "<span class='time'>" + eta + " Min" + "</span>" + "</div>");
+		$("#stop-data").append("<div class='departure' style='color: " + "#" + route_text_color + ";'>" + "<span class='route-short' style='" + "background-color: rgba(" + route_color_r + ", " + route_color_g + ", " + route_color_b + ", " + "1.0)" + ";'>" + route_short + "</span>" + "<span class='route-name'>" + route_name + "</span>" + "<span class='time'>" + eta + " Min" + "</span>" + "</div>");
 	}
 	if ($('#stop-data').html() == "") {
 		$("#stop-data").append("<p>No buses coming...</p>");

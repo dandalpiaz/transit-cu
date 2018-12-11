@@ -21,7 +21,7 @@
 		<img id="title-img" src="{{ url_for('static', filename='logo.png') }}" alt="CU Transit logo"/>
 		<span id="title-text">transit</span>
 	</a>
-	{% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-label="Toggle Filter section"></button>{% endblock %}
+	{% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-expanded="false" aria-label="Toggle Filter section"></button>{% endblock %}
 </div>
 
 <div id="main">
@@ -32,33 +32,33 @@
 	<div style="display:none;" id="filters">
 		<h2 id="filter-by">Filter By:</h2>
 
-		<button class="route-short-filter noselect" style="background-color: rgba(252, 238, 31, 0.75); color: rgb(0, 0, 0);">1</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(199, 153, 74, 0.75); color: rgb(0, 0, 0);">10</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(252, 238, 31, 0.75); color: rgb(0, 0, 0);">100</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(235, 0, 139, 0.75); color: rgb(0, 0, 0);">11</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(235, 0, 139, 0.75); color: rgb(0, 0, 0);">110</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(0, 105, 145, 0.75); color: rgb(255, 255, 255);">12</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(0, 105, 145, 0.75); color: rgb(255, 255, 255);">120</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(204, 204, 204, 0.75); color: rgb(0, 0, 0);">13</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(204, 204, 204, 0.75); color: rgb(0, 0, 0);">130</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(43, 48, 136, 0.75); color: rgb(255, 255, 255);">14</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(255, 191, 255, 0.75); color: rgb(0, 0, 0);">16</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(178, 210, 53, 0.75); color: rgb(0, 0, 0);">180</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(237, 28, 36, 0.75); color: rgb(0, 0, 0);">2</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(237, 28, 36, 0.75); color: rgb(0, 0, 0);">20</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(0, 0, 0, 0.75); color: rgb(255, 255, 255);">21</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(90, 29, 90, 0.75); color: rgb(255, 255, 255);">22</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(90, 29, 90, 0.75); color: rgb(255, 255, 255);">220</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(167, 139, 192, 0.75); color: rgb(0, 0, 0);">3</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(167, 139, 192, 0.75); color: rgb(0, 0, 0);">30</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(53, 92, 170, 0.75); color: rgb(255, 255, 255);">4</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(0, 128, 99, 0.75); color: rgb(255, 255, 255);">5</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(0, 128, 99, 0.75); color: rgb(255, 255, 255);">50</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(249, 159, 42, 0.75); color: rgb(0, 0, 0);">6</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(128, 130, 133, 0.75); color: rgb(0, 0, 0);">7</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(128, 130, 133, 0.75); color: rgb(0, 0, 0);">70</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(158, 137, 102, 0.75); color: rgb(0, 0, 0);">8</button>
-		<button class="route-short-filter noselect" style="background-color: rgba(130, 86, 34, 0.75); color: rgb(255, 255, 255);">9</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(252, 238, 31, 1.0); color: rgb(0, 0, 0);">1</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(199, 153, 74, 1.0); color: rgb(0, 0, 0);">10</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(252, 238, 31, 1.0); color: rgb(0, 0, 0);">100</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(235, 0, 139, 1.0); color: rgb(0, 0, 0);">11</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(235, 0, 139, 1.0); color: rgb(0, 0, 0);">110</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(0, 105, 145, 1.0); color: rgb(255, 255, 255);">12</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(0, 105, 145, 1.0); color: rgb(255, 255, 255);">120</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(204, 204, 204, 1.0); color: rgb(0, 0, 0);">13</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(204, 204, 204, 1.0); color: rgb(0, 0, 0);">130</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(43, 48, 136, 1.0); color: rgb(255, 255, 255);">14</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(255, 191, 255, 1.0); color: rgb(0, 0, 0);">16</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(178, 210, 53, 1.0); color: rgb(0, 0, 0);">180</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(237, 28, 36, 1.0); color: rgb(0, 0, 0);">2</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(237, 28, 36, 1.0); color: rgb(0, 0, 0);">20</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(0, 0, 0, 1.0); color: rgb(255, 255, 255);">21</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(90, 29, 90, 1.0); color: rgb(255, 255, 255);">22</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(90, 29, 90, 1.0); color: rgb(255, 255, 255);">220</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(167, 139, 192, 1.0); color: rgb(0, 0, 0);">3</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(167, 139, 192, 1.0); color: rgb(0, 0, 0);">30</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(53, 92, 170, 1.0); color: rgb(255, 255, 255);">4</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(0, 128, 99, 1.0); color: rgb(255, 255, 255);">5</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(0, 128, 99, 1.0); color: rgb(255, 255, 255);">50</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(249, 159, 42, 1.0); color: rgb(0, 0, 0);">6</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(128, 130, 133, 1.0); color: rgb(0, 0, 0);">7</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(128, 130, 133, 1.0); color: rgb(0, 0, 0);">70</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(158, 137, 102, 1.0); color: rgb(0, 0, 0);">8</button>
+		<button class="route-short-filter noselect" style="background-color: rgba(130, 86, 34, 1.0); color: rgb(255, 255, 255);">9</button>
 	</div>
 	
 </div>

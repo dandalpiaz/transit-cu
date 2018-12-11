@@ -9,14 +9,14 @@ function hexToRgb(hex) {
 }
 
 $(document).ready(function() {
-	$('#filter-toggle').click(function() {
-		$('#filters').slideToggle("fast");
-		$(this).toggleClass("fa-filter fa-times");
-	});
-
-	$('#filter-update-toggle').click(function() {
+	$('#filter-toggle, #filter-update-toggle').click(function() {
 		$('#filters').slideToggle("fast");
 		$('#filter-toggle').toggleClass("fa-filter fa-times");
+		if ($('#filter-toggle').attr('aria-expanded') == "true") {
+			$('#filter-toggle').attr('aria-expanded', 'false');
+		} else {
+			$('#filter-toggle').attr('aria-expanded', 'true');
+		}
 	});
 })
 
@@ -31,6 +31,7 @@ $(document).mouseup(function(e) {
 		if ( $('#filters').is(':visible') ) {
 			element1.slideToggle("fast");
 			$('#filter-toggle').toggleClass("fa-filter fa-times");
+			$('#filter-toggle').attr('aria-expanded', 'false');
 		}
     }
 });
