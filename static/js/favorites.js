@@ -25,6 +25,9 @@ function checkIfStopIsFavorite(stop_name) {
 		var test_title = fav_split[1];
 		if ( test_title == stop_name ) {
 			$('.fa-star').addClass( "fav-active" );
+			$('.fa-star').attr("aria-label", "Starred");
+		} else {
+			$('.fa-star').attr("aria-label", "Not Starred");
 		}
     }
 }
@@ -32,8 +35,10 @@ function checkIfStopIsFavorite(stop_name) {
 function addRemoveFavorite(item, stop_id, stop_name) {
 	if (item.hasClass( "fav-active") ) {
 		item.removeClass( "fav-active" );
+		$('.fa-star').attr("aria-label", "Not Starred");
 	} else {
 		item.addClass( "fav-active" );
+		$('.fa-star').attr("aria-label", "Starred");
 	}
 
 	var fav_string = stop_id + "###" + stop_name;

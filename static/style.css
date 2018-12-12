@@ -113,12 +113,20 @@ li {
     position: fixed;
     top: 67px;
     right: 0px;
-    max-width: 277px;
+    max-width: 250px;
     overflow: auto;
     height: 100%;
     box-sizing: border-box;
     border-left: 1px solid #ddd;
     z-index: 2;
+}
+
+#filter-by {
+    font-size: 17px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: block;
 }
 
 #full-width-bg {
@@ -194,7 +202,7 @@ i.fa.fa-search {
 }
 
 #main {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 #favorites-wrapper {
@@ -237,14 +245,17 @@ i.fa.fa-search {
     color: yellow;
 }
 
+#favorites-title .fav-active:hover {
+    cursor: default;
+}
+
 #attribution {
     font-size: 16px;
-    margin-top: 140px;
     line-height: 19px;
     position: fixed;
     bottom: 0px;
     right: 0px;
-    background: darkblue;
+    background: darkslateblue;
     color: white;
     width: 100%;
     padding: 10px;
@@ -316,12 +327,12 @@ p.departure:last-child {
 .route-short-filter {
     border-radius: 50%;
     border: 0px;
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
     text-align: center;
     display: inline-block;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Roboto';
     margin-bottom: 2px;
 }
@@ -348,7 +359,7 @@ p.departure:last-child {
 
 #load-time {
     color: white;
-    background: #ee3124;
+    background: darkslateblue;
     display: inline-block;
     margin-top: 25px;
     padding: 2px;
@@ -370,9 +381,4 @@ p.departure:last-child {
 
 #filter-update-toggle:hover {
     cursor: pointer;
-}
-
-#filter-by {
-    font-size: 17px;
-    font-weight: 400;
 }

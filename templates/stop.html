@@ -24,7 +24,7 @@
 
 	<p id="load-time" style="display:none;"></p>
 	<p id="current-filters-parent" style="display:none;">
-		Active filters (<a id='filter-update-toggle' aria-label="Toggle Filter section">update</a>): <span id="current-filters"></span>
+		Active filters (<a href="#" id='filter-update-toggle' aria-label="Toggle Filter section">update</a>): <span id="current-filters"></span>
 	</p>
 {% endblock %}
 
@@ -46,6 +46,7 @@ function request_stop_data() {
 			return
 		}
 		$('#stop-data').html("");
+		$('#stop-error').html("");
 		parseStopData();
 		getTimeColor();
 		updateActiveFilterButtons();

@@ -9,15 +9,18 @@ if (saved_filters == null || saved_filters.length == 0) {
 function updateActiveFilterButtons() {
 	$('.route-short-filter').each(function() {
 		if (selected_filters.includes($(this).text())) {
-			$(this).css('opacity', '1.0');
+			$(this).css('border-radius', '50%');
+			$(this).attr('aria-label', 'Filter Active');
 		} else {
-			$(this).css('opacity', '0.5');
+			$(this).css('border-radius', '0px');
+			$(this).attr('aria-label', 'Filter Inactive');
 		}
 	});
 	
 	if (selected_filters.length == 0) {
 		$('.route-short-filter').each(function() {
-			$(this).css('opacity', '1.0');
+			$(this).css('border-radius', '50%');
+			$(this).attr('aria-label', 'Filter Inactive');
 		});
 	}
 }
