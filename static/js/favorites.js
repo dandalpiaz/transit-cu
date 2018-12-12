@@ -20,6 +20,9 @@ function listFavorites() {
 }
 
 function checkIfStopIsFavorite(stop_name) {	
+	if (current_favorites.length == 0) {
+		$('.fa-star').attr("aria-label", "Not Starred");
+	}
 	for (var i = 0; i < current_favorites.length; i++) {
 		var fav_split = current_favorites[i].split('###');
 		var test_title = fav_split[1];
