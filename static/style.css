@@ -403,6 +403,10 @@ p.departure:last-child {
     margin-left: 15px;
 }
 
+#current-filters-parent {
+    margin-bottom: 20px;
+}
+
 .active-filter-circle {
     border: 1px solid #aaa;
     border-radius: 50%;
