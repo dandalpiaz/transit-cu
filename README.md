@@ -42,8 +42,6 @@ git push heroku master
 
 - get a new domain name
 - refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
-- add ARIA labels to buttons, font-awesome
-- change filter button styles/behaviour
 - run an audit at [https://web.dev/](https://web.dev/)
 - search stops by current location? show maps for stops?
 - improve error handling

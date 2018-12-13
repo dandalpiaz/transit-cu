@@ -3,7 +3,8 @@
 {% block head %}
 {{ super() }}
 	<style>
-	#main {margin-top: 67px;}
+	body {height: calc(100% - 67px);}
+	#main {margin-top: 67px; margin-bottom: 0px;}
 	#full-width-bg { background: url( "{{ url_for('static', filename='cu.jpg') }}" ); }
 	</style>
 {% endblock %}
@@ -17,11 +18,14 @@
 			<div id="spinner"></div>
 			<ul id="search-results" style="display:none;"></ul>
 		</div>
-	</div>
+		
+		<div id="favorites-container">
+			<div id="favorites-wrapper">
+				<h2 id="favorites-title"><i style="float:none" class="fa fa-star fav-active"></i>Favorites</h2>
+				<ul id="favorites"></ul>
+			</div>
+		</div>
 
-	<div id="favorites-wrapper">
-		<h2 id="favorites-title"><i style="float:none" class="fa fa-star fav-active"></i>Favorites</h2>
-		<ul id="favorites"></ul>
 	</div>
 
 	<p id="attribution">Data provided by <a target="_blank" href="https://mtd.org">CUMTD</a></p>

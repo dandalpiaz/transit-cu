@@ -1,5 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400);
 
+html {
+    height: 100%;
+}
+
 body {
     margin: 0px;
     padding: 0px;
@@ -8,6 +12,7 @@ body {
     background: white;
     margin: auto;
     color: rgba(0, 0, 0, 0.8);
+    height: 100%;
 }
 
 a {
@@ -132,6 +137,8 @@ li {
 #full-width-bg {
     background-repeat: no-repeat !important;
     background-position: center !important; 
+    background-size: cover !important;
+    height: 100%;
 }
 
 #search-wrap {
@@ -141,7 +148,6 @@ li {
     margin-right: auto;
     margin-left: auto;
     max-width: 475px;
-    height: 210px;
     padding-top: 50px;
 }
 
@@ -152,7 +158,6 @@ li {
     font-size: 16px;
     font-family: 'Roboto';
     border: 2px solid #ccc;
-    border-radius: 50px;
     background: rgba(255,255,255,0.95);
 }
 
@@ -195,21 +200,39 @@ i.fa.fa-search {
 }
 
 #search-results {
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,1.0);
     list-style-type: none;
-    padding: 15px;
-    text-align: center;
+    padding: 0px;
+    text-align: left;
+    margin-top: 0px;
+    border-right: 2px solid #ccc;
+    border-left: 2px solid #ccc;
+}
+
+#search-results li {
+    border-bottom: 1px solid #ccc;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #main {
     margin-bottom: 60px;
+    height: 100%;
+}
+
+#favorites-container {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 #favorites-wrapper {
-    max-width: 500px;
+    max-width: 471px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 30px;
+    background: rgba(255,255,255,1.0);
+    border: 2px solid #ccc;
 }
 
 #favorites-title {
@@ -217,11 +240,26 @@ i.fa.fa-search {
     margin-top: 15px;
     margin-left: 15px;
     margin-right: 15px;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 26px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 22px;
     border-bottom: 1px solid #ccc;
     padding-bottom: 8px;
+    text-align: center;
+    padding-right: 15px;
+}
+
+#favorites-title .fa-star {
+    margin-right: 8px;
+}
+
+#favorites {
+    padding-left: 0px;
+}
+
+#favorites li {
+    text-align: center;
+    list-style-type: none;
 }
 
 .fa-star {
@@ -255,9 +293,8 @@ i.fa.fa-search {
     position: fixed;
     bottom: 0px;
     right: 0px;
-    background: darkslateblue;
+    background: rgba(0,0,0,0.8);
     color: white;
-    width: 100%;
     padding: 10px;
     text-align: center;
 }
