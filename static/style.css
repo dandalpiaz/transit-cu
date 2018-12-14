@@ -302,7 +302,7 @@ i.fa.fa-search {
     position: fixed;
     bottom: 0px;
     right: 0px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.95);
     color: white;
     padding: 10px;
     text-align: center;
@@ -405,7 +405,7 @@ p.departure:last-child {
 
 #load-time {
     color: white;
-    background: darkslateblue;
+    background: rgba(0,0,0,0.95);
     display: inline-block;
     margin-top: 25px;
     padding: 2px;
