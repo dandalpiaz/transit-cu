@@ -106,7 +106,7 @@ li {
     border: none;
     position: relative;
     float: right;
-    right: 32px;
+    right: 15px;
     font-size: 28px !important;
     line-height: 50px !important;
     color: rgba(0,0,0,.6);
@@ -358,7 +358,7 @@ p.departure:last-child {
     z-index: -1;
     padding: 10px;
     min-width: 54px;
-    width: calc(100% - 255px);
+    width: calc(100% - 260px);
 }
 
 .route-short {

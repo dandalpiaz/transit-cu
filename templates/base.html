@@ -17,15 +17,15 @@
 
 <body>
 
-<div id="header">
+<nav id="header" role="navigation">
 	<a style="display: inline-block" href="/">
 		<img id="title-img" src="{{ url_for('static', filename='logo.png') }}" alt="CU Transit logo"/>
 		<span id="title-text">transit</span>
 	</a>
 	{% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-expanded="false" aria-label="Toggle Filter section"></button>{% endblock %}
-</div>
+</nav>
 
-<div id="main">
+<main role="main" id="main">
 
 	<div style="display:none;" id="filters">
 		<span id="filter-by">Filter By:</span>
@@ -62,7 +62,7 @@
 	{% block content %}
 	{% endblock %}
 	
-</div>
+</main>
 </body>
 
 {% block footer %}
