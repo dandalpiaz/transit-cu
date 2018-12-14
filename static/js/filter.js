@@ -12,7 +12,7 @@ function updateActiveFilterButtons() {
 			$(this).css('border-radius', '50%');
 			$(this).attr('aria-label', 'Filter Active');
 		} else {
-			$(this).css('border-radius', '0px');
+			$(this).css('border-radius', '2px');
 			$(this).attr('aria-label', 'Filter Inactive');
 		}
 	});

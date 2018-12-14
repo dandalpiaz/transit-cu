@@ -42,15 +42,11 @@ git push heroku master
 
 - get a new domain name
 - refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
-- run an audit at [https://web.dev/](https://web.dev/)
-- search stops by current location? show maps for stops?
+- run audits at web.dev, lighthouse, fae.disability.illinois.edu
+- Add text content to the button elements
+- Add submit button for search form
 - improve error handling
+- organize JS in files
 - how to add to homescreen (android only?)
-
-## Reference
-
-- https://developers.google.com/web/fundamentals/design-and-ui/responsive/
-- https://developers.google.com/web/progressive-web-apps/checklist
-- https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_aria-label_attribute
-- https://fontawesome.com/how-to-use/on-the-web/other-topics/accessibility
-
+- search stops by current location? show map for each stop?
+- separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection

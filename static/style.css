@@ -357,8 +357,8 @@ p.departure:last-child {
     left: 15px;
     z-index: -1;
     padding: 10px;
-    min-width: 54px;
-    width: calc(100% - 260px);
+    min-width: 75px;
+    width: calc(100% - 280px);
 }
 
 .route-short {
@@ -380,11 +380,11 @@ p.departure:last-child {
     display: inline-block;
     font-size: 14px;
     font-family: 'Roboto';
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 
 .route-short-filter:hover {
-    opacity: 0.7 !important;
+    opacity: 0.95 !important;
     cursor: pointer;
 }
 
@@ -401,6 +401,13 @@ p.departure:last-child {
     color: rgba(0, 0, 0, 0.8);
     padding-left: 15px;
     font-size: 17px;
+    max-width: 200px;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+    top: 4px;
 }
 
 #load-time {
