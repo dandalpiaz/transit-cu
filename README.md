@@ -43,10 +43,8 @@ git push heroku master
 - get a new domain name
 - refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
 - run audits at web.dev, lighthouse, fae.disability.illinois.edu
-- Add text content to the button elements
 - Add submit button for search form
-- improve error handling
-- organize JS in files
+- improve error handling, logging
 - how to add to homescreen (android only?)
 - search stops by current location? show map for each stop?
 - separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection
