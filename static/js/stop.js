@@ -5,7 +5,7 @@ function getTimeColor(){
 		value = value / 60;
 		value = 1 - value;
 		var hue=((1-value)*120).toString(10);
-		$(this)[0].style.backgroundColor = ["hsl(",hue,",100%,50%, .3)"].join("");
+		$(this)[0].style.backgroundColor = ["hsla(",hue,",100%,50%, .3)"].join("");
 	});
 }
 

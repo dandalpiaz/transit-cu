@@ -45,7 +45,7 @@ function addRemoveFavorite(item, stop_id, stop_name) {
 	}
 
 	var fav_string = stop_id + "###" + stop_name;
-	if (current_favorites.includes(fav_string)) {
+	if ( current_favorites.indexOf(fav_string) !== -1 ) {
 		var index = current_favorites.indexOf(fav_string);
 		current_favorites.splice(index, 1);
 	} else {

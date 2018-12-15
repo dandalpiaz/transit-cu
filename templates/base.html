@@ -19,10 +19,10 @@
 
 <nav id="header" role="navigation">
 	<a style="display: inline-block" href="/">
-		<img id="title-img" src="{{ url_for('static', filename='logo.png') }}" alt="CU Transit logo"/>
-		<span id="title-text">transit</span>
+		<img id="title-img" src="{{ url_for('static', filename='logo.svg') }}" alt="CU Transit logo"/>
+		<span id="title-text">transit <span id="title-text-alt">Champaign-Urbana</span></span>
 	</a>
-	{% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-expanded="false" aria-label="Toggle Filter section"></button>{% endblock %}
+	{% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-expanded="false" aria-label="Toggle Filter section"><span class="visually-hidden">Toggle Filter section</span></button>{% endblock %}
 </nav>
 
 <main role="main" id="main">
@@ -63,7 +63,6 @@
 	{% endblock %}
 	
 </main>
-</body>
 
 {% block footer %}
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -80,4 +79,5 @@
   gtag('config', '{{ google_tracking_id }}');
 </script>
 
+</body>
 </html>

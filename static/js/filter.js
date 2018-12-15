@@ -8,7 +8,7 @@ if (saved_filters == null || saved_filters.length == 0) {
 
 function updateActiveFilterButtons() {
 	$('.route-short-filter').each(function() {
-		if (selected_filters.includes($(this).text())) {
+		if (selected_filters.indexOf( $(this).text()) !== -1 ) {
 			$(this).css('border-radius', '50%');
 			$(this).attr('aria-label', 'Filter Active');
 		} else {
@@ -35,10 +35,10 @@ function showHideDepartures() {
 		});
 	} else {
 		$('.route-short').each(function() {
-			if (!selected_filters.includes($(this).text().slice(0, -1))) {
-				$(this).parent().hide();
-			} else {
+			if (selected_filters.indexOf( $(this).text().slice(0, -1)) !== -1 ) {
 				$(this).parent().show();
+			} else {
+				$(this).parent().hide();
 			}
 		});
 	}
@@ -51,7 +51,7 @@ function showHideDepartures() {
 
 function updateSavedFilters(clicked_item) {
 	var route_num = clicked_item.text();
-	if (selected_filters.includes(route_num)) {
+	if (selected_filters.indexOf(route_num) !== -1 ) {
 		var index = selected_filters.indexOf(route_num);
 		selected_filters.splice(index, 1);
 	} else {

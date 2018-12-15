@@ -81,11 +81,12 @@ li {
     position: fixed;
     top: 0px;
     width: 100%;
-    z-index: 2;
+    z-index: 3;
 }
 
 #title-img {
     width: 40px;
+    height: 40px;
     float: left;
     margin-top: 5px;
 }
@@ -99,6 +100,18 @@ li {
     display: block;
     float: left;
     padding-left: 8px;
+}
+
+#title-text-alt {
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    font-size: 12px;
+    position: relative;
+    bottom: 3px;
+    background: rgba(0,0,100,0.80);
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 #filter-toggle {
@@ -121,8 +134,8 @@ li {
     padding-right: 15px;
     margin-bottom: 10px;
     background: white;
-    padding: 15px;
     padding-top: 1px;
+    padding-bottom: 80px;
     position: fixed;
     top: 67px;
     right: 0px;
@@ -157,6 +170,7 @@ li {
     margin-left: auto;
     max-width: 475px;
     padding-top: 50px;
+    margin-top: 67px;
 }
 
 #searchTxt {
@@ -275,6 +289,7 @@ i.fa.fa-search {
     color: white;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: orange;
+     text-shadow: -1px 0 orange, 0 1px orange, 1px 0 orange, 0 -1px orange;
     font-size: 27px !important;
     float: right;
     margin-top: 3px;
