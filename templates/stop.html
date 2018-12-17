@@ -15,6 +15,8 @@
 	</style>
 {% endblock %}
 
+{% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-expanded="false" aria-label="Toggle Filter section"></button>{% endblock %}
+
 {% block content %}
 	<h1 id="stop-title"><button class="fa fa-star" aria-label="Not Starred"></button>{{ stop_name }}</h1>
 	<div id="stop-data"></div>
@@ -79,6 +81,9 @@ $(document).ready(function() {
 	$('.fa-star').click(function() {
 		addRemoveFavorite( $(this), "{{ stop_id | safe }}", "{{ stop_name | safe }}" );
 	});
+
+	$('#filter-toggle').animate({right: '17px'}, "fast");
+	$('#filter-toggle').animate({right: '15px'}, "fast");
 
 })
 </script>

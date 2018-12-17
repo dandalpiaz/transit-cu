@@ -46,5 +46,6 @@ git push heroku master
 - Add submit button for search form
 - improve error handling, logging
 - how to add to homescreen (android only?)
+- hide unavailable filters on stop pages?
 - search stops by current location? show map for each stop?
 - separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection
