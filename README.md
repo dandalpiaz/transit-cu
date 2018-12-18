@@ -49,7 +49,6 @@ git push heroku master
 - hide unavailable filters on stop pages?
 - search stops by current location? show map for each stop?
 - separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection
-- add deployment template files
 - move images to separate folder
 - remove favorites JS code from homepage
 - add directional filters (N, S, E, W, etc.)
