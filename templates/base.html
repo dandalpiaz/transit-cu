@@ -22,13 +22,16 @@
 		<img id="title-img" src="{{ url_for('static', filename='img/logo.svg') }}" alt="CU Transit logo"/>
 		<span id="title-text">transit <span id="title-text-alt">Champaign-Urbana</span></span>
 	</a>
-	{% block header_right %}{% endblock %}
+	{% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-expanded="false" aria-label="Toggle Filter section"></button>{% endblock %}
 </nav>
 
 <main role="main" id="main">
 
 	<div style="display:none;" id="filters">
+
 		<span id="filter-by">Filter By:</span>
+
+		<span class="filter-section">Stops</span>
 
 		<button class="route-short-filter noselect" style="background-color: rgba(252, 238, 31, 1.0); color: rgb(0, 0, 0);">1</button>
 		<button class="route-short-filter noselect" style="background-color: rgba(199, 153, 74, 1.0); color: rgb(0, 0, 0);">10</button>
@@ -57,6 +60,23 @@
 		<button class="route-short-filter noselect" style="background-color: rgba(128, 130, 133, 1.0); color: rgb(0, 0, 0);">70</button>
 		<button class="route-short-filter noselect" style="background-color: rgba(158, 137, 102, 1.0); color: rgb(0, 0, 0);">8</button>
 		<button class="route-short-filter noselect" style="background-color: rgba(130, 86, 34, 1.0); color: rgb(255, 255, 255);">9</button>
+
+		<span class="filter-section">Direction</span>
+
+		<button class="route-direction noselect">N</button>
+		<button class="route-direction noselect">S</button>
+		<button class="route-direction noselect">E</button>
+		<button class="route-direction noselect">W</button>
+		<br/>
+		<button class="route-direction noselect">A</button>
+		<button class="route-direction noselect">B</button>
+		<button class="route-direction noselect">C</button>
+		<button class="route-direction noselect">U</button>
+
+		<span class="filter-section">Misc.</span>
+
+		<button class="route-misc noselect">Hopper</button>
+
 	</div>
 
 	{% block content %}

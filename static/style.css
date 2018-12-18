@@ -154,6 +154,14 @@ li {
     display: block;
 }
 
+.filter-section {
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
 #full-width-bg {
     background-repeat: no-repeat !important;
     background-position: center !important; 
@@ -383,7 +391,7 @@ p.departure:last-child {
     display: inline-block;
 }
 
-.route-short-filter {
+.route-short-filter, .route-direction, .route-misc {
     border-radius: 50%;
     border: 0px;
     width: 40px;
@@ -396,7 +404,16 @@ p.departure:last-child {
     margin-bottom: 3px;
 }
 
-.route-short-filter:hover {
+.route-direction {
+    background: none;
+    border: 1px solid grey;
+}
+
+.route-misc {
+    width: auto;
+}
+
+.route-short-filter:hover, .route-direction:hover, .route-misc:hover {
     opacity: 0.95 !important;
     cursor: pointer;
 }
