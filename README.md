@@ -1,6 +1,6 @@
 # Transit CU
 
-A web application for finding bus times for the [Champaign–Urbana Mass Transit District](https://mtd.org/)
+A web application for finding bus times for the [Champaign–Urbana Mass Transit District](https://mtd.org/). Hosted at: [https://transitcu.com](https://transitcu.com)
 
 ## Setup
 
@@ -40,7 +40,6 @@ git push heroku master
 
 ## TODO
 
-- get a new domain name
 - refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
 - run audits at web.dev, lighthouse, fae.disability.illinois.edu
 - Add submit button for search form
@@ -49,7 +48,6 @@ git push heroku master
 - hide unavailable filters on stop pages?
 - search stops by current location? show map for each stop?
 - separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection
-- move images to separate folder
 - remove favorites JS code from homepage
 - add directional filters (N, S, E, W, etc.)
     - have all options nested under an AM and PM section

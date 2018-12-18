@@ -9,7 +9,7 @@
 	<meta name="description" content="Find bus times for the Champaign–Urbana Mass Transit District, UIUC">
 	<link rel="manifest" href="manifest.json">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-	<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+	<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename='img/favicon.ico') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 	<title>transit | Champaign-Urbana Transit</title>
 	{% endblock %}
@@ -19,7 +19,7 @@
 
 <nav id="header" role="navigation">
 	<a style="display: inline-block" href="/">
-		<img id="title-img" src="{{ url_for('static', filename='logo.svg') }}" alt="CU Transit logo"/>
+		<img id="title-img" src="{{ url_for('static', filename='img/logo.svg') }}" alt="CU Transit logo"/>
 		<span id="title-text">transit <span id="title-text-alt">Champaign-Urbana</span></span>
 	</a>
 	{% block header_right %}{% endblock %}
