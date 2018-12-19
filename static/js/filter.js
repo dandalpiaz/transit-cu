@@ -53,19 +53,19 @@ function showHideDepartures() {
 	$('.departure:visible').last().css("border-bottom", "1px solid #bbb");
 	$("#no-filtered-results").html("");
 
-	if (route_number_filters == "" && route_direction_filters == "") {
-		$('.route-short').each(function() {
+	$('.route-short').each(function() {
+		if (route_number_filters == "" && route_direction_filters == "") {
 			$(this).parent().show();
-		});
-	} else {
-		$('.route-short').each(function() {
-			if (route_number_filters.indexOf( $(this).text().slice(0, -1)) !== -1 && route_direction_filters.indexOf( $(this).text().slice(-1)) !== -1 ) {
-				$(this).parent().show();
-			} else {
-				$(this).parent().hide();
-			}
-		});
-	}
+		} else if (route_number_filters.indexOf( $(this).text().slice(0, -1)) !== -1 && route_direction_filters == "") {
+			$(this).parent().show();
+		} else if (route_number_filters == "" && route_direction_filters.indexOf( $(this).text().slice(-1)) !== -1) {
+			$(this).parent().show();
+		} else if (route_number_filters.indexOf( $(this).text().slice(0, -1)) !== -1 && route_direction_filters.indexOf( $(this).text().slice(-1)) !== -1 ) {
+			$(this).parent().show();
+		} else {
+			$(this).parent().hide();
+		}
+	});
 
 	$('.departure:visible').last().css("border-bottom", "0");
 
