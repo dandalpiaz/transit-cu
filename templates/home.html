@@ -42,8 +42,12 @@
 $( document ).ready(function() {
 	listFavorites();
 	updateActiveFilterButtons();
-	$('.route-short-filter').click(function() {
-		updateSavedFilters( $(this) );
+	$('.route-number-filter').click(function() {
+		updateNumberFilters( $(this) );
+		updateActiveFilterButtons();
+	});
+	$('.route-direction-filter').click(function() {
+		updateDirectionFilters( $(this) );
 		updateActiveFilterButtons();
 	});
 

@@ -138,7 +138,7 @@ li {
     position: fixed;
     top: 67px;
     right: 0px;
-    max-width: 250px;
+    max-width: 270px;
     overflow: auto;
     height: 100%;
     box-sizing: border-box;
@@ -391,7 +391,7 @@ p.departure:last-child {
     display: inline-block;
 }
 
-.route-short-filter, .route-direction, .route-misc {
+.route-number-filter, .route-direction-filter, .route-misc-filter {
     border-radius: 50%;
     border: 0px;
     width: 40px;
@@ -404,16 +404,16 @@ p.departure:last-child {
     margin-bottom: 3px;
 }
 
-.route-direction {
+.route-direction-filter {
     background: none;
     border: 1px solid grey;
 }
 
-.route-misc {
+.route-misc-filter {
     width: auto;
 }
 
-.route-short-filter:hover, .route-direction:hover, .route-misc:hover {
+.route-number-filter:hover, .route-direction:hover, .route-misc:hover {
     opacity: 0.95 !important;
     cursor: pointer;
 }

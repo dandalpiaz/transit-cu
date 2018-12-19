@@ -70,10 +70,16 @@ $(document).ready(function() {
 
 	document.title = "{{ stop_name | safe }}" + " | Champaign-Urbana Transit"
 
-	$('.route-short-filter').click(function() {
-		updateSavedFilters( $(this) );
+	$('.route-number-filter').click(function() {
+		updateNumberFilters( $(this) );
 		updateActiveFilterButtons();
 		printActiveFilters();
+		showHideDepartures();
+	});
+
+	$('.route-direction-filter').click(function() {
+		updateDirectionFilters( $(this) );
+		updateActiveFilterButtons();
 		showHideDepartures();
 	});
 
