@@ -34,8 +34,6 @@
 {{ super() }}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/stop.js') }}"></script>
-<script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
-<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 <script>
 function request_stop_data() {
 	$.get("/{{ stop_id | safe }}", function(responseText) {
@@ -70,26 +68,10 @@ $(document).ready(function() {
 
 	document.title = "{{ stop_name | safe }}" + " | Champaign-Urbana Transit"
 
-	$('.route-number-filter').click(function() {
-		updateNumberFilters( $(this) );
-		updateActiveFilterButtons();
-		printActiveFilters();
-		showHideDepartures();
-	});
-
-	$('.route-direction-filter').click(function() {
-		updateDirectionFilters( $(this) );
-		updateActiveFilterButtons();
-		showHideDepartures();
-	});
-
 	checkIfStopIsFavorite("{{ stop_name | safe }}");
 	$('.fa-star').click(function() {
 		addRemoveFavorite( $(this), "{{ stop_id | safe }}", "{{ stop_name | safe }}" );
 	});
-
-	$('#filter-toggle').animate({right: '17px'}, "fast");
-	$('#filter-toggle').animate({right: '15px'}, "fast");
 
 })
 </script>

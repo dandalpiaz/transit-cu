@@ -36,23 +36,10 @@
 {% block footer %}
 {{ super() }}
 <script src="{{ url_for('static', filename='js/search.js') }}"></script>
-<script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
-<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 <script>
 $( document ).ready(function() {
 	listFavorites();
 	updateActiveFilterButtons();
-	$('.route-number-filter').click(function() {
-		updateNumberFilters( $(this) );
-		updateActiveFilterButtons();
-	});
-	$('.route-direction-filter').click(function() {
-		updateDirectionFilters( $(this) );
-		updateActiveFilterButtons();
-	});
-
-	$('#filter-toggle').animate({right: '17px'}, "fast");
-	$('#filter-toggle').animate({right: '15px'}, "fast");
 });      
 </script>
 {% endblock %}
