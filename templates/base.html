@@ -73,7 +73,7 @@
 		<button class="route-direction-filter noselect">C</button>
 		<button class="route-direction-filter noselect">U</button>
 
-		<span class="filter-section">Misc.</span>
+		<span class="filter-section">Exclude</span>
 
 		<button class="route-misc-filter noselect">Hopper</button>
 
@@ -91,7 +91,7 @@
 <script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
 <script>
 $(document).ready(function() {
-	$('.route-number-filter, .route-direction-filter').click(function() {
+	$('.route-number-filter, .route-direction-filter, .route-misc-filter').click(function() {
 		updateStoredFilters( $(this) );
 		updateActiveFilterButtons();
 		//printActiveFilters();
