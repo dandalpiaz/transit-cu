@@ -91,16 +91,10 @@
 <script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
 <script>
 $(document).ready(function() {
-	$('.route-number-filter').click(function() {
-		updateNumberFilters( $(this) );
+	$('.route-number-filter, .route-direction-filter').click(function() {
+		updateStoredFilters( $(this) );
 		updateActiveFilterButtons();
-		printActiveFilters();
-		showHideDepartures();
-	});
-
-	$('.route-direction-filter').click(function() {
-		updateDirectionFilters( $(this) );
-		updateActiveFilterButtons();
+		//printActiveFilters();
 		showHideDepartures();
 	});
 })

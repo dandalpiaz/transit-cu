@@ -413,7 +413,7 @@ p.departure:last-child {
     width: auto;
 }
 
-.route-number-filter:hover, .route-direction:hover, .route-misc:hover {
+.route-number-filter:hover, .route-direction-filter:hover, .route-misc-filter:hover {
     opacity: 0.95 !important;
     cursor: pointer;
 }

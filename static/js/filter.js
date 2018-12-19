@@ -74,26 +74,26 @@ function showHideDepartures() {
 	}
 }
 
-function updateNumberFilters(clicked_item) {
-	var route_num = clicked_item.text();
-	if (route_number_filters.indexOf(route_num) !== -1 ) {
-		var index = route_number_filters.indexOf(route_num);
-		route_number_filters.splice(index, 1);
-	} else {
-		route_number_filters.push(route_num);
-	}
-	localStorage.setItem('route_number_filters', route_number_filters);
-}
+function updateStoredFilters(clicked_item) {
 
-function updateDirectionFilters(clicked_item) {
-	var route_dir = clicked_item.text();
-	if (route_direction_filters.indexOf(route_dir) !== -1 ) {
-		var index = route_direction_filters.indexOf(route_dir);
-		route_direction_filters.splice(index, 1);
-	} else {
-		route_direction_filters.push(route_dir);
+	var filter_criteria = clicked_item.text();
+	
+	if ( clicked_item.hasClass('route-number-filter') ) {
+		var filter_criteria_type = route_number_filters;
+		var filter_criteria_type_name = "route_number_filters";
 	}
-	localStorage.setItem('route_direction_filters', route_direction_filters);
+	if ( clicked_item.hasClass('route-direction-filter') ) {
+		var filter_criteria_type = route_direction_filters;
+		var filter_criteria_type_name = "route_direction_filters";
+	}
+	
+	if (filter_criteria_type.indexOf(filter_criteria) !== -1 ) {
+		var index = filter_criteria_type.indexOf(filter_criteria);
+		filter_criteria_type.splice(index, 1);
+	} else {
+		filter_criteria_type.push(filter_criteria);
+	}
+	localStorage.setItem(filter_criteria_type_name, filter_criteria_type);
 }
 
 function printActiveFilters() {
