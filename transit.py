@@ -19,7 +19,7 @@ def inject_vars():
 
 @app.route('/robots.txt')
 @app.route('/manifest.json')
-@app.route('/logo.png')
+@app.route('/img/logo.png')
 def static_from_root():
 	return send_from_directory(app.static_folder, request.path[1:])
 

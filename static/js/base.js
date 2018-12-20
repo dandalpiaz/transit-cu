@@ -18,6 +18,8 @@ $(document).ready(function() {
 			$('#filter-toggle').attr('aria-expanded', 'true');
 		}
 	});
+	$('#filter-toggle').animate({right: '17px'}, "fast");
+	$('#filter-toggle').animate({right: '15px'}, "fast");
 })
 
 $(document).mouseup(function(e) {

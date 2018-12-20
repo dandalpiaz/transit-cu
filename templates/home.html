@@ -36,16 +36,10 @@
 {% block footer %}
 {{ super() }}
 <script src="{{ url_for('static', filename='js/search.js') }}"></script>
-<script src="{{ url_for('static', filename='js/favorites.js') }}"></script>
-<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
 <script>
 $( document ).ready(function() {
 	listFavorites();
 	updateActiveFilterButtons();
-	$('.route-short-filter').click(function() {
-		updateSavedFilters( $(this) );
-		updateActiveFilterButtons();
-	});
 });      
 </script>
 {% endblock %}
