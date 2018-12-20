@@ -411,6 +411,8 @@ p.departure:last-child {
 
 .route-misc-filter {
     width: auto;
+    background: none;
+    border: 1px solid grey;
 }
 
 .route-number-filter:hover, .route-direction-filter:hover, .route-misc-filter:hover {
@@ -465,6 +467,14 @@ p.departure:last-child {
     margin-left: 2px;
     font-size: 13px;
     box-sizing: content-box;
+}
+
+.active-filter-circle-misc {
+    width: auto;
+    background: none;
+    border: 1px solid #aaa;
+    padding-left: 8px;
+    padding-right: 8px;
 }
 
 #filter-update-toggle:hover {

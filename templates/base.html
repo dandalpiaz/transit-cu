@@ -73,9 +73,9 @@
 		<button class="route-direction-filter noselect">C</button>
 		<button class="route-direction-filter noselect">U</button>
 
-		<span class="filter-section">Exclude</span>
+		<span class="filter-section">Misc.</span>
 
-		<button class="route-misc-filter noselect">Hopper</button>
+		<button class="route-misc-filter noselect">NOT Hopper</button>
 
 	</div>
 
@@ -94,7 +94,7 @@ $(document).ready(function() {
 	$('.route-number-filter, .route-direction-filter, .route-misc-filter').click(function() {
 		updateStoredFilters( $(this) );
 		updateActiveFilterButtons();
-		//printActiveFilters();
+		printActiveFilters();
 		showHideDepartures();
 	});
 })

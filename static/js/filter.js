@@ -152,12 +152,20 @@ function updateStoredFilters(clicked_item) {
 function printActiveFilters() {
 	$('#current-filters').html("");
 
-	if (route_number_filters.length == 0) {
+	if (route_number_filters.length == 0 && route_direction_filters.length == 0 && route_misc_filters.length == 0) {
 		$('#current-filters').append(" none");
 		$('#current-filters-parent').css("margin-top", "5px");
 	}
 
 	for (filter in route_number_filters) {
 		$('#current-filters').append("<span class='active-filter-circle'>" + route_number_filters[filter] + "</span>");
+	}
+
+	for (filter in route_direction_filters) {
+		$('#current-filters').append("<span class='active-filter-circle'>" + route_direction_filters[filter] + "</span>");
+	}
+
+	for (filter in route_misc_filters) {
+		$('#current-filters').append("<span class='active-filter-circle active-filter-circle-misc'>" + route_misc_filters[filter] + "</span>");
 	}
 }
