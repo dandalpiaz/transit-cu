@@ -43,13 +43,15 @@ $( document ).ready(function() {
 			$('#search-results').hide();
 			$("#spinner").css("display","none");
 			$('#search-results').html("");
-			clearTimeout(timer);
+			//clearTimeout(timer);
 		} else {
 			$("#spinner").css("display","block");
 			$('#search-results').html("");
 			$('#search-results').hide();
 			delay(function(){
-				getSearchData();
+				if (searchVar !== "") {
+					getSearchData();
+				}
 			}, 500 );
 		}		
 	});
