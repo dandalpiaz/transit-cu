@@ -9,7 +9,7 @@ app.config.from_object(Config)
 api_key = app.config['CUMTD_KEY']
 google_tracking_id = app.config['TRACKING_ID']
 
-if app.config['SSL_REDIRECT'] == "yes":
+if app.config['SSL_REDIRECT'] == True:
 	from flask_sslify import SSLify
 	sslify = SSLify(app)
 
