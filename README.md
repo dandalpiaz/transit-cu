@@ -19,8 +19,8 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
     ```
 4. To run the site locally, set your API key as the enviornment variable "CUMTD_KEY" by creating a .env file in the root directory, `sudo nano .env`
     ```bash
-    CUMTD_KEY=12345
-    TRACKING_ID=UA-54321
+    CUMTD_KEY=<your-key-here>
+    TRACKING_ID=<google-ua-number-here>
     SSL_REDIRECT=no
     ```
 5. Now you can run:
@@ -44,7 +44,8 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
 
 ## Deploy on Linux
 
-- TBD
+1. Complete a server setup simliar to [Linux Server Configuration for Flask Application on Amazon Lightsail](https://github.com/dandalpiaz/flask-lightsail). For the Supervisor and Nginx config files, see the examples in the "Deployment" directory of this repository.
+2. To deploy new changes, create a script similar to "deploy-example.sh" in the "Deployment" folder.
 
 ## TODO
 
