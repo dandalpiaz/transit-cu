@@ -49,7 +49,10 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
 
 ## TODO
 
-- clearn up filter.js - DRY
+- copyright notice?
+- link to github page?
+- 404 handling
+- clean up filter.js - DRY
 - refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
 - run audits at web.dev, lighthouse, fae.disability.illinois.edu
 - Add submit button for search form
