@@ -37,5 +37,10 @@ self.addEventListener('fetch', function(event) {
         return fetch(event.request);
       }
     )
+    .catch(function(error) {
+      console.log('Request failed:', error);
+      return caches.match('/');
+      // You could return a custom offline 404 page here
+    })
   );
 });
