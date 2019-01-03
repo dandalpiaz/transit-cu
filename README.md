@@ -6,39 +6,48 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
 
 1. Request an API key from CUMTD at [https://developer.cumtd.com](https://developer.cumtd.com/).
 2. Clone this repository and create and activate a virtual enviornment:
-    ```bash
-    git clone https://github.com/dandalpiaz/transit-cu.git
-    cd transit-cu
 
-    python3 -m venv/venv # or python -m venv/venv
-    source venv/bin/activate # for Windows: venv\Scripts\activate
-    ```
+```bash
+git clone https://github.com/dandalpiaz/transit-cu.git
+cd transit-cu
+
+python3 -m venv/venv # or python -m venv/venv
+source venv/bin/activate # for Windows: venv\Scripts\activate
+```
+
 3. Install dependencies:
-    ```bash
-    pip3 install -r requirements.txt # or pip install -r requirements.txt
-    ```
+
+```bash
+pip3 install -r requirements.txt # or pip install -r requirements.txt
+```
+
 4. To run the site locally, set your API key as the enviornment variable "CUMTD_KEY" by creating a .env file in the root directory, `sudo nano .env`
-    ```bash
-    CUMTD_KEY=<your-key-here>
-    TRACKING_ID=<google-ua-number-here>
-    SSL_REDIRECT=no
-    ```
+
+```bash
+CUMTD_KEY=<your-key-here>
+TRACKING_ID=<google-ua-number-here>
+SSL_REDIRECT=no
+```
+
 5. Now you can run:
-    ```bash
-    python3 transit.py # or python transit.py
-    ```
+
+```bash
+python3 transit.py # or python transit.py
+```
 
 ## Deploy on Heroku
 
 1. Install the Heroku CLI.
 2. Run the following commands with an initialized git repository:
-    ```bash
-    heroku create
-    git push heroku master
 
-    # or push a non-master branch
-    git push heroku yourbranch:master
-    ```
+```bash
+heroku create
+git push heroku master
+
+# or push a non-master branch
+git push heroku yourbranch:master
+```
+
 3. Add the enviornment variable "CUMTD_KEY" and "TRACKING_ID" (optional) to Heroku. Set the SSL_REDIRECT variable to "yes". More instructions can be found on Heroku's [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars) page. 
 4. More details on deploying to Heroku using git can be found on Heroku's [Deploying with Git](https://devcenter.heroku.com/articles/git) page.
 
@@ -49,7 +58,13 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
 
 ## TODO
 
-- clearn up filter.js - DRY
+- fullscreen on manijfest?
+- add copyright notice?
+- add link to github page?
+- increase initial request speed, move to python
+- 404 handling
+- manifest does not have background_color
+- clean up filter.js - DRY
 - refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
 - run audits at web.dev, lighthouse, fae.disability.illinois.edu
 - Add submit button for search form
@@ -61,5 +76,5 @@ A web application for finding bus times for the [Champaign–Urbana Mass Transit
     - have all options nested under an AM and PM section
 - add filter for "hopper" buses
 - save filter data for individual stops?
-- create a service worker for Progressive Web App
+- create a service worker for Progressive Web App (run audit)
 - add Google sign-in and use a database for storage (instead of localStorage)
