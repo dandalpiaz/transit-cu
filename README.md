@@ -58,10 +58,8 @@ git push heroku yourbranch:master
 
 ## TODO
 
-- fullscreen on manijfest?
-- add copyright notice?
-- add link to github page?
-- increase initial request speed, move to python
+- fullscreen on manifest?
+- increase initial request speed, move to python?
 - 404 handling
 - manifest does not have background_color
 - clean up filter.js - DRY

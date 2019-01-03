@@ -318,20 +318,27 @@ i.fa.fa-search {
 }
 
 #attribution {
-    font-size: 16px;
-    line-height: 19px;
+    font-size: 14px;
+    line-height: 25px;
     position: fixed;
     bottom: 0px;
     right: 0px;
-    background: rgba(0,0,0,0.95);
+    background: rgba(0,0,0,0.97);
     color: white;
     padding: 10px;
-    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #attribution a {
     color: white;
     text-decoration: underline;
+}
+
+@media (max-width: 500px) {
+    #attribution {
+        width: 100%;
+    }
 }
 
 /* styles specific to stop pages */
