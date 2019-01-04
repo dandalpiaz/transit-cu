@@ -35,9 +35,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js" integrity="sha256-CutOzxCRucUsn6C6TcEYsauvvYilEniTXldPa6/wu0k=" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename='js/stop.js') }}"></script>
 <script>
+
+function update_stop_page() {
+	$('#stop-data').html("");
+	$('#stop-error').html("");
+	parseStopData();
+	getTimeColor();
+	updateActiveFilterButtons();
+	printActiveFilters();
+	showHideDepartures();
+	$('#spinner').hide();
+	$('#load-time').html( "Loaded at: " + moment().format('h:mm A') );
+	$('#load-time').show();
+	$('#current-filters-parent').show();
+}
+
 function request_stop_data() {
 	$.get("/{{ stop_id | safe }}", function(responseText) {
 		json = responseText;
+		json = JSON.parse(responseText);
 	}).done(function() {
 		if (json == "") {
 			$('#spinner').hide();
@@ -45,22 +61,14 @@ function request_stop_data() {
 			$('#stop-error').html("<p>There was an error getting the requested data. Please try again later.</p>");
 			return
 		}
-		$('#stop-data').html("");
-		$('#stop-error').html("");
-		parseStopData();
-		getTimeColor();
-		updateActiveFilterButtons();
-		printActiveFilters();
-		showHideDepartures();
-		$('#spinner').hide();
-		$('#load-time').html( "Loaded at: " + moment().format('h:mm A') );
-		$('#load-time').show();
-		$('#current-filters-parent').show();
+		update_stop_page();
 	});
 }
 
 $(document).ready(function() {
-	request_stop_data();
+	json = JSON.parse('{{ intial_stop_data | safe }}');
+	update_stop_page();
+	
 	setInterval(function() {
 		$('#spinner').show();
 		request_stop_data();

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_from_directory, jsonify
+from flask import Flask, render_template, request, send_from_directory, jsonify, abort
 import urllib.request, json 
 import os
 from config import Config
@@ -35,14 +35,18 @@ def get_stop_data(stop_id):
 	try:
 		with urllib.request.urlopen(stop_data, timeout=25) as url:
 			data = json.loads(url.read().decode())
+	except urllib.error.HTTPError as e:
+		if e.code == 404:
+			abort(404)
 	except:
 		return ""
 		
-	return jsonify(data)
+	return json.dumps(data)
 
 @app.route('/stop=<stop_id>_<stop_name>')
-def get_stop(stop_id, stop_name):		
-	return render_template('stop.html', stop_id=stop_id, stop_name=stop_name)
+def get_stop(stop_id, stop_name):
+	intial_stop_data = get_stop_data(stop_id)
+	return render_template('stop.html', stop_id=stop_id, stop_name=stop_name, intial_stop_data=intial_stop_data)
 
 
 if __name__ == '__main__':

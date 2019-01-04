@@ -1,6 +1,6 @@
 # Transit CU
 
-A web application for finding bus times for the [Champaign–Urbana Mass Transit District](https://mtd.org/). Hosted at: [https://transitcu.com](https://transitcu.com)
+🚍 A web application for finding bus times for the [Champaign–Urbana Mass Transit District](https://mtd.org/) (CUMTD). Hosted at: [https://transitcu.com](https://transitcu.com)
 
 ## Setup
 
