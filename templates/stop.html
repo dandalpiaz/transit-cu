@@ -55,12 +55,6 @@ function request_stop_data() {
 		json = responseText;
 		json = JSON.parse(responseText);
 	}).done(function() {
-		if (json == "") {
-			$('#spinner').hide();
-			$('#stop-data').html("");
-			$('#stop-error').html("<p>There was an error getting the requested data. Please try again later.</p>");
-			return
-		}
 		update_stop_page();
 	});
 }

@@ -1,5 +1,6 @@
 *.pyc
 *.env
+logs
 venv
 __pycache__
 deploy.sh

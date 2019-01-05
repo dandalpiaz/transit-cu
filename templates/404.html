@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 id="stop-title">Stop Not Found</h1>
+    <p style="clear:both"><a href="{{ url_for('index') }}"><i class="fa fa-arrow-left"></i> Go Back</a></p>
+{% endblock %}
+
+{% block footer %}
+{{ super() }}
+<script>
+$( document ).ready(function() {
+	updateActiveFilterButtons();
+});
+</script>
+{% endblock %}

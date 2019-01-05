@@ -17,6 +17,14 @@ if app.config['SSL_REDIRECT'] == True:
 def inject_vars():
 	return dict(google_tracking_id=google_tracking_id)
 
+@app.errorhandler(404)
+def not_found_error(error):
+    return render_template('404.html'), 404
+
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template('500.html'), 500
+
 @app.route('/robots.txt')
 @app.route('/manifest.json')
 @app.route('/img/logo.png')
@@ -38,8 +46,6 @@ def get_stop_data(stop_id):
 	except urllib.error.HTTPError as e:
 		if e.code == 404:
 			abort(404)
-	except:
-		return ""
 		
 	return json.dumps(data)
 
@@ -47,6 +53,26 @@ def get_stop_data(stop_id):
 def get_stop(stop_id, stop_name):
 	intial_stop_data = get_stop_data(stop_id)
 	return render_template('stop.html', stop_id=stop_id, stop_name=stop_name, intial_stop_data=intial_stop_data)
+
+###### Logging #######
+
+import logging
+from logging.handlers import RotatingFileHandler
+import os
+
+if not app.debug:
+
+    if not os.path.exists('logs'):
+        os.mkdir('logs')
+    file_handler = RotatingFileHandler('logs/errors.log', maxBytes=10240,
+                                       backupCount=10)
+    file_handler.setFormatter(logging.Formatter(
+        '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
+    file_handler.setLevel(logging.INFO)
+    app.logger.addHandler(file_handler)
+
+    app.logger.setLevel(logging.INFO)
+    app.logger.info('Application startup')
 
 
 if __name__ == '__main__':
