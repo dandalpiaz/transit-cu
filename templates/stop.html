@@ -68,7 +68,7 @@ $(document).ready(function() {
 		request_stop_data();
 	}, 30 * 1000); // x * 1000 milsec
 
-	document.title = "{{ stop_name | safe }}" + " | Champaign-Urbana Transit"
+	document.title = "{{ stop_name | safe }}" + " | Transit CU"
 
 	checkIfStopIsFavorite("{{ stop_name | safe }}");
 	$('.fa-star').click(function() {
