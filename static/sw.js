@@ -2,6 +2,7 @@
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
   '/',
+  '/offline',
   '/static/img/cu.jpg',
   '/static/img/favicon.ico',
   '/static/img/logo.png',
@@ -29,7 +30,6 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
-        // Cache hit - return response
         console.log("loading cached item");
         if (response) {
           return response;
@@ -39,8 +39,7 @@ self.addEventListener('fetch', function(event) {
     )
     .catch(function(error) {
       console.log('Request failed:', error);
-      return caches.match('/');
-      // You could return a custom offline 404 page here
+      return caches.match('/offline');
     })
   );
 });

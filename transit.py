@@ -25,6 +25,10 @@ def not_found_error(error):
 def internal_error(error):
     return render_template('500.html'), 500
 
+@app.route('/offline')
+def offline():
+	return render_template('offline.html')
+
 @app.route('/robots.txt')
 @app.route('/manifest.json')
 @app.route('/img/logo.png')
