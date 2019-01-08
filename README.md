@@ -58,21 +58,17 @@ git push heroku yourbranch:master
 
 ## TODO
 
-- fullscreen on manifest?
-- increase initial request speed, move to python?
-- 404 handling
 - manifest does not have background_color
 - clean up filter.js - DRY
 - refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
 - run audits at web.dev, lighthouse, fae.disability.illinois.edu
-- Add submit button for search form
-- improve error handling, logging
+- add submit button for search form
+- add email notification for error logging
 - hide unavailable filters on stop pages?
 - search stops by current location? show map for each stop?
 - separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection
 - add directional filters (N, S, E, W, etc.)
-    - have all options nested under an AM and PM section
-- add filter for "hopper" buses
+    - have these options nested under an AM and PM section
 - save filter data for individual stops?
 - create a service worker for Progressive Web App (run audit)
 - add Google sign-in and use a database for storage (instead of localStorage)
