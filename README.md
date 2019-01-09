@@ -68,6 +68,7 @@ git push heroku yourbranch:master
 
 ## TODO
 
+- register service worker for PWA
 - add email notification with error logging
 - clean up filter.js - DRY
 - refactor file structure for app? [example](https://github.com/miguelgrinberg/flasky)

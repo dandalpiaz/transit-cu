@@ -11,15 +11,19 @@ function getSearchData() {
 	searchVar = document.getElementById("searchTxt").value;
     baseUrl = "https://search.mtd.org/v1.0.0/stop/suggest/";
 	url = baseUrl + searchVar;
-	try {
-		$.getJSON(url, function(data) {
+
+	$.ajax({
+		url: url,
+		type: "GET",
+		dataType: "json",
+		timeout: 5000,
+		success: function(data) {
 			if (data.length == 0) {
 				$("#spinner").css("display","none");
 				$('#search-results').html("");
 				$('#search-results').append("<li><em>No stops found</em></li>");
 				$('#search-results').show();
-			}
-			else {
+			} else {
 				$("#spinner").css("display","none");
 				$('#search-results').html("");
 				for (i = 0; i < data.length; i++) {
@@ -29,11 +33,13 @@ function getSearchData() {
 				}
 				$('#search-results').show();
 			}
-		});
-	} catch(err) {
-		$('#search-results').html("<li><em>Error retrieving search result; try again later.</em></li>");
-		$('#search-results').show();
-	}
+		},
+		error: function(xmlhttprequest, textstatus, message) {
+			$("#spinner").css("display","none");
+			$('#search-results').html("<li><em>Error retrieving search results; please try again later.</em></li>");
+			$('#search-results').show();
+		}
+	})
 };
 
 $( document ).ready(function() {
