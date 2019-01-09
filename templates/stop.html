@@ -51,12 +51,23 @@ function update_stop_page() {
 }
 
 function request_stop_data() {
-	$.get("/{{ stop_id | safe }}", function(responseText) {
-		json = responseText;
-		json = JSON.parse(responseText);
-	}).done(function() {
-		update_stop_page();
-	});
+	$.ajax({
+		url: "/{{ stop_id | safe }}",
+		type: "GET",
+		dataType: "json",
+		timeout: 5000,
+		success: function(response) {
+			json = response;
+			update_stop_page();
+		},
+		error: function(xmlhttprequest, textstatus, message) {
+			$('#stop-data').html("");
+			$('#stop-error').html("<p>There was a problem retrieving the stop data. Please try again later.</p>");
+			$('#spinner').hide();
+			$('#load-time').hide();
+			$('#current-filters-parent').hide();
+		}
+	})
 }
 
 $(document).ready(function() {

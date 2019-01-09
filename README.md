@@ -56,19 +56,20 @@ git push heroku yourbranch:master
 1. Complete a server setup simliar to [Linux Server Configuration for Flask Application on Amazon Lightsail](https://github.com/dandalpiaz/flask-lightsail). For the Supervisor and Nginx config files, see the examples in the "Deployment" directory of this repository.
 2. To deploy new changes, create a script similar to "deploy-example.sh" in the "Deployment" folder.
 
+## IDEAS
+
+- search for stops by current location
+- show map on each stop page?
+- separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection
+- directional filters - have these options nested under an AM and PM section
+- hide unavailable filters on individual stop pages?
+- save filter data for individual stops?
+- add Google sign-in and use a database for storage (instead of localStorage)
+
 ## TODO
 
-- manifest does not have background_color
+- add email notification with error logging
 - clean up filter.js - DRY
-- refactor file structure for app? [See Flasky repo](https://github.com/miguelgrinberg/flasky)
+- refactor file structure for app? [example](https://github.com/miguelgrinberg/flasky)
 - run audits at web.dev, lighthouse, fae.disability.illinois.edu
-- add submit button for search form
-- add email notification for error logging
-- hide unavailable filters on stop pages?
-- search stops by current location? show map for each stop?
-- separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection
-- add directional filters (N, S, E, W, etc.)
-    - have these options nested under an AM and PM section
-- save filter data for individual stops?
-- create a service worker for Progressive Web App (run audit)
-- add Google sign-in and use a database for storage (instead of localStorage)
+- add submit button for search form, does it need to be a form element?
