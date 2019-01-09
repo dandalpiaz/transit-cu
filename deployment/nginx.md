@@ -16,6 +16,9 @@ server {
     location / {
         proxy_pass http://localhost:8000;
     }
+
+    access_log /var/log/transit_access.log;
+    error_log /var/log/transit_error.log;
 }
 
 # check syntax and reload
