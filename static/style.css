@@ -488,3 +488,14 @@ p.departure:last-child {
 #filter-update-toggle:hover {
     cursor: pointer;
 }
+
+#no-filter-results p {
+    margin-bottom: 20px;
+}
+
+#footer {
+    background: #F8F8F8;
+    padding-bottom: 2px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}

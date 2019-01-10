@@ -75,7 +75,7 @@ function updateActiveFilterButtons() {
 
 function showHideDepartures() {
 	$('.departure:visible').last().css("border-bottom", "1px solid #bbb");
-	$("#no-filtered-results").html("");
+	$("#no-filter-results").html("");
 
 	$('.route-short').each(function() {
 
@@ -119,7 +119,7 @@ function showHideDepartures() {
 	$('.departure:visible').last().css("border-bottom", "0");
 
 	if ( $('.departure:visible').length == 0 ) {
-		$("#no-filtered-results").append("<p>No buses coming with selected filters...</p>");
+		$("#no-filter-results").html("<p>No buses coming with selected filters...</p>");
 	}
 }
 

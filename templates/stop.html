@@ -19,15 +19,16 @@
 
 {% block content %}
 	<h1 id="stop-title"><button class="fa fa-star" aria-label="Not Starred"></button>{{ stop_name }}</h1>
-	<div id="stop-data"></div>
 	<div id="spinner" style="display:block"></div>
-	<div id="stop-error"></div>
-	<div id="no-filtered-results"></div>
+	<div id="stop-data"></div>
+	<div id="no-filter-results"></div>
 
-	<p id="load-time" style="display:none;"></p>
-	<p id="current-filters-parent" style="display:none;">
-		Active filters (<a href="#" id='filter-update-toggle' aria-label="Toggle Filter section">update</a>): <span id="current-filters"></span>
-	</p>
+	<div id="footer" style="display:none;">
+		<p id="load-time"></p>
+		<p id="current-filters-parent">
+			Active filters (<a href="#" id='filter-update-toggle' aria-label="Toggle Filter section">update</a>): <span id="current-filters"></span>
+		</p>
+	</div>
 {% endblock %}
 
 {% block footer %}
@@ -38,7 +39,6 @@
 
 function update_stop_page() {
 	$('#stop-data').html("");
-	$('#stop-error').html("");
 	parseStopData();
 	getTimeColor();
 	updateActiveFilterButtons();
@@ -46,8 +46,7 @@ function update_stop_page() {
 	showHideDepartures();
 	$('#spinner').hide();
 	$('#load-time').html( "Loaded at: " + moment().format('h:mm A') );
-	$('#load-time').show();
-	$('#current-filters-parent').show();
+	$('#footer').show();
 }
 
 function request_stop_data() {
@@ -61,11 +60,10 @@ function request_stop_data() {
 			update_stop_page();
 		},
 		error: function(xmlhttprequest, textstatus, message) {
-			$('#stop-data').html("");
-			$('#stop-error').html("<p>There was a problem retrieving the stop data. Please try again later.</p>");
+			$('#stop-data').html("<p>There was a problem retrieving the stop data. Please try again later.</p>");
+			$('#no-filter-results').html("");
 			$('#spinner').hide();
-			$('#load-time').hide();
-			$('#current-filters-parent').hide();
+			$('#footer').hide();
 		}
 	})
 }
