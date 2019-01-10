@@ -64,11 +64,12 @@ git push heroku yourbranch:master
 - directional filters - have these options nested under an AM and PM section
 - hide unavailable filters on individual stop pages?
 - save filter data for individual stops?
+- redo frontend with JS framework (Vue, React), single page webapp?
 - add Google sign-in and use a database for storage (instead of localStorage)
 
 ## TODO
 
-- register service worker for PWA
+- re-evaluate caching on service worker (for PWA)
 - add email notification with error logging
 - clean up filter.js - DRY
 - refactor file structure for app? [example](https://github.com/miguelgrinberg/flasky)
