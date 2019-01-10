@@ -1,5 +1,5 @@
 
-var CACHE_NAME = 'my-site-cache-v1';
+var CACHE_NAME = 'my-site-cache-v1.1';
 var urlsToCache = [
   '/',
   '/offline',
