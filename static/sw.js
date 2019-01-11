@@ -1,5 +1,5 @@
 
-var CACHE_NAME = 'my-site-cache-v1.1';
+var CACHE_NAME = 'my-site-cache-v1.2';
 var urlsToCache = [
   '/',
   '/offline',
@@ -26,15 +26,16 @@ self.addEventListener('install', function(event) {
   );
 });
 
+
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     caches.match(event.request)
       .then(function(response) {
-        //console.log("loading cached item");
-        if (response) {
+        try {
+          return fetch(event.request);
+        } catch(err) {
           return response;
         }
-        return fetch(event.request);
       }
     )
     .catch(function(error) {
