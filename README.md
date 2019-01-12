@@ -69,9 +69,9 @@ git push heroku yourbranch:master
 
 ## TODO
 
+- prevent footer from overlapping search results on mobile
 - re-evaluate caching on service worker (for PWA)
 - add email notification with error logging
 - clean up filter.js - DRY
 - refactor file structure for app? [example](https://github.com/miguelgrinberg/flasky)
 - run audits at web.dev, lighthouse, fae.disability.illinois.edu
-- add submit button for search form, does it need to be a form element?
