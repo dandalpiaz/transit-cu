@@ -45,7 +45,7 @@ def get_stop_data(stop_id):
 	stop_data = "https://developer.cumtd.com/api/v2.2/json/GetDeparturesByStop?key=" + api_key + "&stop_id=" + stop_id + "&pt=60"
 
 	try:
-		with urllib.request.urlopen(stop_data, timeout=25) as url:
+		with urllib.request.urlopen(stop_data, timeout=10) as url:
 			data = json.loads(url.read().decode())
 	except urllib.error.HTTPError as e:
 		if e.code == 404:
