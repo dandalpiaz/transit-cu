@@ -69,8 +69,7 @@ function request_stop_data() {
 }
 
 $(document).ready(function() {
-	json = JSON.parse('{{ intial_stop_data | safe }}');
-	update_stop_page();
+	request_stop_data();
 	
 	setInterval(function() {
 		$('#spinner').show();

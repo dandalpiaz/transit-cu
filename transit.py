@@ -55,8 +55,7 @@ def get_stop_data(stop_id):
 
 @app.route('/stop=<stop_id>_<stop_name>')
 def get_stop(stop_id, stop_name):
-	intial_stop_data = get_stop_data(stop_id)
-	return render_template('stop.html', stop_id=stop_id, stop_name=stop_name, intial_stop_data=intial_stop_data)
+	return render_template('stop.html', stop_id=stop_id, stop_name=stop_name)
 
 ###### Logging #######
 
