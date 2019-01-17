@@ -69,6 +69,9 @@ git push heroku yourbranch:master
 
 ## TODO
 
+- debug intermittent error when auto refreshing stop data - sometimes happening after several refresh requests
+- add ARIA attributes for autocomplete search
+- force refresh stop data when waking mobile device from sleep
 - prevent footer from overlapping search results on mobile
 - re-evaluate caching on service worker (for PWA)
 - add email notification with error logging
