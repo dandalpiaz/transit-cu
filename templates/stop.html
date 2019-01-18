@@ -59,8 +59,12 @@ function request_stop_data() {
 			json = response;
 			update_stop_page();
 		},
-		error: function(xmlhttprequest, textstatus, message) {
-			$('#stop-data').html("<p>There was a problem retrieving the stop data. Please try again later.</p>");
+		error: function(xhr) {
+			if (xhr.status == 404) {
+				window.location.replace("/404");
+			} else {
+				$('#stop-data').html("<p>There was a problem retrieving the stop data. Please try again later.</p>");
+			}
 			$('#no-filter-results').html("");
 			$('#spinner').hide();
 			$('#footer').hide();
