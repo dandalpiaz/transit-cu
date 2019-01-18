@@ -9,7 +9,7 @@ function hexToRgb(hex) {
 }
 
 $(document).ready(function() {
-	$('#filter-toggle, #filter-update-toggle').click(function() {
+	$('#filter-toggle').click(function() {
 		$('#filters').slideToggle("fast");
 		$('#filter-toggle').toggleClass("fa-filter fa-times");
 		if ($('#filter-toggle').attr('aria-expanded') == "true") {
@@ -25,10 +25,9 @@ $(document).ready(function() {
 $(document).mouseup(function(e) {
     var element1 = $("#filters");
 	var element2 = $("#filter-toggle");
-	var element3 = $("#filter-update-toggle");
 
     // if the target of the click isn't the container nor a descendant of the container
-    if (!element1.is(e.target) && element1.has(e.target).length === 0 && !element2.is(e.target) && !element3.is(e.target)) 
+    if (!element1.is(e.target) && element1.has(e.target).length === 0 && !element2.is(e.target) ) 
     {
 		if ( $('#filters').is(':visible') ) {
 			element1.slideToggle("fast");

@@ -153,8 +153,9 @@ function printActiveFilters() {
 	$('#current-filters').html("");
 
 	if (route_number_filters.length == 0 && route_direction_filters.length == 0 && route_misc_filters.length == 0) {
-		$('#current-filters').append(" none");
-		$('#current-filters-parent').css("margin-top", "5px");
+		$('#current-filters-parent').hide();
+	} else {
+		$('#current-filters-parent').show();
 	}
 
 	for (filter in route_number_filters) {

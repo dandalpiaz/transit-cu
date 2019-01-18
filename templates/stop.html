@@ -26,7 +26,7 @@
 	<div id="footer" style="display:none;">
 		<p id="load-time"></p>
 		<p id="current-filters-parent">
-			Active filters (<a href="#" id='filter-update-toggle' aria-label="Toggle Filter section">update</a>): <span id="current-filters"></span>
+			<span id="current-filters-label">Active filters:</span> <span id="current-filters"></span>
 		</p>
 	</div>
 {% endblock %}
@@ -54,7 +54,7 @@ function request_stop_data() {
 		url: "/{{ stop_id | safe }}",
 		type: "GET",
 		dataType: "json",
-		timeout: 5000,
+		timeout: 15000,
 		success: function(response) {
 			json = response;
 			update_stop_page();

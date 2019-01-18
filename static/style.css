@@ -461,6 +461,7 @@ p.departure:last-child {
 
 #current-filters-parent {
     margin-bottom: 20px;
+    margin-top: 5px;
 }
 
 .active-filter-circle {
@@ -475,18 +476,21 @@ p.departure:last-child {
     margin-left: 2px;
     font-size: 13px;
     box-sizing: content-box;
+    background: white;
 }
 
 .active-filter-circle-misc {
     width: auto;
-    background: none;
+    background: white;
     border: 1px solid #aaa;
     padding-left: 8px;
     padding-right: 8px;
 }
 
-#filter-update-toggle:hover {
-    cursor: pointer;
+#current-filters-label {
+    background: rgba(0,0,0,.6);
+    color: white;
+    padding: 2px;
 }
 
 #no-filter-results p {
@@ -498,4 +502,5 @@ p.departure:last-child {
     padding-bottom: 2px;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+    min-height: 77px;
 }
