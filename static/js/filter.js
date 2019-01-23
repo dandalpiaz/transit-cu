@@ -25,9 +25,11 @@ function updateActiveFilterButtons() {
 		if (route_number_filters.indexOf( $(this).text()) !== -1 ) {
 			$(this).css('border-radius', '50%');
 			$(this).attr('aria-label', 'Filter Active');
+			$(this).css('opacity', '1.0');
 		} else {
 			$(this).css('border-radius', '2px');
 			$(this).attr('aria-label', 'Filter Inactive');
+			$(this).css('opacity', '0.75');
 		}
 	});
 	
@@ -35,6 +37,7 @@ function updateActiveFilterButtons() {
 		$('.route-number-filter').each(function() {
 			$(this).css('border-radius', '50%');
 			$(this).attr('aria-label', 'Filter Inactive');
+			$(this).css('opacity', '1.0');
 		});
 	}
 
@@ -42,9 +45,11 @@ function updateActiveFilterButtons() {
 		if (route_direction_filters.indexOf( $(this).text()) !== -1 ) {
 			$(this).css('border-radius', '50%');
 			$(this).attr('aria-label', 'Filter Active');
+			$(this).css('opacity', '1.0');
 		} else {
 			$(this).css('border-radius', '2px');
 			$(this).attr('aria-label', 'Filter Inactive');
+			$(this).css('opacity', '0.75');
 		}
 	});
 	
@@ -52,6 +57,7 @@ function updateActiveFilterButtons() {
 		$('.route-direction-filter').each(function() {
 			$(this).css('border-radius', '50%');
 			$(this).attr('aria-label', 'Filter Inactive');
+			$(this).css('opacity', '1.0');
 		});
 	}
 
@@ -59,9 +65,11 @@ function updateActiveFilterButtons() {
 		if (route_misc_filters.indexOf( $(this).text()) !== -1 ) {
 			$(this).css('border-radius', '50%');
 			$(this).attr('aria-label', 'Filter Active');
+			$(this).css('opacity', '1.0');
 		} else {
 			$(this).css('border-radius', '2px');
 			$(this).attr('aria-label', 'Filter Inactive');
+			$(this).css('opacity', '0.75');
 		}
 	});
 	
@@ -69,6 +77,7 @@ function updateActiveFilterButtons() {
 		$('.route-misc-filter').each(function() {
 			$(this).css('border-radius', '2px');
 			$(this).attr('aria-label', 'Filter Inactive');
+			$(this).css('opacity', '0.75');
 		});
 	}
 }

@@ -412,15 +412,26 @@ p.departure:last-child {
     margin-bottom: 3px;
 }
 
+.route-number-filter:active,
+.route-number-filter:focus,
+.route-direction-filter:active,
+.route-direction-filter:focus,
+.route-misc-filter:active,
+.route-misc-filter:focus {
+    outline: none; 
+    -webkit-box-shadow: 0px 0px 0px 2px rgb(137, 182, 255);
+    box-shadow: 0px 0px 0px 2px rgb(137, 182, 255);
+}
+
 .route-direction-filter {
-    background: none;
-    border: 1px solid grey;
+    background: grey;
+    color: white;
 }
 
 .route-misc-filter {
     width: auto;
-    background: none;
-    border: 1px solid grey;
+    background: grey;
+    color: white;
 }
 
 .route-number-filter:hover, .route-direction-filter:hover, .route-misc-filter:hover {
