@@ -418,9 +418,16 @@ p.departure:last-child {
 .route-direction-filter:focus,
 .route-misc-filter:active,
 .route-misc-filter:focus {
-    outline: none; 
+    outline: none;
+    -webkit-appearance: none;
     -webkit-box-shadow: 0px 0px 0px 2px rgb(137, 182, 255);
     box-shadow: 0px 0px 0px 2px rgb(137, 182, 255);
+}
+
+.route-number-filter::-moz-focus-inner,
+.route-direction-filter::-moz-focus-inner,
+.route-misc-filter::-moz-focus-inner {
+    border: 0;
 }
 
 .route-direction-filter {
