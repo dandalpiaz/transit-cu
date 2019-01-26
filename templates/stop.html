@@ -54,7 +54,7 @@ function request_stop_data() {
 		url: "/{{ stop_id | safe }}",
 		type: "GET",
 		dataType: "json",
-		timeout: 15000,
+		timeout: 30000,
 		success: function(response) {
 			json = response;
 			update_stop_page();
