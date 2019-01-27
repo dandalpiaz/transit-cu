@@ -11,7 +11,7 @@
 git clone https://github.com/dandalpiaz/transit-cu.git
 cd transit-cu
 
-python3 -m venv/venv # or python -m venv/venv
+python3 -m venv venv # or python -m venv venv
 source venv/bin/activate # for Windows: venv\Scripts\activate
 ```
 
