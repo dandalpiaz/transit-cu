@@ -369,7 +369,7 @@ div.departure {
     padding-right: 15px;
     margin: 0px;
     font-weight: 400;
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid #ccc;
 }
 
 p.departure:last-child {
