@@ -323,7 +323,7 @@ i.fa.fa-search {
     line-height: 25px;
     position: fixed;
     bottom: 0px;
-    right: 0px;
+    left: 0px;
     background: rgba(0,0,0,0.97);
     color: white;
     padding: 10px;
