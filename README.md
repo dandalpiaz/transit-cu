@@ -62,6 +62,7 @@ git push heroku yourbranch:master
 - show map on each stop page?
 - separate page - mark all stops on a Google Map, draw polylines for routes, allow route selection
 - directional filters - have these options nested under an AM and PM section
+- add a 'remove all filters' button
 - hide unavailable filters on individual stop pages?
 - save filter data for individual stops?
 - redo frontend with JS framework (Vue, React), single page webapp?
