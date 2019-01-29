@@ -28,10 +28,13 @@
 	</div>
 
 	<p id="attribution">
-		<i class="fa fa-copyright"></i> Dan Dalpiaz &nbsp;&bull;&nbsp; 
-		<a target="_blank" href="https://github.com/dandalpiaz/transit-cu" rel="noopener"><i class="fa fa-github" style="padding-right: 5px;"></i>Find on Github</a> 
-		<br/>
+		<i class="fa fa-copyright"></i> Dan Dalpiaz
+		&nbsp;&bull;&nbsp;
+		<a target="_blank" href="https://github.com/dandalpiaz/transit-cu" rel="noopener"><i class="fa fa-github" style="padding-right: 5px;"></i>Find on Github</a>
+		&nbsp;&bull;&nbsp;
 		Data provided by <a target="_blank" href="https://mtd.org" rel="noopener">CUMTD</a>
+		<br/>
+		<a target="_blank" href="https://commons.wikimedia.org/wiki/File:Champaign_From_Above.jpg" rel="noopener">"Champaign From Above"</a> by Peter Folk, <br/>used under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" rel="noopener">CC BY-SA 3.0</a> / dust removed from original
 	</p>
 {% endblock %}
 
@@ -42,6 +45,17 @@
 $( document ).ready(function() {
 	listFavorites();
 	updateActiveFilterButtons();
+
+	if ( document.documentElement.clientWidth <= 500 ) {
+		$('#searchTxt').focusin(function(){
+			$('#attribution').css("position", "static");
+		});
+
+		$('#searchTxt').focusout(function(){
+			$('#attribution').css("position", "fixed");
+		});   
+	} 
+	
 });
 </script>
 {% endblock %}
