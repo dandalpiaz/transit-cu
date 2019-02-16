@@ -537,6 +537,16 @@ p.departure:last-child {
     }
 }
 
+@media (max-width: 365px) {
+    .route-name {
+        max-width: 160px !important;
+    }
+
+    .time {
+        min-width: 100px !important;
+    }
+}
+
 @media (max-width: 320px) {
     .route-name {
         max-width: 150px !important;
@@ -544,6 +554,10 @@ p.departure:last-child {
 
     .time {
         min-width: 75px !important;
+    }
+
+    #title-text-alt {
+        font-size: 10px;
     }
 }
 
