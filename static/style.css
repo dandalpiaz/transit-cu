@@ -529,7 +529,7 @@ p.departure:last-child {
     }
 
     .route-name {
-        max-width: 175px !important;
+        max-width: 170px !important;
     }
 
     .time {
@@ -537,7 +537,7 @@ p.departure:last-child {
     }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 320px) {
     .route-name {
         max-width: 150px !important;
     }

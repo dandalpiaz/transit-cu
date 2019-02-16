@@ -106,7 +106,7 @@ function showHideDepartures() {
 		direction_match = false;
 		misc_match = false;
 
-		if (route_number_filters.indexOf( $(this).text().slice(0, -1)) !== -1) {
+		if (route_number_filters.indexOf( $(this).text().replace(/\D/g,'')) !== -1) {
 			number_match = true;
 		}
 		if (route_direction_filters.indexOf( $(this).text().slice(-1)) !== -1) {
