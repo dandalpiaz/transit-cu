@@ -42,7 +42,7 @@ def index():
 
 @app.route('/<stop_id>')
 def get_stop_data(stop_id):
-	stop_data = "https://developer.cumtd.com/api/v2.2/json/GetDeparturesByStop?key=" + api_key + "&stop_id=" + stop_id + "&pt=60"
+	stop_data = "https://developer.mtd.org/api/v2.2/json/GetDeparturesByStop?key=" + api_key + "&stop_id=" + stop_id + "&pt=60"
 
 	try:
 		with urllib.request.urlopen(stop_data) as url:
