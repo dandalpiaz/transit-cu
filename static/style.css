@@ -365,6 +365,16 @@ i.fa.fa-search {
     clear: both;
 }
 
+#error {
+    background: crimson;
+    color: white;
+    padding: 15px;
+}
+
+#error-time {
+    font-weight: 600;
+}
+
 div.departure {
     font-size: 16px;
     padding: 10px;
