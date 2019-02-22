@@ -67,6 +67,8 @@ git push heroku yourbranch:master
 - save filter data for individual stops?
 - redo frontend with JS framework (Vue, React), single page webapp?
 - add Google sign-in and use a database for storage (instead of localStorage)
+- front page - new image? Shadow on boxes?
+- filter toggle - slideToggle vs toggle
 
 ## TODO
 
