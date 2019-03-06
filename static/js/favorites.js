@@ -44,9 +44,15 @@ function addRemoveFavorite(item, stop_id, stop_name) {
 		$('.fa-star').attr("aria-label", "Starred");
 	}
 
+	var fav_ids = [];
+	for (var i = 0; i < current_favorites.length; i++) {
+		fav_ids.push(current_favorites[i].split('###')[0]);
+	}
+
 	var fav_string = stop_id + "###" + stop_name;
-	if ( current_favorites.indexOf(fav_string) !== -1 ) {
-		var index = current_favorites.indexOf(fav_string);
+	var fav_id = stop_id;
+	if ( fav_ids.indexOf(fav_id) !== -1 ) {
+		var index = fav_ids.indexOf(fav_id);
 		current_favorites.splice(index, 1);
 	} else {
 		current_favorites.push(fav_string);
