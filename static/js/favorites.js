@@ -19,14 +19,14 @@ function listFavorites() {
     $.each(listitems, function(idx, itm) { mylist.append(itm); });
 }
 
-function checkIfStopIsFavorite(stop_name) {	
+function checkIfStopIsFavorite(stop_id) {	
 	if (current_favorites.length == 0) {
 		$('.fa-star').attr("aria-label", "Not Starred");
 	}
 	for (var i = 0; i < current_favorites.length; i++) {
 		var fav_split = current_favorites[i].split('###');
-		var test_title = fav_split[1];
-		if ( test_title == stop_name ) {
+		var test_id = fav_split[0];
+		if ( test_id == stop_id ) {
 			$('.fa-star').addClass( "fav-active" );
 			$('.fa-star').attr("aria-label", "Starred");
 		} else {

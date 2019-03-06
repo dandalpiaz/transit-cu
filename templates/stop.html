@@ -15,6 +15,8 @@
 	</style>
 {% endblock %}
 
+{% block title %}{{ stop_name }} | Transit CU{% endblock %}
+
 {% block header_right %}<button id="filter-toggle" class="fa fa-filter" aria-expanded="false" aria-label="Toggle Filter section"></button>{% endblock %}
 
 {% block content %}
@@ -85,9 +87,7 @@ $(document).ready(function() {
 		request_stop_data();
 	}, 30 * 1000); // x * 1000 milsec
 
-	document.title = "{{ stop_name }}" + " | Transit CU"
-
-	checkIfStopIsFavorite("{{ stop_name }}");
+	checkIfStopIsFavorite("{{ stop_id }}");
 	$('.fa-star').click(function() {
 		addRemoveFavorite( $(this), "{{ stop_id }}", "{{ stop_name }}" );
 	});
