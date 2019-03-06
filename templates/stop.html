@@ -51,7 +51,7 @@ function update_stop_page() {
 
 function request_stop_data() {
 	$.ajax({
-		url: "/{{ stop_id | safe }}",
+		url: "/{{ stop_id }}",
 		type: "GET",
 		dataType: "json",
 		timeout: 60000,
@@ -85,11 +85,11 @@ $(document).ready(function() {
 		request_stop_data();
 	}, 30 * 1000); // x * 1000 milsec
 
-	document.title = "{{ stop_name | safe }}" + " | Transit CU"
+	document.title = "{{ stop_name }}" + " | Transit CU"
 
-	checkIfStopIsFavorite("{{ stop_name | safe }}");
+	checkIfStopIsFavorite("{{ stop_name }}");
 	$('.fa-star').click(function() {
-		addRemoveFavorite( $(this), "{{ stop_id | safe }}", "{{ stop_name | safe }}" );
+		addRemoveFavorite( $(this), "{{ stop_id }}", "{{ stop_name }}" );
 	});
 
 })

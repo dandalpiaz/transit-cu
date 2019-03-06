@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, send_from_directory, jsonify, abort
+from flask import Flask, render_template, request, send_from_directory, jsonify, abort, escape
 import urllib.request, json 
 import os
 from config import Config
@@ -56,6 +56,7 @@ def get_stop_data(stop_id):
 @app.route('/stop=<stop_id>_<stop_name>')
 def get_stop(stop_id, stop_name):
 	return render_template('stop.html', stop_id=stop_id, stop_name=stop_name)
+	#return render_template('stop.html', stop_id=stop_id, stop_name=escape(stop_name))
 
 ###### Logging #######
 
