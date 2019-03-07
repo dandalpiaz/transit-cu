@@ -19,14 +19,14 @@ function listFavorites() {
     $.each(listitems, function(idx, itm) { mylist.append(itm); });
 }
 
-function checkIfStopIsFavorite(stop_name) {	
+function checkIfStopIsFavorite(stop_id) {	
 	if (current_favorites.length == 0) {
 		$('.fa-star').attr("aria-label", "Not Starred");
 	}
 	for (var i = 0; i < current_favorites.length; i++) {
 		var fav_split = current_favorites[i].split('###');
-		var test_title = fav_split[1];
-		if ( test_title == stop_name ) {
+		var test_id = fav_split[0];
+		if ( test_id == stop_id ) {
 			$('.fa-star').addClass( "fav-active" );
 			$('.fa-star').attr("aria-label", "Starred");
 		} else {
@@ -44,9 +44,15 @@ function addRemoveFavorite(item, stop_id, stop_name) {
 		$('.fa-star').attr("aria-label", "Starred");
 	}
 
+	var fav_ids = [];
+	for (var i = 0; i < current_favorites.length; i++) {
+		fav_ids.push(current_favorites[i].split('###')[0]);
+	}
+
 	var fav_string = stop_id + "###" + stop_name;
-	if ( current_favorites.indexOf(fav_string) !== -1 ) {
-		var index = current_favorites.indexOf(fav_string);
+	var fav_id = stop_id;
+	if ( fav_ids.indexOf(fav_id) !== -1 ) {
+		var index = fav_ids.indexOf(fav_id);
 		current_favorites.splice(index, 1);
 	} else {
 		current_favorites.push(fav_string);
