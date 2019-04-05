@@ -72,10 +72,10 @@ git push heroku yourbranch:master
 
 ## TODO
 
+- separate API request for stop title, instead of using title in URL
 - debug intermittent error when auto refreshing stop data - sometimes happening after several refresh requests
 - add ARIA attributes for autocomplete search
 - force refresh stop data when waking mobile device from sleep
-- prevent footer from overlapping search results on mobile
 - re-evaluate caching on service worker (for PWA)
 - add email notification with error logging
 - clean up filter.js - DRY

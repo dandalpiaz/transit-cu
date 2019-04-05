@@ -29,7 +29,7 @@ function getSearchData() {
 				for (i = 0; i < data.length; i++) {
 					stopName = data[i]['result']['name'];
 					stopID = data[i]['result']['id'];
-					$('#search-results').append("<li>" + "<a href='/stop=" + stopID + "_" + stopName + "'>" + stopName + "</a>" + "</li>");
+					$('#search-results').append("<li>" + '<a href="/stop=' + stopID + '_' + stopName + '">' + stopName + "</a>" + "</li>");
 				}
 				$('#search-results').show();
 			}
