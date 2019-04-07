@@ -7,4 +7,3 @@ load_dotenv(os.path.join(basedir, '.env'))
 class Config(object):
     CUMTD_KEY = os.environ.get('CUMTD_KEY') or "cumtd key not provided"
     TRACKING_ID = os.environ.get('TRACKING_ID') or "tracking id not provided"
-    SSL_REDIRECT = True if os.environ.get('SSL_REDIRECT') == "yes" else False
