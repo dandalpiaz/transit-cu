@@ -69,7 +69,7 @@ function request_stop_data() {
 					$('#error-time').html( moment(lastLoad).fromNow() );
 				} else {
 					lastLoad = moment().subtract(30, "seconds");
-					$('#stop-data').prepend("<p id='error'>There was a problem retrieving the stop data. Please try again later. The data below was last loaded: " + "<span id='error-time'>" + "less than a minute ago" + "</span>" + "</p>");
+					$('#stop-data').prepend("<p id='error'>There was a problem retrieving the stop data. Please try again later. The data below (if any) was last loaded: " + "<span id='error-time'>" + "less than a minute ago" + "</span>" + "</p>");
 				}
 			}
 			$('#no-filter-results').html("");
