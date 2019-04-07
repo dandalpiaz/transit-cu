@@ -26,30 +26,13 @@ pip3 install -r requirements.txt # or pip install -r requirements.txt
 ```bash
 CUMTD_KEY=<your-key-here>
 TRACKING_ID=<google-ua-number-here>
-SSL_REDIRECT=no
 ```
 
 5. Now you can run:
 
 ```bash
-python3 transit.py # or python transit.py
+flask run
 ```
-
-## Deploy on Heroku
-
-1. Install the Heroku CLI.
-2. Run the following commands with an initialized git repository:
-
-```bash
-heroku create
-git push heroku master
-
-# or push a non-master branch
-git push heroku yourbranch:master
-```
-
-3. Add the enviornment variable "CUMTD_KEY" and "TRACKING_ID" (optional) to Heroku. Set the SSL_REDIRECT variable to "yes". More instructions can be found on Heroku's [Configuration and Config Vars](https://devcenter.heroku.com/articles/config-vars) page. 
-4. More details on deploying to Heroku using git can be found on Heroku's [Deploying with Git](https://devcenter.heroku.com/articles/git) page.
 
 ## Deploy on Linux
 
