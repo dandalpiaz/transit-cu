@@ -40,6 +40,10 @@ def static_from_root():
 def index():
 	return render_template('home.html')
 
+@app.route('/maps')
+def maps():
+	return render_template('maps.html')
+
 @app.route('/<stop_id>')
 def get_stop_data(stop_id):
 	stop_data = "https://developer.mtd.org/api/v2.2/json/GetDeparturesByStop?key=" + api_key + "&stop_id=" + stop_id + "&pt=60"

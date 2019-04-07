@@ -200,7 +200,7 @@ i.fa.fa-search {
     position: relative;
     bottom: 38px;
     right: 20px;
-    font-size: 22px;
+    font-size: 20px;
     color: rgba(0,0,0,0.5);
     z-index: 1;
 }
@@ -286,6 +286,7 @@ i.fa.fa-search {
 
 #favorites {
     padding-left: 20px;
+    margin-bottom: 0px;
 }
 
 #favorites li {
@@ -312,6 +313,9 @@ i.fa.fa-search {
 
 #favorites-title .fa-star {
     margin-right: 8px;
+    font-size: 20px !important;
+    position: relative;
+    bottom: 3px;
 }
 
 .fa-star:hover {
@@ -324,6 +328,16 @@ i.fa.fa-search {
 
 #favorites-title .fav-active:hover {
     cursor: default;
+}
+
+#maps-wrapper {
+    text-align: right;
+    padding: 5px;
+}
+
+#maps-link {
+    font-size: 14px;
+    font-weight: 400;
 }
 
 #attribution {
