@@ -24,7 +24,7 @@ def offline():
 @bp.route('/img/logo.png')
 @bp.route('/sw.js')
 def static_from_root():
-	return send_from_directory(app.static_folder, request.path[1:])
+	return send_from_directory(current_app.static_folder, request.path[1:])
 
 @bp.route('/')
 def index():
