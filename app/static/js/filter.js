@@ -112,7 +112,7 @@ function showHideDepartures() {
 		if (route_direction_filters.indexOf( $(this).text().slice(-1)) !== -1) {
 			direction_match = true;
 		}
-		if ( $(this).next().text().indexOf("hopper") == -1  ) {
+		if ( $(this).next().text().indexOf("opper") == -1  ) {
 			misc_match = true;
 		}
 
