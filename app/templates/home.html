@@ -5,7 +5,6 @@
 	<style>
 	body {height: calc(100% - 67px);}
 	#main {margin-top: 67px;}
-	#full-width-bg { background: url( "{{ url_for('static', filename='img/cu.jpg') }}" ); }
 	</style>
 {% endblock %}
 
@@ -20,13 +19,34 @@
 			<ul id="search-results" style="display:none;"></ul>
 		</div>
 		
-		<div id="favorites-container">
-			<div id="favorites-wrapper">
-				<h2 id="favorites-title"><i style="float:none" class="fa fa-star fav-active"></i><span>Favorites</span></h2>
-				<ul id="favorites"></ul>
-				<p id="maps-wrapper">
-					<a id="maps-link" href="/maps"><i class="fa fa-map"></i> maps</a>
-				</p>
+		<div class="box-wrap">
+			<div class="box">
+				<h2 class="box-title"><i style="float:none" class="fa fa-star fav-active"></i><span>Favorites</span></h2>
+				<ul class="box-list" id="favorites"></ul>
+			</div>
+		</div>
+
+		<div class="box-wrap">
+			<div class="box"">
+				<h2 class="box-title"><i style="float:none" class="fa fa-arrow-up"></i><span>Popular</span></h2>
+				<ul class="box-list">
+					<li><a href="/stop=PLAZA_Transit%20Plaza">Transit Plaza</a></li>
+					<li><a href="/stop=IU_Illini%20Union">Illini Union</a></li>
+					<li><a href="/stop=GRGLIB_Gregory%20at%20Library">Gregory at Library</a></li>
+					<li><a href="/stop=PAR_Pennsylvania%20Ave.%20Residence%20Hall">Pennsylvania Ave. Residence Hall</a></li>
+					<li><a href="/stop=KRANNERT_Krannert%20Center">Krannert Center</a></li>
+					<li><a href="/stop=1STSTDM_First%20&%20Stadium">First & Stadium</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="box-wrap" style="margin-bottom: 75px">
+			<div class="box">
+				<h2 class="box-title"><i style="float:none" class="fa fa-map"></i><span>Maps</span></h2>
+				<ul class="box-list">
+					<li><a target="_blank" rel="noopener" href="https://mtd.org/maps-and-schedules/maps/">Route Maps (mtd.org) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+					<li><a target="_blank" rel="noopener" href="https://mtd.org/maps-and-schedules/plan-trip/">Trip Planner (mtd.org) <i class="fa fa-external-link" aria-hidden="true"></i></a></li>
+				</ul>
 			</div>
 		</div>
 
@@ -38,8 +58,6 @@
 		<a target="_blank" href="https://github.com/dandalpiaz/transit-cu" rel="noopener"><i class="fa fa-github" style="padding-right: 5px;"></i>Find on Github</a>
 		&nbsp;&bull;&nbsp;
 		Data provided by <a target="_blank" href="https://mtd.org" rel="noopener">CUMTD</a>
-		&nbsp;&bull;&nbsp;
-		<a target="_blank" href="https://commons.wikimedia.org/wiki/File:Champaign_From_Above.jpg" rel="noopener">"Champaign From Above"</a> by Peter Folk, used under <a target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/deed.en" rel="noopener">CC BY-SA 3.0</a> / dust removed from original
 	</p>
 {% endblock %}
 

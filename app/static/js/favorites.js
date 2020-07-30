@@ -16,7 +16,10 @@ function listFavorites() {
     listitems.sort(function(a, b) {
         return $(a).text().toUpperCase().localeCompare($(b).text().toUpperCase());
     })
-    $.each(listitems, function(idx, itm) { mylist.append(itm); });
+	$.each(listitems, function(idx, itm) { mylist.append(itm); });
+	if (current_favorites.length == 0) {
+		$('#favorites').append("<li>No favorites yet...</li>")
+	}
 }
 
 function checkIfStopIsFavorite(stop_id) {	

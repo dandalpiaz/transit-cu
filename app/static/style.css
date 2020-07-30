@@ -163,9 +163,7 @@ li {
 }
 
 #full-width-bg {
-    background-repeat: no-repeat !important;
-    background-position: center !important; 
-    background-size: cover !important;
+    background: #fafafa;
     height: 100%;
 }
 
@@ -250,22 +248,22 @@ i.fa.fa-search {
     height: 100%;
 }
 
-#favorites-container {
+.box-wrap {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-#favorites-wrapper {
+.box {
     max-width: 445px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 30px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     background: rgba(255,255,255,0.95);
     border: 2px solid #ccc;
 }
 
-#favorites-title {
+.box-title {
     margin-bottom: 15px;
     margin-top: 15px;
     margin-left: 15px;
@@ -279,17 +277,18 @@ i.fa.fa-search {
     padding-right: 15px;
 }
 
-#favorites-title span {
+.box-title span {
     position: relative;
     bottom: 2px;
+    margin-left: 8px;
 }
 
-#favorites {
+.box-list {
     padding-left: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
-#favorites li {
+.box-list li {
     text-align: left;
     list-style-type: none;
 }
@@ -303,6 +302,14 @@ i.fa.fa-search {
     float: right;
     border: 0px;
     background: none;
+}
+
+.fa-arrow-up {
+    color: orange;
+}
+
+.fa-map {
+    color: cornflowerblue;
 }
 
 #stop-title .fa-star {
@@ -328,16 +335,6 @@ i.fa.fa-search {
 
 #favorites-title .fav-active:hover {
     cursor: default;
-}
-
-#maps-wrapper {
-    text-align: right;
-    padding: 5px;
-}
-
-#maps-link {
-    font-size: 14px;
-    font-weight: 400;
 }
 
 #attribution {

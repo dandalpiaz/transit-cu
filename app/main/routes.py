@@ -30,10 +30,6 @@ def static_from_root():
 def index():
 	return render_template('home.html')
 
-@bp.route('/maps')
-def maps():
-	return render_template('maps.html')
-
 @bp.route('/<stop_id>')
 def get_stop_data(stop_id):
 
