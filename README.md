@@ -64,3 +64,4 @@ flask run
 - clean up filter.js - DRY
 - refactor file structure for app? [example](https://github.com/miguelgrinberg/flasky)
 - run audits at web.dev, lighthouse, fae.disability.illinois.edu
+
