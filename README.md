@@ -39,6 +39,25 @@ flask run
 1. Complete a server setup simliar to [Linux Server Configuration for Flask Application on Amazon Lightsail](https://github.com/dandalpiaz/flask-lightsail). For the Supervisor and Nginx config files, see the examples in the "Deployment" directory of this repository.
 2. To deploy new changes, create a script similar to "deploy-example.sh" in the "Deployment" folder.
 
+## Deploy on Heroku
+
+1. Create an account at [heroku.com](https://heroku.com).
+2. Install the Heroku command line interface:
+    ```
+    sudo wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+    ```
+3. Create a Heroku project:
+    ```
+    heroku login
+    heroku create
+    ```
+4. Update git remote (if necessary)
+    ```
+    git remote set-url heroku https://git.heroku.com/example.git 
+    git remote -v
+    git push heroku master
+    ```
+
 ## IDEAS
 
 - search for stops by current location
